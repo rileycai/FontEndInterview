@@ -12,7 +12,7 @@ Front-end interview resources
 
 [来源](https://juejin.im/post/5c878397f265da2dde07293b)  [题目](https://github.com/zhenzhencai/FontEndInterview/blob/master/Questions.html)  [答案](https://github.com/zhenzhencai/FontEndInterview/blob/master/Answer.html)
     
-<!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -66,7 +66,6 @@ Front-end interview resources
       // JS here
     </script>
   </body>
-</html>
+  </html>
     
-    个
 
