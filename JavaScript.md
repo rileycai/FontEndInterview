@@ -37,10 +37,19 @@ console.log(fn.getYear());
 ```
 Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
  
-4. 每个函数function都有一个prototype,每个对象都有一个__proto__,称为隐式原型
+4. 每个函数function都有一个prototype,每个对象都有一个__proto__,称为隐式原型。特例：Object.prototype是对象，它的__proto__指向的是null
 
-![](https://images0.cnblogs.com/blog/138012/201409/181509180812624.png)
+![](https://images0.cnblogs.com/blog/138012/201409/181510403153733.png)
 
+5. A instancee of B,沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
+
+```javascript
+console.log(Object instanceof Function) //true
+console.log(Function instanceof Object) //true
+console.log(Function instanceof Function) //true
+```
+
+![](https://images0.cnblogs.com/blog/138012/201409/181637013624694.png)
 
 
         
