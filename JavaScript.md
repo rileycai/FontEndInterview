@@ -51,6 +51,27 @@ console.log(Function instanceof Function) //true
 
 ![](https://images0.cnblogs.com/blog/138012/201409/181637013624694.png)
 
+6. 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值；
+
+```javascript
+console.log(f1)    //function fl(){}
+function fl(){}    //函数声明
+console.log(f2)    //undefined
+var f2=function(){}    //函数表达式
+```
+
+7. this
+```javascript
+function Foo(){
+   this.name="haha";
+   this.year=1998;
+   console.log(this);
+}
+var f1=new Foo();  // Foo {name: "haha", year: 1998}
+Foo();     //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+```
+
+
 
         
 
