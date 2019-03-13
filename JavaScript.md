@@ -108,5 +108,24 @@ var obj={
 
 ```
 
+8. javascript没有块级作用域，javascript除了全局作用域之外，只有函数可以创建的作用域。
+
+作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。
+
+9. 从自由变量到作用域链。
+
+要到创建这个函数的那个作用域中取值——是“创建”，而不是“调用”
+
+```javascript
+var a=10;
+function fn(){var b=20; function bar(){console.log(a+b);} return bar;}
+var x=fn();
+var b=200;
+var x();    //30
+```
+
+10. 闭包的两种应用————函数作为返回值，函数作为参数传递。
+
+
         
 
