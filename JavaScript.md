@@ -2,6 +2,7 @@
 ### 1.原型与闭包
 
 参考：
+
 [深入理解JavaScript原型与闭包](https://www.cnblogs.com/wangfupeng1988/p/3977924.html)
 
 [让你分分钟理解 JavaScript 闭包](https://www.cnblogs.com/onepixel/p/5062456.html)
@@ -30,9 +31,10 @@ function Fn() { }
         Fn.prototype.getYear = function () {
             return 1988;
         };
-
-        var fn = new Fn();
-        console.log(fn.name);
-        console.log(fn.getYear());
+var fn = new Fn();
+console.log(fn.name);
+console.log(fn.getYear());
 ```
-Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
+        Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
+        
+
