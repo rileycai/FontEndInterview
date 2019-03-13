@@ -61,6 +61,8 @@ var f2=function(){}    //函数表达式
 ```
 
 7. this
+
+1情况1：构造函数
 ```javascript
 function Foo(){
    this.name="haha";
@@ -71,7 +73,40 @@ var f1=new Foo();  // Foo {name: "haha", year: 1998}
 Foo();     //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
 ```
 
+情况2：函数作为对象的一个属性
+```javascript
+var obj={
+   x:10,
+   fn:function(){console.log(this);console.log(this.x);}
+}
+obj.fn()     // {x: 10, fn: ƒ}   10
+var fn1=obj.fn;    
+fn1();      //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}   undefined
+```
 
+情况3：函数用call或者apply调用
+```javascript
+var obj={
+   x:10
+}
+var fn=function(){console.log(this);console.log(this.x);}
+fn.call(obj)      //Object {x:10}  10
+```
+
+情况4：全局 & 调用普通函数
+```javascript
+var obj={
+   x:10,
+   fn:function(){
+      function f(){
+         console.log(this);
+         console.log(this.x);
+      }
+      fn();       //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}   undefined
+   }
+}
+
+```
 
         
 
