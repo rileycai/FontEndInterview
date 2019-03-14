@@ -488,4 +488,149 @@ ES6之前的继承是通过**原型**来实现的，也就是每一个构造函�
 
 [滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
 
+### 24. 什么是函数节流和函数去抖？
 
+函数节流就是让一个函数无法在很短的时间间隔内连续调用，而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，比如我们
+为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。
+
+函数去抖是在我们事件结束后的一段时间内才会执行，会有一个延迟性。现在我们有一个需求，有一个输入框要求输入联想，在用户输入的过程中，需要按照一定的时间像后台发送ajax请求，获取数据。对于这样的需求，我们可以通过函数节流来实现
+
+参考：
+
+[JS函数节流](https://www.cnblogs.com/mopagunda/p/5323080.html)
+
+### 25.请说一下实现jsonp的实现思路？
+jsonp的原理是使用script标签来实现跨域，因为script标签的的src属性是不受同源策略的影响的，因此可以使用其来跨域。一个最简单的jsonp就是创建一个script标签，设置src为相应的url，在url之后添加相应的callback，格式类似于
+url?callback=xxx，服务端根据我们的callback来返回相应的数据，类似于res.send(req.query.callback + '('+ data + ')')，这样就实现了一个最简单的jsonp
+
+参考：
+
+[jsonp原理详解](https://blog.csdn.net/hansexploration/article/details/80314948)
+
+### 26.浏览器内核有哪些？分别对应哪些浏览器？
+常见的浏览器内核有Trident、Gecko、WebKit、Presto，对应的浏览器为Trident对应于IE，Gecko对应于火狐浏览器，Webkit有chrome和safari，Presto
+有Opera。
+
+### 27.什么是深拷贝，什么是浅拷贝？
+浅拷贝是指仅仅复制对象的引用，而不是复制对象本身；深拷贝则是把复制对象所引用的全部对象都复制一遍。
+
+深拷贝方法1：递归复制所有层级的属性
+
+```javascript
+function deepClone(obj){
+    let objClone = Array.isArray(obj)?[]:{};
+    if(obj && typeof obj==="object"){
+        for(key in obj){
+            if(obj.hasOwnProperty(key)){
+                //判断ojb子元素是否为对象，如果是，递归复制
+                if(obj[key]&&typeof obj[key] ==="object"){
+                    objClone[key] = deepClone(obj[key]);
+                }else{
+                    //如果不是，简单复制
+                    objClone[key] = obj[key];
+                }
+            }
+        }
+    }
+    return objClone;
+} 
+```
+
+深拷贝方法2：借用JSON对象的parse和stringify
+
+```javascript
+function deepClone(obj){
+    let _obj = JSON.stringify(obj),
+        objClone = JSON.parse(_obj);
+    return objClone
+}  
+```
+
+深拷贝方法3：借用JQuery的extend方法。
+
+**$.extend( [deep ], target, object1 [, objectN ] )**
+
+deep表示是否深拷贝，为true为深拷贝，为false，则为浅拷贝
+
+target Object类型 目标对象，其他对象的成员属性将被附加到该对象上。
+
+object1  objectN可选。 Object类型 第一个以及第N个被合并的对象。
+
+```javascript
+let a=[0,1,[2,3],4],
+b=$.extend(true,[],a);
+```
+
+[深拷贝与浅拷贝的区别，实现深拷贝的几种方法](https://www.cnblogs.com/echolun/p/7889848.html)
+
+### 28.原生js字符串方法有哪些？
+简单分为获取类方法，获取类方法有charAt方法用来获取指定位置的字符，获取指定位置字符的unicode编码的charCodeAt方法，
+与之相反的fromCharCode方法，通过传入的unicode返回字符串。查找类方法有indexof()、lastIndexOf()、search()、match()
+方法。截取类的方法有substring、slice、substr三个方法，其他的还有replace、split、toLowerCase、toUpperCase方法。
+
+### 29.原生js字符串截取方法有哪些？有什么区别？
+js字符串截取方法有substring、slice、substr三个方法，substring和slice都是指定截取的首尾索引值，不同的是传递负值的时候
+substring会当做0来处理，而slice传入负值的规则是-1指最后一个字符，substr方法则是第一个参数是开始截取的字符串，第二个是截取的字符数量，
+和slice类似，传入负值也是从尾部算起的。
+
+### 30.let和const的异同有哪些？
+let和const都是对变量的声明，都有块级作用域的概念，不同的是const是对常量的声明，因此声明同时必须赋值，且之后不能更改，而let则可以。
+
+### 31.将静态资源放在其他域名的目的是什么？
+这样做的主要目的是在请求这些静态资源的时候不会发送cookie，节省了流量，需要注意的是cookie是会发送给子域名的（二级域名），所以这些静态资源是不会放在子域名下的，而是单独放在一个单独的主域名下。同时还有一个原因就是浏览器对于一个域名会有请求数的限制，这种方法可以方便做CDN。
+
+参考：
+
+[为什么淘宝、腾讯等会把静态资源放在另外一个主域名下？](https://www.zhihu.com/question/20627139)
+
+[为什么很多网站的静态资源会使用独立的域名？](https://www.zhihu.com/question/20534662)
+
+### 32.如何实现对一个DOM元素的深拷贝，包括元素的绑定事件？
+```javascript
+//使用cloneNode，但是在元素上绑定的事件不会拷贝
+function clone(origin) {
+    return Object.assign({},origin);
+}
+//实现了对原始对象的克隆，但是只能克隆原始对象自身的值，不能克隆她继承的值，如果想要保持继承链，可以采用如下方法：
+function clone(origin) {
+    let originProto=Object.getPrototypeOf(origin);
+    return Object.assign(Object.create(originProto),origin);
+}
+```
+
+参考：
+
+[如何实现对一个DOM元素的深拷贝，包括元素的绑定事件？](https://blog.csdn.net/caoxinhui521/article/details/78079377)
+
+###  33.简要介绍一下WebPack的底层实现原理
+webpack是把项目当作一个整体，通过给定的一个主文件，webpack将从这个主文件开始找到你项目当中的所有依赖的文件，使用loaders来处理它们，最后打包成一个或多个浏览器可识别的js文件.
+
+参考：
+
+[webpack简单原理以及实现方法](http://www.cnblogs.com/bilibilicai/p/6830154.html)
+
+[webpack中文网](https://www.webpackjs.com/concepts/)
+
+### 34.ajax的readyState有哪几个状态，含义分别是什么？
+ajax的readyState共有5个状态，分别是0-4，其中每个数字的含义分别是0代表还没调用open方法，1代表的是未调用send方法，也就是还没发送数据给服务器
+2代表的是还没有接收到响应，3代表的是开始接收到了部分数据，4代表的是接收完成，数据可以在客户端使用了。
+
+### 35.AMD和CMD的区别？
+最明显的区别就是在模块定义时对依赖的处理不同
+
+AMD推崇依赖前置，在定义模块的时候就要声明其依赖的模块
+
+CMD推崇就近依赖，只有在用到某个模块的时候再去require
+
+参考：
+
+[前端模块化，AMD与CMD的区别](https://www.cnblogs.com/futai/p/5258349.html)
+
+### 36.SVG和Canvas的区别
+Canvas：依赖分辨率；不支持事件处理器；弱的文本渲染能力；能够以 .png 或 .jpg 格式保存结果图像；最适合图像密集型的游戏，其中的许多对象会被频繁重绘
+SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染区域的应用程序（比如谷歌地图）；复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）；不适合游戏应用
+
+### 37.对于ES7和ES8了解多少
+参考：
+
+[10分钟学会ES7+ES8](https://www.cnblogs.com/zhuanzhuanfe/p/7493433.html)
