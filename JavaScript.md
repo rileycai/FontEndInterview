@@ -455,7 +455,37 @@ setTimeout表示间隔一段时间之后执行一次调用，而setInterval则�
 
 参考：
 
-[JS 中settimeout和setinterval函数的区别](https://my.oschina.net/u/3636678/blog/1499852)
+[setTimeout和setInterval从入门到精通](https://www.cnblogs.com/pelli/p/6225858.html)
 
-[setTimeout() 和 setInterval() 本质区别在哪里？](https://segmentfault.com/q/1010000005989491)
+### 19. 同源策略是什么？
+
+同源策略是指只有具有相同源的页面才能够共享数据，比如cookie，同源是指页面具有相同的协议、域名、端口号，有一项不同就不是同源。 有同源策略能够保证web网页的安全性。
+
+DOM 同源策略：禁止对不同源页面 DOM 进行操作。这里主要场景是 iframe 跨域的情况，不同域名的 iframe 是限制互相访问的。
+
+XMLHttpRequest 同源策略：禁止使用 XHR 对象向不同源的服务器地址发起 HTTP 请求。
+
+跨域解决方法： 1. CORS（跨域资源共享）； 2. JSONP跨域； 3. 图像ping跨域； 4. 服务器代理； 5. document.domain 跨域； 6. window.name 跨域； 7. location.hash 跨域； 8. postMessage 跨域；
+
+[浏览器同源策略及跨域的解决方法](https://www.cnblogs.com/laixiangran/p/9064769.html)
+
+### 20. ES6之前JavaScript如何实现继承？
+ES6之前的继承是通过**原型**来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在
+构造函数的prototype上寻找，而prototype本质上就是一个实例，因此如果prototype上还没有则会往prototype上的构造函数的prototype寻找，因此实现继承
+可以让构造函数的prototype是父级的一个实例就是以实现继承。
+
+### 21. 如何阻止事件冒泡和默认事件？
+标准的DOM对象中可以使用事件对象的stopPropagation()方法来阻止事件冒泡，但在IE8以下中IE的事件对象通过设置事件对象的cancelBubble属性为true来阻止冒泡；默认事件的话通过事件对象的preventDefault()方法来阻止，而IE通过设置事件对象的returnValue属性为false来阻止默认事件。
+
+### 22. addEventListener有哪些参数？
+有三个参数，第一个是事件的类型，第二个是事件的回调函数，第三个是一个表示事件是冒泡阶段还是捕获阶段捕获的布尔值，true表示捕获，false表示冒泡。
+
+### 23. 如何实现懒加载？
+
+当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为1*1px图片的路径（这样就只需请求一次），只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载
+
+参考：
+
+[滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
+
 
