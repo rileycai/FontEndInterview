@@ -260,3 +260,168 @@ let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
 
 使用onload事件运行加载成功，使用onerror事件判断失败
 
+### 10. 递归和迭代
+
+```javascript
+// 迭代，利用变量的原值推算出变量的一个新值，迭代就是A不停的调用B.
+function iteration(x){
+   var sum=1; 
+   for(x; x>=1; x--){
+       sum = sum*x;
+   }
+}
+// 递归：程序调用自身的编程技巧称为递归。
+function recursion(x){
+   if(x>1){
+       return x*recursion(x-1);
+   }else{
+       return 1;
+   }
+}
+```
+
+1） 递归中一定有迭代,但是迭代中不一定有递归,大部分可以相互转换。
+
+2） 能用迭代的不用递归,递归调用函数,浪费空间,并且递归太深容易造成堆栈的溢出./*相对*/
+ 
+参考：
+
+[深究递归和迭代的区别、联系、优缺点及实例对比](https://blog.csdn.net/laoyang360/article/details/7855860)
+
+[「递归」和「迭代」有哪些区别？](https://www.zhihu.com/question/20278387)
+
+### 11. 策略模式
+
+意图：定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。
+
+主要解决：在有多种算法相似的情况下，使用 if...else 所带来的复杂和难以维护。
+
+优点： 1、算法可以自由切换。 2、避免使用多重条件判断。 3、扩展性良好。
+
+缺点： 1、策略类会增多。 2、所有策略类都需要对外暴露。
+
+使用场景： 1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 2、一个系统需要动态地在几种算法中选择一种。 3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。
+
+参考：
+
+[策略模式](http://www.runoob.com/design-pattern/strategy-pattern.html)
+
+### 12. 浏览器事件循环机制
+
+   JavaScript引擎是单线程，也就是说每次只能执行一项任务，其他任务都得按照顺序排队等待被执行，只有当前的任务执行完成之后才会往下执行下一个任务。Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。
+   
+   1.JS 调用栈是一种后进先出的数据结构。当函数被调用时，会被添加到栈中的顶部，执行完成之后就从栈顶部移出该函数，直到栈内被清空。
+   
+   2.JavaScript 单线程中的任务分为同步任务和异步任务。同步任务会在调用栈中按照顺序排队等待主线程执行，异步任务则会在异步有了结果后将注册的回调函数添加到任务队列(消息队列)中等待主线程空闲的时候，也就是栈内被清空的时候，被读取到栈中等待主线程执行。任务队列是先进先出的数据结构。
+   
+   3.调用栈中的同步任务都执行完毕，栈内被清空了，就代表主线程空闲了，这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。每次栈内被清空，都会去读取任务队列有没有任务，有就读取执行，一直循环读取-执行的操作，就形成了事件循环。
+   
+   4.定时器会开启一条定时器触发线程来触发计时，定时器会在等待了指定的时间后将事件放入到任务队列中等待读取到主线程执行。定时器指定的延时毫秒数其实并不准确，因为定时器只是在到了指定的时间时将事件放入到任务队列中，必须要等到同步的任务和现有的任务队列中的事件全部执行完成之后，才会去读取定时器的事件到主线程执行，中间可能会存在耗时比较久的任务，那么就不可能保证在指定的时间执行。
+  
+```javascript
+console.log(1);
+setTimeout(function() {
+    console.log(2);
+})
+var promise = new Promise(function(resolve, reject) {
+    console.log(3);
+    resolve();
+})
+promise.then(function() {
+    console.log(4);
+})
+console.log(5);           //1,3,5,4,2
+```
+   
+参考：
+
+[js浏览器事件循环机制](https://www.cnblogs.com/yqx0605xi/p/9267827.html)
+
+### 13. 原生js操作Dom的方法有哪些？
+
+   获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、 getElementsByName、querySelector、querySelectorAll
+   
+   对元素属性进行操作的 getAttribute、 setAttribute、removeAttribute方法
+   
+   对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、 createElement等
+
+### 14. typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么
+
+   typeof的返回值有undefined、boolean、string、number、object、function、symbol。对undefined 使用返回undefined、null使用返回object，NaN使用返回number。
+   
+### 15. 实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
+
+只需要鉴别这些类型那么使用typeof即可，要鉴别null先判断双等判断是否为null，之后使用typeof判断，如果是obejct的话，再用Array.isArray判断
+是否为数组，如果是数字再使用isNaN判断是否为NaN,（需要注意的是NaN并不是JavaScript数据类型，而是一种特殊值）如下：
+```javascript
+function type(ele) {
+  if(ele===null) {
+    return null;
+  } else if(typeof ele === 'object') {
+    if(Array.isArray(ele)) {
+      return 'array';
+    } else {
+      return typeof ele;
+    }
+  } else if(typeof ele === 'number') {
+    if(isNaN(ele)) {
+      return NaN;
+    } else {
+      return typeof ele;
+    }
+  } else{
+    return typeof ele;
+  }
+}
+``` 
+   
+### 16. javascript做类型判断的方法有哪些？
+1. typeof
+```javascript
+typeof '';       // string 有效
+typeof 1;        // number 有效
+typeof Symbol(); // symbol 有效
+typeof true;     //boolean 有效
+typeof undefined; //undefined 有效
+typeof null;     //object 无效
+typeof [] ;      //object 无效
+typeof new Function();      // function 有效
+typeof new Date();          //object 无效
+typeof new RegExp();        //object 无效
+```
+
+2. instanceof ,instanceof 检测的是原型
+```javascript
+instanceof (A,B) = {
+    var L = A.__proto__;
+    var R = B.prototype;
+    if(L === R) {
+        // A的内部属性 __proto__ 指向 B 的原型对象
+        return true;
+    }
+    return false;
+}
+```
+
+3. constructor
+
+当一个函数 F被定义时，JS引擎会为F添加 prototype 原型，然后再在 prototype上添加一个 constructor 属性，并让其指向 F 的引用。当执行 var f = new F() 时，F 被当成了构造函数，f 是F的实例对象，此时 F 原型上的 constructor 传递到了 f 上，因此 f.constructor == F
+
+4. tostring
+
+toString() 是 Object 的原型方法，调用该方法，默认返回当前对象的 [[Class]] 。这是一个内部属性，其格式为 [object Xxx] ，其中 Xxx 就是对象的类型。
+```javascript
+Object.prototype.toString.call('') ;   // [object String]
+Object.prototype.toString.call(1) ;    // [object Number]
+Object.prototype.toString.call(true) ; // [object Boolean]
+Object.prototype.toString.call(Symbol()); //[object Symbol]
+Object.prototype.toString.call(undefined) ; // [object Undefined]
+Object.prototype.toString.call(null) ; // [object Null]
+Object.prototype.toString.call(new Function()) ; // [object Function]
+Object.prototype.toString.call(new Date()) ; // [object Date]
+Object.prototype.toString.call([]) ; // [object Array]
+Object.prototype.toString.call(new RegExp()) ; // [object RegExp]
+Object.prototype.toString.call(new Error()) ; // [object Error]
+Object.prototype.toString.call(document) ; // [object HTMLDocument]
+Object.prototype.toString.call(window) ; //[object global] window 是全局对象 global 的引用
+```
