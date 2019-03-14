@@ -175,6 +175,60 @@ XMLHttpRequest.open(method,URL,flag,name,password)
 
 [w3school AJAX教程](http://www.w3school.com.cn/ajax/index.asp)
 
+### 4. Get和Post的区别
 
-        
+GET - 从指定的资源请求数据。 POST - 向指定的资源提交要被处理的数据。
 
+然而，在以下情况中，请使用 POST 请求：
+
+   无法使用缓存文件（更新服务器上的文件或数据库）
+
+   向服务器发送大量数据（POST 没有数据量限制）
+   
+   发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
+ 
+[GET对比POST](http://www.w3school.com.cn/tags/html_ref_httpmethods.asp)
+
+### 5. 简要介绍ES6
+
+1. 新的变量声明方式 let/const，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升。同时不能重复声明。
+
+2. 解构赋值
+```javascript
+let [a, [[b], c]] = [1, [[2], 3]];
+let [a = 1, b] = []; // a = 1, b = undefined
+let [a, ...b] = [1, 2, 3];     //a=1,b=[2,3]
+//解构默认值
+let [a = 3, b = a] = [];         // a = 3, b = 3
+let [a = 3, b = a] = [1];        // a = 1, b = 1
+let [a = 3, b = a] = [1, 2];      // a = 1, b = 2
+let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
+```
+
+3. ES6 引入了一种新的原始数据类型 Symbol ，表示独一无二的值，最大的用法是用来定义对象的唯一属性名。Symbol 函数栈不能用 new 命令，因为 Symbol 是原始数据类型（null,undefined,Boolean,String,Number,Symbol），不是对象。
+
+4. ES6对字符串、 数组、正则、对象、函数等拓展了一些方法
+
+5. 为解决异步回调问题，引入了promise和 generator
+   
+   Promise 异步操作有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败）。除了异步操作的结果，任何其他操作都无法改变这个状态。
+
+   Promise 对象只有：从 pending 变为 fulfilled 和从 pending 变为 rejected 的状态改变。只要处于 fulfilled 和 rejected ，状态就不会再变了即 resolved（已定型）。
+   
+   then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise 执行失败时的回调，两个函数只会有一个被调用。
+   
+   ES6 新引入了 Generator 函数，可以通过 yield 关键字，把函数的执行流挂起，为改变执行流程提供了可能，从而为异步编程提供解决方案。
+
+6. 实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到浏览器兼容性，我们在实际开发中需要使用babel进行编译。
+
+   ES6 的模块自动开启严格模式，不管你有没有在模块头部加上 use strict;。
+   
+   模块中可以导入和导出各种类型的变量，如函数，对象，字符串，数字，布尔值，类等。
+   
+   每个模块都有自己的上下文，每一个模块内声明的变量都是局部变量，不会污染全局作用域。
+
+   每一个模块只加载一次（是单例的）， 若再去加载同目录下同文件，直接从内存中读取。
+ 
+参考：
+
+[ES6教程](http://www.runoob.com/w3cnote/es6-tutorial.html)
