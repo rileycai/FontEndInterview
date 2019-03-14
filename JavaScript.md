@@ -1,5 +1,5 @@
 ## JavaScript部分
-### 1.原型与闭包
+### 1. 原型与闭包
 
 参考：
 
@@ -118,6 +118,62 @@ var x();    //30
 ```
 
 10. 闭包的两种应用————函数作为返回值，函数作为参数传递。
+
+### 2. 引起JavaScript内存泄漏的操作有哪些
+
+虽然JavaScript 会自动垃圾收集，但是如果我们的代码写法不当，会让变量一直处于“进入环境”的状态，无法被回收。
+
+1. 全局变量引起的内存泄漏
+
+2. 闭包引起的内存泄漏
+
+3. dom清空或删除时，事件未清除导致的内存泄漏
+
+4. 子元素存在引用引起的内存泄漏
+
+5. 被遗忘的计时器
+
+参考：
+
+[【译】JavaScript 内存泄漏问题](http://octman.com/blog/2016-06-28-four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
+
+[JavaScript 常见的内存泄漏原因](https://juejin.im/entry/58158abaa0bb9f005873a843)
+
+### 3. 如何实现ajax请求
+
+(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
+```javascript
+var xmlHttpRequest;  //定义一个变量,用于存放XMLHttpRequest对象
+function createXMLHttpRequest()    //创建XMLHttpRequest对象的方法
+{
+   if(window.ActiveXObject){   //判断是否是IE浏览器
+      xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");  //创建IE浏览器中的XMLHttpRequest对象
+   }
+   else if(window.XMLHttpRequest)    //判断是否是Netscape等其他支持XMLHttpRequest组件的浏览器
+   {
+      xmlHttpRequest = new XMLHttpRequest();  //创建其他浏览器上的XMLHttpRequest对象
+   }
+}
+```
+
+(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.
+```javascript
+XMLHttpRequest.open(method,URL,flag,name,password)
+```
+
+(3)设置响应HTTP请求状态变化的函数.
+
+(4)发送HTTP请求.
+
+(5)获取异步调用返回的数据.
+
+(6)使用JavaScript和DOM实现局部刷新.
+
+参考：
+
+[实现AJAX的基本步骤](https://www.cnblogs.com/kennyliu/p/3876729.html)
+
+[w3school AJAX教程](http://www.w3school.com.cn/ajax/index.asp)
 
 
         
