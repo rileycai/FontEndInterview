@@ -406,6 +406,9 @@ instanceof (A,B) = {
 3. constructor
 
 当一个函数 F被定义时，JS引擎会为F添加 prototype 原型，然后再在 prototype上添加一个 constructor 属性，并让其指向 F 的引用。当执行 var f = new F() 时，F 被当成了构造函数，f 是F的实例对象，此时 F 原型上的 constructor 传递到了 f 上，因此 f.constructor == F
+```javascript
+' '.constructor== String
+```
 
 4. tostring
 
@@ -425,3 +428,34 @@ Object.prototype.toString.call(new Error()) ; // [object Error]
 Object.prototype.toString.call(document) ; // [object HTMLDocument]
 Object.prototype.toString.call(window) ; //[object global] window 是全局对象 global 的引用
 ```
+
+参考：
+
+[判断js数据类型的四种方法](https://www.cnblogs.com/onepixel/p/5126046.html)
+
+### 17.JavaScript严格模式下有哪些不同？
++ 不允许不使用var关键字去创建全局变量，抛出ReferenceError
++ 不允许对变量使用delete操作符，抛ReferenceError
++ 不可对对象的只读属性赋值，不可对对象的不可配置属性使用delete操作符，不可为不可拓展的对象添加属性，均抛TypeError
++ 对象属性名必须唯一
++ 函数中不可有重名参数
++ 在函数内部对修改参数不会反映到arguments中
++ 淘汰arguments.callee和arguments.caller
++ 不可在if内部声明函数
++ 抛弃with语句
+
+参考：
+
+1.[javascript高级程序设计](https://book.douban.com/subject/10546125/)
+
+### 18.setTimeout和setInterval的区别，包含内存方面的分析？
+setTimeout表示间隔一段时间之后执行一次调用，而setInterval则是每间隔一段时间循环调用，直至clearInterval结束。
+内存方面，setTimeout只需要进入一次队列，不会造成内存溢出，setInterval因为不计算代码执行时间，有可能同时执行多次代码，
+导致内存溢出。
+
+参考：
+
+[JS 中settimeout和setinterval函数的区别](https://my.oschina.net/u/3636678/blog/1499852)
+
+[setTimeout() 和 setInterval() 本质区别在哪里？](https://segmentfault.com/q/1010000005989491)
+
