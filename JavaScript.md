@@ -42,7 +42,6 @@ Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以
 ![](https://images0.cnblogs.com/blog/138012/201409/181510403153733.png)
 
 5. A instancee of B,沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
-
 ```javascript
 console.log(Object instanceof Function) //true
 console.log(Function instanceof Object) //true
@@ -52,7 +51,6 @@ console.log(Function instanceof Function) //true
 ![](https://images0.cnblogs.com/blog/138012/201409/181637013624694.png)
 
 6. 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值；
-
 ```javascript
 console.log(f1)    //function fl(){}
 function fl(){}    //函数声明
@@ -108,14 +106,9 @@ var obj={
 
 ```
 
-8. javascript没有块级作用域，javascript除了全局作用域之外，只有函数可以创建的作用域。
+8. javascript没有块级作用域，javascript除了全局作用域之外，只有函数可以创建的作用域。作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。
 
-作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。
-
-9. 从自由变量到作用域链。
-
-要到创建这个函数的那个作用域中取值——是“创建”，而不是“调用”
-
+9. 从自由变量到作用域链。要到创建这个函数的那个作用域中取值——是“创建”，而不是“调用”
 ```javascript
 var a=10;
 function fn(){var b=20; function bar(){console.log(a+b);} return bar;}
