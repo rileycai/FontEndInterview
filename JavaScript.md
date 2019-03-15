@@ -1,6 +1,8 @@
 ## JavaScript部分
 ### 1. 原型与闭包
 
+闭包是指有权访问另外一个函数作用域中的变量的函数
+
 参考：
 
 [深入理解JavaScript原型与闭包](https://www.cnblogs.com/wangfupeng1988/p/3977924.html)
@@ -36,7 +38,7 @@ console.log(fn.name);
 console.log(fn.getYear());
 ```
 Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
- 
+
 4. 每个函数function都有一个prototype,每个对象都有一个__proto__,称为隐式原型。特例：Object.prototype是对象，它的__proto__指向的是null
 
 ![](https://images0.cnblogs.com/blog/138012/201409/181510403153733.png)
@@ -135,6 +137,8 @@ var x();    //30
 
 参考：
 
+[JavaScript深入之4类常见内存泄漏及如何避免](https://github.com/yygmind/blog/issues/16)
+
 [【译】JavaScript 内存泄漏问题](http://octman.com/blog/2016-06-28-four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
 
 [JavaScript 常见的内存泄漏原因](https://juejin.im/entry/58158abaa0bb9f005873a843)
@@ -184,9 +188,9 @@ GET - 从指定的资源请求数据。 POST - 向指定的资源提交要被处
    无法使用缓存文件（更新服务器上的文件或数据库）
 
    向服务器发送大量数据（POST 没有数据量限制）
-   
+
    发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
- 
+
 [GET对比POST](http://www.w3school.com.cn/tags/html_ref_httpmethods.asp)
 
 ### 5. 简要介绍ES6
@@ -210,42 +214,42 @@ let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
 4. ES6对字符串、 数组、正则、对象、函数等拓展了一些方法
 
 5. 为解决异步回调问题，引入了promise和 generator
-   
+
    Promise 异步操作有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败）。除了异步操作的结果，任何其他操作都无法改变这个状态。
 
    Promise 对象只有：从 pending 变为 fulfilled 和从 pending 变为 rejected 的状态改变。只要处于 fulfilled 和 rejected ，状态就不会再变了即 resolved（已定型）。
-   
+
    then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise 执行失败时的回调，两个函数只会有一个被调用。
-   
+
    ES6 新引入了 Generator 函数，可以通过 yield 关键字，把函数的执行流挂起，为改变执行流程提供了可能，从而为异步编程提供解决方案。
 
 6. 实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到浏览器兼容性，我们在实际开发中需要使用babel进行编译。
 
    ES6 的模块自动开启严格模式，不管你有没有在模块头部加上 use strict;。
-   
+
    模块中可以导入和导出各种类型的变量，如函数，对象，字符串，数字，布尔值，类等。
-   
+
    每个模块都有自己的上下文，每一个模块内声明的变量都是局部变量，不会污染全局作用域。
 
    每一个模块只加载一次（是单例的）， 若再去加载同目录下同文件，直接从内存中读取。
- 
+
 参考：
 
 [ES6教程](http://www.runoob.com/w3cnote/es6-tutorial.html)
 
 ### 6. 对JS模块化的理解
-   
+
    在ES6出现之前，js没有标准的模块化概念，这也就造成了js多人写作开发容易造成全局污染的情况，以前我们可能会采用立即执行函数、对象等方式来尽量减少变量这种情况，后面社区为了解决这个问题陆续提出了**AMD规范**和**CMD规范**，这里不同于Node.js的 CommonJS的原因在于服务端所有的模块都是存在于硬盘中的，加载和读取几乎是不需要时间的，而浏览器端因为加载速度取决于网速，因此需要采用异步加载，*AMD规范中使用define来定义一个模块，使用require方法来加载一个模块，现在ES6也推出了标准的模块加载方案，通过export和import来导出和导入模块*。
-   
+
 ### 7. 介绍事件代理以及好处
 
    事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。好处是可以减少事件绑定，同时动态的DOM结构仍然可以监听。事件代理发生在冒泡阶段。
-   
+
 参考：
 
 [js中的事件委托或是事件代理详解](https://www.cnblogs.com/liugang-vip/p/5616484.html)
-   
-   
+
+
 ### 8. 使用new操作符实例化一个对象的具体步骤
 
 1.构造一个新的对象
@@ -265,7 +269,7 @@ let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
 ```javascript
 // 迭代，利用变量的原值推算出变量的一个新值，迭代就是A不停的调用B.
 function iteration(x){
-   var sum=1; 
+   var sum=1;
    for(x; x>=1; x--){
        sum = sum*x;
    }
@@ -283,7 +287,7 @@ function recursion(x){
 1） 递归中一定有迭代,但是迭代中不一定有递归,大部分可以相互转换。
 
 2） 能用迭代的不用递归,递归调用函数,浪费空间,并且递归太深容易造成堆栈的溢出./*相对*/
- 
+
 参考：
 
 [深究递归和迭代的区别、联系、优缺点及实例对比](https://blog.csdn.net/laoyang360/article/details/7855860)
@@ -309,15 +313,15 @@ function recursion(x){
 ### 12. 浏览器事件循环机制
 
    JavaScript引擎是单线程，也就是说每次只能执行一项任务，其他任务都得按照顺序排队等待被执行，只有当前的任务执行完成之后才会往下执行下一个任务。Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。
-   
+
    1.JS 调用栈是一种后进先出的数据结构。当函数被调用时，会被添加到栈中的顶部，执行完成之后就从栈顶部移出该函数，直到栈内被清空。
-   
+
    2.JavaScript 单线程中的任务分为同步任务和异步任务。同步任务会在调用栈中按照顺序排队等待主线程执行，异步任务则会在异步有了结果后将注册的回调函数添加到任务队列(消息队列)中等待主线程空闲的时候，也就是栈内被清空的时候，被读取到栈中等待主线程执行。任务队列是先进先出的数据结构。
-   
+
    3.调用栈中的同步任务都执行完毕，栈内被清空了，就代表主线程空闲了，这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。每次栈内被清空，都会去读取任务队列有没有任务，有就读取执行，一直循环读取-执行的操作，就形成了事件循环。
-   
+
    4.定时器会开启一条定时器触发线程来触发计时，定时器会在等待了指定的时间后将事件放入到任务队列中等待读取到主线程执行。定时器指定的延时毫秒数其实并不准确，因为定时器只是在到了指定的时间时将事件放入到任务队列中，必须要等到同步的任务和现有的任务队列中的事件全部执行完成之后，才会去读取定时器的事件到主线程执行，中间可能会存在耗时比较久的任务，那么就不可能保证在指定的时间执行。
-  
+
 ```javascript
 console.log(1);
 setTimeout(function() {
@@ -332,7 +336,7 @@ promise.then(function() {
 })
 console.log(5);           //1,3,5,4,2
 ```
-   
+
 参考：
 
 [js浏览器事件循环机制](https://www.cnblogs.com/yqx0605xi/p/9267827.html)
@@ -340,15 +344,15 @@ console.log(5);           //1,3,5,4,2
 ### 13. 原生js操作Dom的方法有哪些？
 
    获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、 getElementsByName、querySelector、querySelectorAll
-   
+
    对元素属性进行操作的 getAttribute、 setAttribute、removeAttribute方法
-   
+
    对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、 createElement等
 
 ### 14. typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么
 
    typeof的返回值有undefined、boolean、string、number、object、function、symbol。对undefined 使用返回undefined、null使用返回object，NaN使用返回number。
-   
+
 ### 15. 实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
 
 只需要鉴别这些类型那么使用typeof即可，要鉴别null先判断双等判断是否为null，之后使用typeof判断，如果是obejct的话，再用Array.isArray判断
@@ -373,8 +377,8 @@ function type(ele) {
     return typeof ele;
   }
 }
-``` 
-   
+```
+
 ### 16. javascript做类型判断的方法有哪些？
 1. typeof
 ```javascript
@@ -533,7 +537,7 @@ function deepClone(obj){
         }
     }
     return objClone;
-} 
+}
 ```
 
 深拷贝方法2：借用JSON对象的parse和stringify
@@ -634,3 +638,57 @@ SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染�
 参考：
 
 [10分钟学会ES7+ES8](https://www.cnblogs.com/zhuanzhuanfe/p/7493433.html)
+
+### 38. call模拟实现
+```JavaScript
+Function.prototype.call2 = function (context) {
+    var context = context || window;
+    context.fn = this;
+
+    var args = [];
+    for(var i = 1, len = arguments.length; i < len; i++) {
+        args.push('arguments[' + i + ']');
+    }
+
+    var result = eval('context.fn(' + args +')');
+
+    delete context.fn
+    return result;
+}
+// 测试一下
+var value = 2;
+
+var obj = {
+    value: 1
+}
+function bar(name, age) {
+    console.log(this.value);
+    return {
+        value: this.value,
+        name: name,
+        age: age
+    }
+}
+bar.call2(null); // 2
+console.log(bar.call2(obj, 'kevin', 18));
+```
+### apply模拟实现
+```JavaScript
+Function.prototype.apply = function (context, arr) {
+    var context = Object(context) || window;
+    context.fn = this;
+    var result;
+    if (!arr) {
+        result = context.fn();
+    }
+    else {
+        var args = [];
+        for (var i = 0, len = arr.length; i < len; i++) {
+            args.push('arr[' + i + ']');
+        }
+        result = eval('context.fn(' + args + ')')
+    }
+    delete context.fn
+    return result;
+}
+```
