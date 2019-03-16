@@ -4,7 +4,13 @@
 ## 目录
 #### [JavaScript部分](JavaScript.md)
 
+###  [css部分](css.md)
+
+###  [vue部分](vue.md)
+
 #### [代码面试](Code.md)
+
+#### [大厂面试题汇总](realInterviwe.md)
 
 ## JavaScript重难点
 
@@ -25,6 +31,8 @@
 6. [JavaScript深入之从作用域链理解闭包](https://github.com/yygmind/blog/issues/18)
 
 7. [JavaScript深入之闭包面试题解](https://github.com/yygmind/blog/issues/19)
+
+8. [深度解析bind原理、使用场景及模拟实现](https://github.com/yygmind/blog/issues/23)
 
 
 
