@@ -179,20 +179,6 @@ XMLHttpRequest.open(method,URL,flag,name,password)
 
 [w3school AJAX教程](http://www.w3school.com.cn/ajax/index.asp)
 
-### 4. Get和Post的区别
-
-GET - 从指定的资源请求数据。 POST - 向指定的资源提交要被处理的数据。
-
-然而，在以下情况中，请使用 POST 请求：
-
-   无法使用缓存文件（更新服务器上的文件或数据库）
-
-   向服务器发送大量数据（POST 没有数据量限制）
-
-   发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
-
-[GET对比POST](http://www.w3school.com.cn/tags/html_ref_httpmethods.asp)
-
 ### 5. 简要介绍ES6
 
 1. 新的变量声明方式 let/const，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升。同时不能重复声明。
