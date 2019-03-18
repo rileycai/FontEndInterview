@@ -1,6 +1,7 @@
 function SuperType() {
     this.property = true;
-    console.log(this);
+    // console.log(this);
+
 }
 var x= SuperType();
 
