@@ -102,3 +102,58 @@ function create() {
 	return ret instanceof Object ? ret : obj;
 };
 ```
+
+### 7. 两个升序数组合并成一个升序数组
+```JavaScript
+function merge(left, right){
+    let result  = [],
+        il      = 0,
+        ir      = 0;
+    while (il < left.length && ir < right.length) {
+        result.push(left[il] < right[ir] ? left[il++] : right[ir++]);
+    }
+    return result.concat(left.slice(il)).concat(right.slice(ir));
+}
+```
+
+### 8. 数组去重
+```javascript
+//reduce方法
+const distinct = arr => arr.sort().reduce( (init, current) => {    
+    if (init.length === 0 || init[init.length - 1] !== current) {
+        init.push( current );
+    }
+    return init;
+}, []);
+//过滤方法
+const distinct = arr => arr.filter( (element, index, self) => {
+    return self.indexOf( element ) === index;
+});
+```
+
+
+### 9. 多重数组降维
+```javascript
+const flattenDeep = arr => Array.isArray(arr)
+  ? arr.reduce( (a, b) => [...a, ...flattenDeep(b)] , [])
+  : [arr]
+```
+
+### 10. 给定两个数组，写一个方法来计算它们的交集。
+```javascript
+var intersect = function(nums1, nums2) {  
+    var map1 = new Map();
+    var number = [];
+    for(var i = 0; i < nums1.length; i++) {
+        var map1Value = map1.get(nums1[i]);
+        map1.set( nums1[i], ( map1Value ? map1Value : 0 ) + 1 );
+    }
+    for(var i = 0; i < nums2.length; i++) {
+        if( map1.has(nums2[i]) && map1.get(nums2[i]) != 0 ) {
+            number.push(nums2[i]);
+            map1.set( nums2[i], map1.get(nums2[i]) - 1 );
+        }
+    }
+    return number;
+};
+```
