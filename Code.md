@@ -184,3 +184,29 @@ p.then(function (text) {   // 如果AJAX成功，获得响应内容
     log.innerText = 'ERROR: ' + status;
 });
 ```
+12. 以下代码，使用三种方法，实现依次输出0-9
+```JavaScript
+//使用立即执行函数（）（）
+for (var i = 0; i < 10; i++) {
+  funcs.push((function (value) {
+    return function () {
+      console.log(value)
+    }
+  }(i)))
+}
+//使用闭包
+function show(i) {
+  return function () {
+    console.log(i)
+  }
+}
+for (var i = 0; i < 10; i++) {
+  funcs.push(show(i))
+}
+//使用let
+for (let i = 0; i < 10; i++) {
+  funcs.push(function () {
+    console.log(i)
+  })
+}
+```
