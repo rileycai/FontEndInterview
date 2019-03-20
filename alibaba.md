@@ -40,6 +40,12 @@ box-sizing:border-box;
 
 参考： [什么是BFC](https://www.cnblogs.com/libin-1/p/7098468.html)
 
+##### 5. CSS垂直居中
+
+##### 6.宽高比4:3自适应
+
+##### 7.让一个图片无限旋转
+
 #### Javascript
 ##### 1. 讲一讲this指针
 ##### 2. 讲一讲原型链
@@ -106,12 +112,25 @@ window.onload = function(){
 }
 ```
 
-##### 11.排序方法，有哪些讲讲原理
+##### 11.排序方法，有哪些讲讲原理，js的sort（）用到哪些排序算法？
++  V8 ：数组长度小于等于 22 的用插入排序，其它的用快速排序
+
+参考： [十大经典的排序算法](https://www.cnblogs.com/onepixel/articles/7674659.html)
 
 ##### 12.懂链表吗，懂二叉树吗，懂堆吗？
 ##### 13.vue如何实现双向绑定
 
 ##### 14.如何拦截变量属性
++ 使用proxy。**new Proxy()** 表示生成一个 **Proxy** 实例，**target** 参数表示所要拦截的目标对象，**handler** 参数也是一个对象，用来定制拦截行为。
+```javascript
+var proxy = new Proxy({}, {
+  get: function(target, property) {
+    return 35;
+  }
+});
+let obj = Object.create(proxy);
+obj.time // 35
+```
 
 ##### 15.箭头函数和普通函数的区别是什么？
 + 普通函数this：
@@ -131,3 +150,38 @@ window.onload = function(){
 ##### 17.讲讲es6的promise函数
 
 ##### 18.讲讲es6的generator函数
+
+##### 19.函数柯里化理解
++ 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。
++ 用途：1.延迟计算；2.参数复用；3.动态生成函数
+```JavaScript
+function curry (fn, currArgs) {
+    return function() {
+        let args = [].slice.call(arguments);
+        // 首次调用时，若未提供最后一个参数currArgs，则不用进行args的拼接
+        if (currArgs !== undefined) {
+            args = args.concat(currArgs);
+        }
+        // 递归调用
+        if (args.length < fn.length) {
+            return curry(fn, args);
+        }
+        // 递归出口
+        return fn.apply(null, args);
+    }
+}
+```
+
+##### 20.写个js继承的例子
+
+
+### 网络相关
+##### 1. http 1.0 1.2 2.0的区别
+
+##### 2.post请求常见的content-type
+
+##### 3.强制缓存和协商缓存
+
+##### 4.跨域有哪些方法
+
+##### 5.写一个jsonp的实现
