@@ -1,7 +1,15 @@
 ## ES6面试
-### 1.箭头函数注意事项
-1. typeof运算符和普通的function一样
-2. instanceof也返回true，表明也是Function的实例
-3. **this固定，不再善变**
-4. 箭头函数不能用new
-5. 不能使用argument
+
+参考： [ES6高频面试题目整理](https://www.cnblogs.com/fengxiongZz/p/8191503.html)
+
+##### 1.箭头函数和普通函数的区别是什么？
++ 普通函数this：
+1. this总是代表它的直接调用者。
+2. 在默认情况下，没找到直接调用者，this指的是window。
+3. 在严格模式下，没有直接调用者的函数中的this是undefined。
+4. 使用call,apply,bind绑定，this指的是绑定的对象。
++ 箭头函数this：
+1. 在使用=>定义函数的时候，this的指向是 **定义时所在的对象**，而不是使用时所在的对象；
+2. **不能够用作构造函数**，这就是说，不能够使用new命令，否则就会抛出一个错误；
+3. 不能够使用 **arguments** 对象；
+4. 不能使用 **yield** 命令；
