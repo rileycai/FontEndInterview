@@ -204,7 +204,21 @@ function curry (fn, currArgs) {
 4. **text/xml**：使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。
 
 ##### 3.强制缓存和协商缓存
++ **强制缓存**： 浏览器在请求某一资源时，会先获取该资源缓存的header信息，判断是否命中强缓存（cache-control和expires信息），若命中直接从缓存中获取资源信息，包括缓存header信息；本次请求根本就不会与服务器进行通信；
++ **协商缓存**： 如果没有命中强缓存，浏览器会发送请求到服务器，请求会携带第一次请求返回的有关缓存的header字段信息（Last-Modified/If-Modified-Since和Etag/If-None-Match），由服务器根据请求中的相关header信息来比对结果是否协商缓存命中；若命中，则服务器返回新的响应header信息更新缓存中的对应header信息，但是并不返回资源内容，它会告知浏览器可以直接从缓存获取；否则返回最新的资源内容
+
+参考： [http协商缓存VS强缓存](https://www.cnblogs.com/wonyun/p/5524617.html)
 
 ##### 4.跨域有哪些方法
 
 ##### 5.写一个jsonp的实现
++ 利用了 **script** 标签没有跨域限制这一“漏洞”来达到与第三方通讯的目的。简单地说，该协议就是，允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名包裹json数据，这样客户端就可以随意定制自己的函数自动处理返回的数据了。
+```JavaScript
+    var flightHandler = data=>{
+      console.log(data);
+    }
+    var url = "http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998&callback=flightHandler";
+    var script = document.createElement('script');
+    script.setAttribute('src', url);
+    document.getElementsByTagName('head')[0].appendChild(script);
+```
