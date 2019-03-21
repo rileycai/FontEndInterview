@@ -11,6 +11,7 @@
 ### 基础问题
 #### CSS
 ##### 1. 讲一下float,清除浮动
+float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。
 ##### 2. 移动端适配问题，讲讲rem
 + px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。
 + em是相对长度单位。相对于当前对象内文本的字体尺寸。
@@ -42,9 +43,42 @@ box-sizing:border-box;
 
 ##### 5. CSS垂直居中
 
+参考： [纯CSS实现垂直居中的几种方法](https://www.cnblogs.com/hutuzhu/p/4450850.html)
+
 ##### 6.宽高比4:3自适应
++ **垂直方向的padding**: 在css中，padding-top或padding-bottom的百分比值是根据容器的width来计算的。
+```css
+.wrap{
+       position: relative;
+       height: 0;  //容器的height设置为0
+       width: 100%;
+       padding-top: 75%;  //100%*3/4
+   }
+   .wrap > *{
+       position: absolute;//容器的内容的所有元素absolute,然子元素内容都将被padding挤出容器
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+   }
+```
++ 
+
+参考： [CSS实现长宽比的几种方案](https://www.w3cplus.com/css/aspect-ratio.html)
 
 ##### 7.让一个图片无限旋转
+```css
+ <img class="circle" src="001.jpg" width="400" height="400"/>
+
+ //infinite 表示动画无限次播放 linear表示动画从头到尾的速度是相同的
+ .circle{
+         animation: myRotation 5s linear infinite;
+     }
+@keyframes myRotation {
+         from {transform: rotate(0deg);}
+         to {transform: rotate(360deg);}
+}
+```
 
 #### Javascript
 ##### 1. 讲一讲this指针
