@@ -39,3 +39,21 @@ import A from '@/components/a.vue'
 + **updated** 等到updated的时候 view层才被重新渲染，数据更新。
 + **beforeDestroy** 钩子函数在实例销毁之前调用。在这一步，实例仍然完全可用。
 + **destroyed** 钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+
+### 5.vue的父子组件如何通信的
++ 父组件是通过props属性给子组件通信
++ 子组件通过触发事件来改变父组件的数据（this.$emit(method,data))。父组件通过监听子组件触发的事件，来调用方法，接收数据。
++ 兄弟组件的通信，采用观察者模式。新建一个第三方实例。
+```JavaScript
+//组件他哥
+<div @click="ge"></div>
+methods: {
+    ge() {
+        vm.$emit('blur','sichaoyun'); //触发事件
+    }
+}
+//组件小弟
+vm.$on('blur', (arg) => {
+        this.test= arg; // 接收
+});
+```

@@ -250,6 +250,34 @@ function curry (fn, currArgs) {
 ```
 
 #### 20.写个js继承的例子
+```JavaScript
+//寄生组合继承
+function Animal (name) {
+  // 属性
+  this.name = name || 'Animal';
+  // 实例方法
+  this.sleep = function(){
+    console.log(this.name + '正在睡觉！');
+  }
+}
+// 原型方法
+Animal.prototype.eat = function(food) {
+  console.log(this.name + '正在吃：' + food);
+};
+function Cat(name){
+  Animal.call(this);
+  this.name = name || 'Tom';
+}
+(function(){
+  // 创建一个没有实例方法的类
+  var Super = function(){};
+  Super.prototype = Animal.prototype;
+  //将实例作为子类的原型
+  Cat.prototype = new Super();
+})();
+Cat.prototype.constructor = Cat;
+```
+参考： [JS继承实现方式](https://www.cnblogs.com/humin/p/4556820.html)
 
 
 ### 网络相关
@@ -281,6 +309,13 @@ function curry (fn, currArgs) {
 参考： [http协商缓存VS强缓存](https://www.cnblogs.com/wonyun/p/5524617.html)
 
 #### 4.跨域有哪些方法
+1. **JSONP**
+2. **通过修改document.domain来跨子域。** 只能把document.domain设置成自身或更高一级的父域。
+3. **使用window.name来进行跨域** ；window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
+4. **使用HTML5中新引进的window.postMessage方法来跨域传送数据** 使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。
+5. **CORS**
+6. **服务器代理**
+7. **flash**
 
 #### 5.写一个jsonp的实现
 + 利用了 **script** 标签没有跨域限制这一“漏洞”来达到与第三方通讯的目的。简单地说，该协议就是，允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名包裹json数据，这样客户端就可以随意定制自己的函数自动处理返回的数据了。
