@@ -53,16 +53,25 @@ box-sizing:border-box;
        height: 0;  //容器的height设置为0
        width: 100%;
        padding-top: 75%;  //100%*3/4
-   }
-   .wrap > *{
+}
+.wrap > *{
        position: absolute;//容器的内容的所有元素absolute,然子元素内容都将被padding挤出容器
        left: 0;
        top: 0;
        width: 100%;
        height: 100%;
-   }
+}
 ```
-+ 
++ **padding & calc()**: 跟第一种方法原理相同
+```css
+padding-top: calc(100%*9/16);
+```
++ **padding & 伪元素**
++ **视窗单位**： 浏览器100vw表示浏览器的视窗宽度
+```css
+width:100vw;
+height:calc(100vw*3/4)
+```
 
 参考： [CSS实现长宽比的几种方案](https://www.w3cplus.com/css/aspect-ratio.html)
 
