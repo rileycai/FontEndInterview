@@ -241,3 +241,34 @@ function random(length){
     return arr+=random(length-arr.length);
 }
 ```
+
+15. 给定一个没有重复数字的序列，返回所有的全排列
+```JavaScript
+var ans,res,hash,len;
+var dfs=function(num,nums){
+    if(num===len){
+        var tmp=res.map(function(x){
+            return x;
+        })
+        ans.push(tmp);
+        return;
+    }
+    for(var i=0;i<len;i++){
+        if(hash[i])
+            continue;
+        hash[i]=true;
+        res.push(nums[i]);
+        dfs(num+1,nums);
+        hash[i]=false;
+        res.pop();
+    }
+}
+var permute = function(nums) {
+    ans=[];
+    res=[];
+    hash=[];
+    len=nums.length;
+    dfs(0,nums);
+    return ans;
+};
+```

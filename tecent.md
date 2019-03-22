@@ -53,6 +53,36 @@ var quickSort = function(arr) {
 };
 ```
 ### 4. 查找数组中元素和等于给定数的子数组
+```JavaScript
+var ans,res,len;
+var dfs=function(index,sum,candidates,target){
+    if(sum===target){
+        var tmp=res.map(function(item){
+            return item;
+        })
+        ans.push(tmp);
+        // console.log(res,ans);
+        return ;
+    }
+    for(var i=index;i<len;i++){
+        if(sum+candidates[i]>target)
+            continue;
+        res.push(candidates[i]);
+        dfs(i,sum+candidates[i],candidates,target);
+        res.pop();
+    }
+}
+var combinationSum = function(candidates, target) {
+    ans=[];
+    len=candidates.length;
+    candidates.sort((a,b)=>a-b);
+    for(var i=0;i<len;i++){
+        res=[candidates[i]];
+        dfs(i,candidates[i],candidates,target);
+    }
+    return ans;
+};
+```
 
 ## vue
 ### 1. vuex原理
@@ -94,6 +124,7 @@ var quickSort = function(arr) {
 
 ## 安全
 ### 1. 如何解决浏览器劫持问题
+
 ### 2. 讲讲CSRF和XSS区别
 
 
