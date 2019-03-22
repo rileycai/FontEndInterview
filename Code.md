@@ -210,3 +210,34 @@ for (let i = 0; i < 10; i++) {
   })
 }
 ```
+13. 返回字符串中重复最多的字符
+```JavaScript
+function count(arr){
+    var map =new Map();
+    for(var i=0;i<arr.length;i++){
+        if(map.get(arr[i])){
+            map.set(arr[i],map.get(arr[i])+1)
+        }else{
+            map.set(arr[i],1);
+        }
+    }
+    var max=0;
+    var val='';
+    map.forEach(function(value,key,map){
+        if(value>max){
+            max=value;
+            val=key;
+        }
+    })
+    return val;
+}
+```
+14. 生成n为随机字符串
+```JavaScript
+function random(length){
+    var arr=Math.random().toString(36).substr(2);
+    if(arr.length>length)
+        return arr.substr(0,length);
+    return arr+=random(length-arr.length);
+}
+```
