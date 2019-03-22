@@ -624,3 +624,8 @@ SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染�
 参考：
 
 [10分钟学会ES7+ES8](https://www.cnblogs.com/zhuanzhuanfe/p/7493433.html)
+
+### 38.Js中forEach和map方法的区别
++ forEach返回值是undefined,不可链式调用
++ map返回一个新数组，原数组不会改变。
++ 没有办法终止或者跳出forEach循环，除非抛出异常，如果想执行一个数组是否满足什么条件，可以用Array.every()或者Array.some();

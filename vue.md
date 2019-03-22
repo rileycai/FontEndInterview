@@ -1,4 +1,5 @@
 ## vue面试题
+参考：[Vue面试中，经常会被问到的面试题/Vue知识点整理](https://segmentfault.com/a/1190000016344599)
 
 ### 1.vue 动态路由加载
 在vue-router对象中首先初始化公共路由，比如（404，login）等，然后在用户登陆成功，根据用户的角色信息，获取对应权限菜单信息menuList，并将后台返回的menuList转换成我们需要的router数据结构，然后通过vue-router2.2新添的router.addRouter(routes)方法，同时我们可以将转后的路由信息保存于vuex，这样我们可以在我们的SideBar组件中获取我们的全部路由信息，并且渲染我们的左侧菜单栏，让动态路由实现。
@@ -57,3 +58,65 @@ vm.$on('blur', (arg) => {
         this.test= arg; // 接收
 });
 ```
+
+### 6.Vue的路由实现：hash模式 和 history模式
++ **hash模式：** 在浏览器中符号“#”，#以及#后面的字符称之为hash，用window.location.hash读取；
++ 特点：hash虽然在URL中，但不被包括在HTTP请求中；用来指导浏览器动作，对服务端安全无用，hash不会重加载页面。hash 模式下，仅 hash 符号之前的内容会被包含在请求中，如 http://www.xxx.com，因此对于后端来说，即使没有做到对路由的全覆盖，也不会返回 404 错误。
++ **history模式：** history采用HTML5的新特性；且提供了两个新方法：pushState（），replaceState（）可以对浏览器历史记录栈进行修改，以及popState事件的监听到状态变更。
++ history 模式下，前端的 URL 必须和实际向后端发起请求的 URL 一致，如 http://www.xxx.com/items/id。后端如果缺少对 /items/id 的路由处理，将返回 404 错误。
+
+### 7.vue-cli如何新增自定义指令？
+```JavaScript
+//创建局部指令
+var app = new Vue({
+    el: '#app',
+    data: {    
+    },
+    // 创建指令(可以多个)
+    directives: {
+        // 指令名称
+        dir1: {
+            inserted(el) {
+                el.style.width = '200px';
+            }}}})
+//创建全局指令
+Vue.directive('dir2', {
+    inserted(el) {
+        console.log(el);
+    }
+})
+//指令的使用
+<div v-dir1></div>
+```
+
+### 8.vue如何自定义一个过滤器？
+```JavaScript
+<div id="app">
+     <input type="text" v-model="msg" />
+     {{msg| capitalize }}
+</div>
+
+var vm=new Vue({
+    el:"#app",
+    data:{
+        msg:''
+    },
+    filters: {
+      capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+      }
+    }
+})
+```
+
+### 9.对keep-alive 的了解？
++ keep-alive是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。
++ 在vue 2.1.0 版本之后，keep-alive新加入了两个属性: include(包含的组件缓存) 与 exclude(排除的组件不缓存，优先级大于include) 。
+
+### 10. vue中 key 值的作用？
++ 当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。key的作用主要是为了高效的更新虚拟DOM。
+
+### 11.什么是vue的计算属性？
+在模板中放入太多的逻辑会让模板过重且难以维护，在需要对数据进行复杂处理，且可能多次使用的情况下，尽量采取计算属性的方式。好处：①使得数据处理结构清晰；②依赖于数据，数据更新，处理结果自动更新；③计算属性内部this指向vm实例；④在template调用时，直接写计算属性名即可；⑤常用的是getter方法，获取数据，也可以使用set方法改变数据；⑥相较于methods，不管依赖的数据变不变，methods都会重新计算，但是依赖数据不变的时候computed从缓存中获取，不会重新计算。
