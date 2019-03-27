@@ -46,3 +46,21 @@ function deepClone(obj,hash=new Map()){
    })
 </script>
 ```
+
+### 手写快速排序算法
+```JavaScript
+function quickSort(arr){
+    if(arr.length<=1)
+        return arr;
+    var mid=Math.floor(arr.length/2);
+    var val=arr.splice(mid,1)[0];
+    var left=[],right=[];
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]<val)
+            left.push(arr[i]);
+        else
+            right.push(arr[i]);
+    }
+    return quickSort(left).concat([val]).concat(quickSort(right));
+}
+```
