@@ -64,3 +64,49 @@ function quickSort(arr){
     return quickSort(left).concat([val]).concat(quickSort(right));
 }
 ```
+
+### 实现堆排序
+```JavaScript
+function swap(arr,i,j){
+    let temp=arr[i];
+    arr[i]=arr[j];
+    arr[j]=temp;
+}
+function shiftDown(arr,i,len){
+    let temp=arr[i];
+    for(let j=2*i+1;j<len;j=2*j+1){
+        temp=arr[i];
+        if(j+1<len && arr[j]<arr[j+1])
+            j++;
+        if(arr[j]>temp){
+            swap(arr,i,j);
+            i=j;
+        }
+        else
+            break;
+    }
+}
+function heapSort(arr){
+    len=arr.length;
+    for(let i=Math.floor(len/2-1);i>=0;i--)
+        shiftDown(arr,i,len);
+    for(let i=len-1;i>=0;i--){
+        swap(arr,0,i);
+        shiftDown(arr,0,i);
+    }
+}
+```
+### 函数柯里化实现
+```JavaScript
+function curry(fn,currArgs){
+    var currArgs=currArgs || [];
+    return function(){
+        var args=[].slice.call(arguments);
+        [].push.apply(args,currArgs);
+
+        if(args.length<fn.length)
+            return curry.call(this,fn,args);
+        return fn.apply(this,args);
+    }
+}
+```
