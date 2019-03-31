@@ -184,7 +184,7 @@ p.then(function (text) {   // 如果AJAX成功，获得响应内容
     log.innerText = 'ERROR: ' + status;
 });
 ```
-12. 以下代码，使用三种方法，实现依次输出0-9
+### 12. 以下代码，使用三种方法，实现依次输出0-9
 ```JavaScript
 //使用立即执行函数（）（）
 for (var i = 0; i < 10; i++) {
@@ -210,7 +210,7 @@ for (let i = 0; i < 10; i++) {
   })
 }
 ```
-13. 返回字符串中重复最多的字符
+### 13. 返回字符串中重复最多的字符
 ```JavaScript
 function count(arr){
     var map =new Map();
@@ -232,7 +232,7 @@ function count(arr){
     return val;
 }
 ```
-14. 生成n为随机字符串
+### 14. 生成n为随机字符串
 ```JavaScript
 function random(length){
     var arr=Math.random().toString(36).substr(2);
@@ -242,7 +242,7 @@ function random(length){
 }
 ```
 
-15. 给定一个没有重复数字的序列，返回所有的全排列
+### 15. 给定一个没有重复数字的序列，返回所有的全排列
 ```JavaScript
 var ans,res,hash,len;
 var dfs=function(num,nums){
