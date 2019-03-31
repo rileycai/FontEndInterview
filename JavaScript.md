@@ -7,36 +7,12 @@
 
 [深入理解JavaScript原型与闭包](https://www.cnblogs.com/wangfupeng1988/p/3977924.html)
 
-[让你分分钟理解 JavaScript 闭包](https://www.cnblogs.com/onepixel/p/5062456.html)
-
-[全面理解Javascript闭包和闭包的几种写法及用途](https://www.cnblogs.com/yunfeifei/p/4019504.html)
-
-1. 判断一个变量是不是对象非常简单。值类型(undefined,null, number, string, boolean)的类型判断用typeof，引用类型(函数、数组、对象)的类型判断用instanceof，一切引用类型都是对象，对象是属性的集合。
-```javascript
-typeof null     //object
-null instanceof Object   //false
-```
+1. 判断一个变量是不是对象非常简单。值类型(undefined, number, string, boolean)的类型判断用typeof，引用类型(函数、数组、对象)的类型判断用instanceof，一切引用类型都是对象，对象是属性的集合。
 
 2. 对象都是通过函数创建的,函数是对象
-```javascript
-//  var obj = { a: 10, b: 20 };
-var obj = new Object();
-obj.a = 10;
-obj.b = 20;
-console.log(typeof (Object));  // function
-```
 
 3. 每个函数都有一个属性叫做prototype。这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。
-```javascript
-function Fn() { }
-   Fn.prototype.name = '王福朋';
-   Fn.prototype.getYear = function () {
-   return 1988;
-};
-var fn = new Fn();
-console.log(fn.name);
-console.log(fn.getYear());
-```
+
 Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
 
 4. 每个函数function都有一个prototype,每个对象都有一个__proto__,称为隐式原型。特例：Object.prototype是对象，它的__proto__指向的是null
@@ -143,35 +119,37 @@ var x();    //30
 
 [JavaScript 常见的内存泄漏原因](https://juejin.im/entry/58158abaa0bb9f005873a843)
 
-### 3. 如何实现ajax请求
+### 3. ajax请求的五种状态
++ 0 － （未初始化）XMLHttprequset对象已经存在
++ 1 － （载入）调用open()方法，根据参数(method,url,true)完成对象状态的设置。并调用send()方法开始向服务端发送请求。值为1表示正在向服务端发送请求。
++ 2 － （载入完成）send()方法执行完成，已经接收到全部响应内容
++ 3 － （交互）正在解析响应内容
++ 4 － （完成）响应内容解析完成，可以在客户端调用了
 
-(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
-```javascript
-var xmlHttpRequest;  //定义一个变量,用于存放XMLHttpRequest对象
-function createXMLHttpRequest()    //创建XMLHttpRequest对象的方法
-{
-   if(window.ActiveXObject){   //判断是否是IE浏览器
-      xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");  //创建IE浏览器中的XMLHttpRequest对象
-   }
-   else if(window.XMLHttpRequest)    //判断是否是Netscape等其他支持XMLHttpRequest组件的浏览器
-   {
-      xmlHttpRequest = new XMLHttpRequest();  //创建其他浏览器上的XMLHttpRequest对象
-   }
+```Javascript
+//promise 实现ajax
+function ajax(method, url, data) {
+    var request = new XMLHttpRequest();
+    return new Promise(function (resolve, reject) {
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    resolve(request.responseText);
+                } else {
+                    reject(request.status);
+                }
+            }
+        };
+        request.open(method, url);
+        request.send(data);
+    });
 }
+ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，获得响应内容
+    log.innerText = text;
+}).catch(function (status) { // 如果AJAX失败，获得响应代码
+    log.innerText = 'ERROR: ' + status;
+});
 ```
-
-(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.
-```javascript
-XMLHttpRequest.open(method,URL,flag,name,password)
-```
-
-(3)设置响应HTTP请求状态变化的函数.
-
-(4)发送HTTP请求.
-
-(5)获取异步调用返回的数据.
-
-(6)使用JavaScript和DOM实现局部刷新.
 
 参考：
 
