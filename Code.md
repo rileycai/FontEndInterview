@@ -9,29 +9,20 @@
 
   3.点击列表项不跳转，弹出href内的内容
 
-[来源](https://juejin.im/post/5c878397f265da2dde07293b)  [题目](https://github.com/zhenzhencai/FontEndInterview/blob/master/Questions.html)  [答案](https://github.com/zhenzhencai/FontEndInterview/blob/master/Answer.html)
+[来源](https://juejin.im/post/5c878397f265da2dde07293b)  [题目](https://github.com/zhenzhencai/FontEndInterview/blob/master/html/Questions.html)  [答案](https://github.com/zhenzhencai/FontEndInterview/blob/master/html/Answer.html)
 
 ### 2. 用setTimeout实现setInterval
 
 ```javascript
-function mySetInterval(fn, millisec,count){
+function mySetInterval(fn, millisec){
   function interval(){
-    if(typeof count===‘undefined’||count-->0){
-      setTimeout(interval, millisec);
-      try{
-        fn()
-      }catch(e){
-        t = 0;
-        throw e.toString();
-      }
-    }
+    setTimeout(interval, millisec);
+    fn();
   }
   setTimeout(interval, millisec)
 }
 ```
-
 参考：
-
 [用setTimeout实现setInterval](https://www.jianshu.com/p/32479bdfd851)
 
 ### 3. call模拟实现
@@ -118,44 +109,40 @@ function merge(left, right){
 
 ### 8. 数组去重
 ```javascript
-//reduce方法
-const distinct = arr => arr.sort().reduce( (init, current) => {    
-    if (init.length === 0 || init[init.length - 1] !== current) {
-        init.push( current );
+//优化遍历数组法
+function distinct(arr){
+    var temp=[];
+    var len=arr.length;
+    for(var i=0;i<len;i++){
+        for(var j=i+1;j<len;j++){
+            if(arr[i]===arr[j]){
+                i++;
+                j=i;
+            }
+        }
+        temp.push(arr[i]);
     }
-    return init;
-}, []);
-//过滤方法
-const distinct = arr => arr.filter( (element, index, self) => {
-    return self.indexOf( element ) === index;
-});
+    return temp;
+}
 ```
 
-
-### 9. 多重数组降维
+### 09. 给定两个数组，写一个方法来计算它们的交集。
 ```javascript
-const flattenDeep = arr => Array.isArray(arr)
-  ? arr.reduce( (a, b) => [...a, ...flattenDeep(b)] , [])
-  : [arr]
-```
-
-### 10. 给定两个数组，写一个方法来计算它们的交集。
-```javascript
-var intersect = function(nums1, nums2) {  
-    var map1 = new Map();
-    var number = [];
-    for(var i = 0; i < nums1.length; i++) {
-        var map1Value = map1.get(nums1[i]);
-        map1.set( nums1[i], ( map1Value ? map1Value : 0 ) + 1 );
+function intersect(arr1,arr2){
+    var map=new Map();
+    var arr=[];
+    for(var i=0;i<arr1.length;i++){
+        var temp=map.get(arr1[i]);
+        map.set(arr1[i],(temp?temp:0)+1);
     }
-    for(var i = 0; i < nums2.length; i++) {
-        if( map1.has(nums2[i]) && map1.get(nums2[i]) != 0 ) {
-            number.push(nums2[i]);
-            map1.set( nums2[i], map1.get(nums2[i]) - 1 );
+    for(var i=0;i<arr2.length;i++){
+        if(map.has(arr2[i]) &&map.get(arr2[i])!=0){
+            arr.push(arr2[i]);
+            map.set(arr2[i],map.get(arr2[i])-1)
         }
     }
-    return number;
-};
+    return arr;
+}
 ```
 
 ### 11.promise实现ajax
@@ -177,39 +164,13 @@ function ajax(method, url, data) {
         request.send(data);
     });
 }
-var p = ajax('GET', '/api/categories');
-p.then(function (text) {   // 如果AJAX成功，获得响应内容
+ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，获得响应内容
     log.innerText = text;
 }).catch(function (status) { // 如果AJAX失败，获得响应代码
     log.innerText = 'ERROR: ' + status;
 });
 ```
-### 12. 以下代码，使用三种方法，实现依次输出0-9
-```JavaScript
-//使用立即执行函数（）（）
-for (var i = 0; i < 10; i++) {
-  funcs.push((function (value) {
-    return function () {
-      console.log(value)
-    }
-  }(i)))
-}
-//使用闭包
-function show(i) {
-  return function () {
-    console.log(i)
-  }
-}
-for (var i = 0; i < 10; i++) {
-  funcs.push(show(i))
-}
-//使用let
-for (let i = 0; i < 10; i++) {
-  funcs.push(function () {
-    console.log(i)
-  })
-}
-```
+
 ### 13. 返回字符串中重复最多的字符
 ```JavaScript
 function count(arr){
@@ -244,31 +205,31 @@ function random(length){
 
 ### 15. 给定一个没有重复数字的序列，返回所有的全排列
 ```JavaScript
-var ans,res,hash,len;
-var dfs=function(num,nums){
+var hash,res,ans,len;
+function dfs(num,arr){
     if(num===len){
-        var tmp=res.map(function(x){
-            return x;
-        })
-        ans.push(tmp);
+        var temp=res.map(function(item){
+            return item;
+        });
+        ans.push(temp);
         return;
     }
     for(var i=0;i<len;i++){
         if(hash[i])
             continue;
         hash[i]=true;
-        res.push(nums[i]);
-        dfs(num+1,nums);
+        res.push(arr[i]);
+        dfs(num+1,arr);
         hash[i]=false;
         res.pop();
     }
 }
-var permute = function(nums) {
-    ans=[];
-    res=[];
+function permute(arr){
     hash=[];
-    len=nums.length;
-    dfs(0,nums);
+    res=[];
+    ans=[];
+    len=arr.length;
+    dfs(0,arr);
     return ans;
-};
+}
 ```

@@ -7,8 +7,23 @@
 
 参考： [移动端高清适配方案（解决图片模糊问题、1px细线问题）](http://www.cnblogs.com/superlizhao/p/8729190.html)
 
-### 2. 介绍flex布局
+### 2. 介绍flex布局，用flex实现三列布局
 Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。
++ 容器的属性:
+1. flex-direction: row | row-reverse | column | column-reverse;
+2. flex-wrap: nowrap | wrap | wrap-reverse;
+3. flex-flow: <flex-direction> || <flex-wrap>;
+4. justify-content: flex-start(默认) | flex-end | center | space-between | space-around;
+5. align-items: flex-start | flex-end | center | baseline | stretch(默认);
+6. align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
++ 项目的属性：
+1. order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+2. flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+3. flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+4. flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+5. align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+6. flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。
 
 参考： [Flex布局语法教程](http://www.runoob.com/w3cnote/flex-grammar.html), [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
 
@@ -37,8 +52,6 @@ Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型�
 4. 绝对定位中固定高度时设置top:50%，margin-top值为高度一半的负值
 
 5. 文本垂直居中设置line-height为height值
-
-6. display设置为tabel-ceil,vertical-aligin:center
 
 参考：[垂直居中](https://www.cnblogs.com/hutuzhu/p/4450850.html)
 
