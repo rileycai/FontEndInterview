@@ -126,7 +126,7 @@ function distinct(arr){
 }
 ```
 
-### 09. 给定两个数组，写一个方法来计算它们的交集。
+### 9. 给定两个数组，写一个方法来计算它们的交集。
 ```javascript
 function intersect(arr1,arr2){
     var map=new Map();
@@ -145,7 +145,7 @@ function intersect(arr1,arr2){
 }
 ```
 
-### 11.promise实现ajax
+### 10.promise实现ajax
 ```Javascript
 //promise 实现ajax
 function ajax(method, url, data) {
@@ -171,7 +171,7 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 });
 ```
 
-### 13. 返回字符串中重复最多的字符
+### 11. 返回字符串中重复最多的字符
 ```JavaScript
 function count(arr){
     var map =new Map();
@@ -193,7 +193,7 @@ function count(arr){
     return val;
 }
 ```
-### 14. 生成n为随机字符串
+### 12. 生成n为随机字符串
 ```JavaScript
 function random(length){
     var arr=Math.random().toString(36).substr(2);
@@ -203,7 +203,7 @@ function random(length){
 }
 ```
 
-### 15. 给定一个没有重复数字的序列，返回所有的全排列
+### 13. 给定一个没有重复数字的序列，返回所有的全排列
 ```JavaScript
 var hash,res,ans,len;
 function dfs(num,arr){
