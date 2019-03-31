@@ -162,16 +162,6 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 1. 新的变量声明方式 let/const，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升。同时不能重复声明。
 
 2. 解构赋值
-```javascript
-let [a, [[b], c]] = [1, [[2], 3]];
-let [a = 1, b] = []; // a = 1, b = undefined
-let [a, ...b] = [1, 2, 3];     //a=1,b=[2,3]
-//解构默认值
-let [a = 3, b = a] = [];         // a = 3, b = 3
-let [a = 3, b = a] = [1];        // a = 1, b = 1
-let [a = 3, b = a] = [1, 2];      // a = 1, b = 2
-let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
-```
 
 3. ES6 引入了一种新的原始数据类型 Symbol ，表示独一无二的值，最大的用法是用来定义对象的唯一属性名。Symbol 函数栈不能用 new 命令，因为 Symbol 是原始数据类型（null,undefined,Boolean,String,Number,Symbol），不是对象。
 
@@ -179,35 +169,18 @@ let {a = 10, b = 5} = {a: 3};    // a = 3; b = 5;
 
 5. 为解决异步回调问题，引入了promise和 generator
 
-   Promise 异步操作有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败）。除了异步操作的结果，任何其他操作都无法改变这个状态。
-
-   Promise 对象只有：从 pending 变为 fulfilled 和从 pending 变为 rejected 的状态改变。只要处于 fulfilled 和 rejected ，状态就不会再变了即 resolved（已定型）。
-
-   then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise 执行失败时的回调，两个函数只会有一个被调用。
-
-   ES6 新引入了 Generator 函数，可以通过 yield 关键字，把函数的执行流挂起，为改变执行流程提供了可能，从而为异步编程提供解决方案。
-
 6. 实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到浏览器兼容性，我们在实际开发中需要使用babel进行编译。
-
-   ES6 的模块自动开启严格模式，不管你有没有在模块头部加上 use strict;。
-
-   模块中可以导入和导出各种类型的变量，如函数，对象，字符串，数字，布尔值，类等。
-
-   每个模块都有自己的上下文，每一个模块内声明的变量都是局部变量，不会污染全局作用域。
-
-   每一个模块只加载一次（是单例的）， 若再去加载同目录下同文件，直接从内存中读取。
 
 参考：
 
 [ES6教程](http://www.runoob.com/w3cnote/es6-tutorial.html)
 
 ### 6. 对JS模块化的理解
-
-   在ES6出现之前，js没有标准的模块化概念，这也就造成了js多人写作开发容易造成全局污染的情况，以前我们可能会采用立即执行函数、对象等方式来尽量减少变量这种情况，后面社区为了解决这个问题陆续提出了**AMD规范**和**CMD规范**，这里不同于Node.js的 CommonJS的原因在于服务端所有的模块都是存在于硬盘中的，加载和读取几乎是不需要时间的，而浏览器端因为加载速度取决于网速，因此需要采用异步加载，*AMD规范中使用define来定义一个模块，使用require方法来加载一个模块，现在ES6也推出了标准的模块加载方案，通过export和import来导出和导入模块*。
+在ES6出现之前，js没有标准的模块化概念，这也就造成了js多人写作开发容易造成全局污染的情况，以前我们可能会采用立即执行函数、对象等方式来尽量减少变量这种情况，后面社区为了解决这个问题陆续提出了 **AMD规范** 和 **CMD规范** ，这里不同于Node.js的 CommonJS的原因在于服务端所有的模块都是存在于硬盘中的，加载和读取几乎是不需要时间的，而浏览器端因为加载速度取决于网速，因此需要采用异步加载，*AMD规范中使用define来定义一个模块，使用require方法来加载一个模块，现在ES6也推出了标准的模块加载方案，通过export和import来导出和导入模块*。
 
 ### 7. 介绍事件代理以及好处
 
-   事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。好处是可以减少事件绑定，同时动态的DOM结构仍然可以监听。事件代理发生在冒泡阶段。
+事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。好处是可以减少事件绑定，同时动态的DOM结构仍然可以监听。事件代理发生在冒泡阶段。
 
 参考：
 
@@ -276,46 +249,22 @@ function recursion(x){
 
 ### 12. 浏览器事件循环机制
 
-   JavaScript引擎是单线程，也就是说每次只能执行一项任务，其他任务都得按照顺序排队等待被执行，只有当前的任务执行完成之后才会往下执行下一个任务。Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。
+JavaScript引擎是单线程，也就是说每次只能执行一项任务，其他任务都得按照顺序排队等待被执行，只有当前的任务执行完成之后才会往下执行下一个任务。Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。
+1. JS 调用栈是一种后进先出的数据结构。当函数被调用时，会被添加到栈中的顶部，执行完成之后就从栈顶部移出该函数，直到栈内被清空。
+2. JavaScript 单线程中的任务分为同步任务和异步任务。同步任务会在调用栈中按照顺序排队等待主线程执行，异步任务则会在异步有了结果后将注册的回调函数添加到任务队列(消息队列)中等待主线程空闲的时候，也就是栈内被清空的时候，被读取到栈中等待主线程执行。任务队列是先进先出的数据结构。
+3. 调用栈中的同步任务都执行完毕，栈内被清空了，就代表主线程空闲了，这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。每次栈内被清空，都会去读取任务队列有没有任务，有就读取执行，一直循环读取-执行的操作，就形成了事件循环。
+4. 定时器会开启一条定时器触发线程来触发计时，定时器会在等待了指定的时间后将事件放入到任务队列中等待读取到主线程执行。定时器指定的延时毫秒数其实并不准确，因为定时器只是在到了指定的时间时将事件放入到任务队列中，必须要等到同步的任务和现有的任务队列中的事件全部执行完成之后，才会去读取定时器的事件到主线程执行，中间可能会存在耗时比较久的任务，那么就不可能保证在指定的时间执行。
 
-   1.JS 调用栈是一种后进先出的数据结构。当函数被调用时，会被添加到栈中的顶部，执行完成之后就从栈顶部移出该函数，直到栈内被清空。
-
-   2.JavaScript 单线程中的任务分为同步任务和异步任务。同步任务会在调用栈中按照顺序排队等待主线程执行，异步任务则会在异步有了结果后将注册的回调函数添加到任务队列(消息队列)中等待主线程空闲的时候，也就是栈内被清空的时候，被读取到栈中等待主线程执行。任务队列是先进先出的数据结构。
-
-   3.调用栈中的同步任务都执行完毕，栈内被清空了，就代表主线程空闲了，这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。每次栈内被清空，都会去读取任务队列有没有任务，有就读取执行，一直循环读取-执行的操作，就形成了事件循环。
-
-   4.定时器会开启一条定时器触发线程来触发计时，定时器会在等待了指定的时间后将事件放入到任务队列中等待读取到主线程执行。定时器指定的延时毫秒数其实并不准确，因为定时器只是在到了指定的时间时将事件放入到任务队列中，必须要等到同步的任务和现有的任务队列中的事件全部执行完成之后，才会去读取定时器的事件到主线程执行，中间可能会存在耗时比较久的任务，那么就不可能保证在指定的时间执行。
-
-```javascript
-console.log(1);
-setTimeout(function() {
-    console.log(2);
-})
-var promise = new Promise(function(resolve, reject) {
-    console.log(3);
-    resolve();
-})
-promise.then(function() {
-    console.log(4);
-})
-console.log(5);           //1,3,5,4,2
-```
-
-参考：
-
-[js浏览器事件循环机制](https://www.cnblogs.com/yqx0605xi/p/9267827.html)
+参考： [js浏览器事件循环机制](https://www.cnblogs.com/yqx0605xi/p/9267827.html)
 
 ### 13. 原生js操作Dom的方法有哪些？
-
-   获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、 getElementsByName、querySelector、querySelectorAll
-
-   对元素属性进行操作的 getAttribute、 setAttribute、removeAttribute方法
-
-   对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、 createElement等
++ 获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、 getElementsByName、querySelector、querySelectorAll
++ 对元素属性进行操作的 getAttribute、 setAttribute、removeAttribute方法
++ 对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、 createElement等
 
 ### 14. typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么
 
-   typeof的返回值有undefined、boolean、string、number、object、function、symbol。对undefined 使用返回undefined、null使用返回object，NaN使用返回number。
+typeof的返回值有undefined、boolean、string、number、object、function、symbol。对undefined 使用返回undefined、null使用返回object，NaN使用返回number。
 
 ### 15. 实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
 
@@ -412,18 +361,13 @@ Object.prototype.toString.call(window) ; //[object global] window 是全局对�
 + 不可在if内部声明函数
 + 抛弃with语句
 
-参考：
-
-1.[javascript高级程序设计](https://book.douban.com/subject/10546125/)
+参考：[javascript高级程序设计](https://book.douban.com/subject/10546125/)
 
 ### 18.setTimeout和setInterval的区别，包含内存方面的分析？
 setTimeout表示间隔一段时间之后执行一次调用，而setInterval则是每间隔一段时间循环调用，直至clearInterval结束。
-内存方面，setTimeout只需要进入一次队列，不会造成内存溢出，setInterval因为不计算代码执行时间，有可能同时执行多次代码，
-导致内存溢出。
+内存方面，setTimeout只需要进入一次队列，不会造成内存溢出，setInterval因为不计算代码执行时间，有可能同时执行多次代码，导致内存溢出。
 
-参考：
-
-[setTimeout和setInterval从入门到精通](https://www.cnblogs.com/pelli/p/6225858.html)
+参考： [setTimeout和setInterval从入门到精通](https://www.cnblogs.com/pelli/p/6225858.html)
 
 ### 19. 同源策略是什么？
 
@@ -438,7 +382,7 @@ XMLHttpRequest 同源策略：禁止使用 XHR 对象向不同源的服务器地
 [浏览器同源策略及跨域的解决方法](https://www.cnblogs.com/laixiangran/p/9064769.html)
 
 ### 20. ES6之前JavaScript如何实现继承？
-ES6之前的继承是通过**原型**来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在
+ES6之前的继承是通过 **原型** 来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在
 构造函数的prototype上寻找，而prototype本质上就是一个实例，因此如果prototype上还没有则会往prototype上的构造函数的prototype寻找，因此实现继承
 可以让构造函数的prototype是父级的一个实例就是以实现继承。
 
@@ -452,81 +396,46 @@ ES6之前的继承是通过**原型**来实现的，也就是每一个构造函�
 
 当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为1*1px图片的路径（这样就只需请求一次），只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载
 
-参考：
-
-[滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
+参考：[滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
 
 ### 24. 什么是函数节流和函数去抖？
 
-函数节流就是让一个函数无法在很短的时间间隔内连续调用，而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，比如我们
-为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。
+函数节流就是让一个函数无法在很短的时间间隔内连续调用，而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，比如我们为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。
 
 函数去抖是在我们事件结束后的一段时间内才会执行，会有一个延迟性。现在我们有一个需求，有一个输入框要求输入联想，在用户输入的过程中，需要按照一定的时间像后台发送ajax请求，获取数据。对于这样的需求，我们可以通过函数节流来实现
 
-参考：
-
-[JS函数节流](https://www.cnblogs.com/mopagunda/p/5323080.html)
+参考：[JS函数节流](https://www.cnblogs.com/mopagunda/p/5323080.html)
 
 ### 25.请说一下实现jsonp的实现思路？
-jsonp的原理是使用script标签来实现跨域，因为script标签的的src属性是不受同源策略的影响的，因此可以使用其来跨域。一个最简单的jsonp就是创建一个script标签，设置src为相应的url，在url之后添加相应的callback，格式类似于
-url?callback=xxx，服务端根据我们的callback来返回相应的数据，类似于res.send(req.query.callback + '('+ data + ')')，这样就实现了一个最简单的jsonp
+jsonp的原理是使用script标签来实现跨域，因为script标签的的src属性是不受同源策略的影响的，因此可以使用其来跨域。一个最简单的jsonp就是创建一个script标签，设置src为相应的url，在url之后添加相应的callback，格式类似于url?callback=xxx，服务端根据我们的callback来返回相应的数据，类似于res.send(req.query.callback + '('+ data + ')')，这样就实现了一个最简单的jsonp
 
-参考：
-
-[jsonp原理详解](https://blog.csdn.net/hansexploration/article/details/80314948)
+参考：[jsonp原理详解](https://blog.csdn.net/hansexploration/article/details/80314948)
 
 ### 26.浏览器内核有哪些？分别对应哪些浏览器？
-常见的浏览器内核有Trident、Gecko、WebKit、Presto，对应的浏览器为Trident对应于IE，Gecko对应于火狐浏览器，Webkit有chrome和safari，Presto
-有Opera。
+常见的浏览器内核有Trident、Gecko、WebKit、Presto，对应的浏览器为Trident对应于IE，Gecko对应于火狐浏览器，Webkit有chrome和safari，Presto有Opera。
 
 ### 27.什么是深拷贝，什么是浅拷贝？
 浅拷贝是指仅仅复制对象的引用，而不是复制对象本身；深拷贝则是把复制对象所引用的全部对象都复制一遍。
-
-深拷贝方法1：递归复制所有层级的属性
-
-```javascript
-function deepClone(obj){
-    let objClone = Array.isArray(obj)?[]:{};
-    if(obj && typeof obj==="object"){
-        for(key in obj){
-            if(obj.hasOwnProperty(key)){
-                //判断ojb子元素是否为对象，如果是，递归复制
-                if(obj[key]&&typeof obj[key] ==="object"){
-                    objClone[key] = deepClone(obj[key]);
-                }else{
-                    //如果不是，简单复制
-                    objClone[key] = obj[key];
-                }
-            }
-        }
+```JavaScript
+var isObject=obj=>{return typeof obj === 'object' && obj != null;}
+function deepClone(obj,hash=new Map()){
+  if(!isObject(obj))
+    return obj;
+  if(hash.has(obj))
+    return hash.get(obj);
+  var target=Array.isArray(obj)?[]:{};
+  hash.set(obj,target);
+  for(var i in obj){
+    if(Object.prototype.hasOwnProperty.call(obj,i)){
+      if(isObject(obj[i]))
+        target[i]=deepClone(obj[i],hash);
+      else {
+        target[i]=obj[i];
+      }
     }
-    return objClone;
+  }
+  return target;
 }
-```
-
-深拷贝方法2：借用JSON对象的parse和stringify
-
-```javascript
-function deepClone(obj){
-    let _obj = JSON.stringify(obj),
-        objClone = JSON.parse(_obj);
-    return objClone
-}  
-```
-
-深拷贝方法3：借用JQuery的extend方法。
-
-**$.extend( [deep ], target, object1 [, objectN ] )**
-
-deep表示是否深拷贝，为true为深拷贝，为false，则为浅拷贝
-
-target Object类型 目标对象，其他对象的成员属性将被附加到该对象上。
-
-object1  objectN可选。 Object类型 第一个以及第N个被合并的对象。
-
-```javascript
-let a=[0,1,[2,3],4],
-b=$.extend(true,[],a);
 ```
 
 [深拷贝与浅拷贝的区别，实现深拷贝的几种方法](https://www.cnblogs.com/echolun/p/7889848.html)
@@ -540,9 +449,6 @@ b=$.extend(true,[],a);
 js字符串截取方法有substring、slice、substr三个方法，substring和slice都是指定截取的首尾索引值，不同的是传递负值的时候
 substring会当做0来处理，而slice传入负值的规则是-1指最后一个字符，substr方法则是第一个参数是开始截取的字符串，第二个是截取的字符数量，
 和slice类似，传入负值也是从尾部算起的。
-
-### 30.let和const的异同有哪些？
-let和const都是对变量的声明，都有块级作用域的概念，不同的是const是对常量的声明，因此声明同时必须赋值，且之后不能更改，而let则可以。
 
 ### 31.将静态资源放在其他域名的目的是什么？
 这样做的主要目的是在请求这些静态资源的时候不会发送cookie，节省了流量，需要注意的是cookie是会发送给子域名的（二级域名），所以这些静态资源是不会放在子域名下的，而是单独放在一个单独的主域名下。同时还有一个原因就是浏览器对于一个域名会有请求数的限制，这种方法可以方便做CDN。
@@ -565,43 +471,9 @@ function clone(origin) {
     return Object.assign(Object.create(originProto),origin);
 }
 ```
-
 参考：
 
 [如何实现对一个DOM元素的深拷贝，包括元素的绑定事件？](https://blog.csdn.net/caoxinhui521/article/details/78079377)
-
-###  33.简要介绍一下WebPack的底层实现原理
-webpack是把项目当作一个整体，通过给定的一个主文件，webpack将从这个主文件开始找到你项目当中的所有依赖的文件，使用loaders来处理它们，最后打包成一个或多个浏览器可识别的js文件.
-
-参考：
-
-[webpack简单原理以及实现方法](http://www.cnblogs.com/bilibilicai/p/6830154.html)
-
-[webpack中文网](https://www.webpackjs.com/concepts/)
-
-### 34.ajax的readyState有哪几个状态，含义分别是什么？
-ajax的readyState共有5个状态，分别是0-4，其中每个数字的含义分别是0代表还没调用open方法，1代表的是未调用send方法，也就是还没发送数据给服务器
-2代表的是还没有接收到响应，3代表的是开始接收到了部分数据，4代表的是接收完成，数据可以在客户端使用了。
-
-### 35.AMD和CMD的区别？
-最明显的区别就是在模块定义时对依赖的处理不同
-
-AMD推崇依赖前置，在定义模块的时候就要声明其依赖的模块
-
-CMD推崇就近依赖，只有在用到某个模块的时候再去require
-
-参考：
-
-[前端模块化，AMD与CMD的区别](https://www.cnblogs.com/futai/p/5258349.html)
-
-### 36.SVG和Canvas的区别
-Canvas：依赖分辨率；不支持事件处理器；弱的文本渲染能力；能够以 .png 或 .jpg 格式保存结果图像；最适合图像密集型的游戏，其中的许多对象会被频繁重绘
-SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染区域的应用程序（比如谷歌地图）；复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）；不适合游戏应用
-
-### 37.对于ES7和ES8了解多少
-参考：
-
-[10分钟学会ES7+ES8](https://www.cnblogs.com/zhuanzhuanfe/p/7493433.html)
 
 ### 38.Js中forEach和map方法的区别
 + forEach返回值是undefined,不可链式调用
