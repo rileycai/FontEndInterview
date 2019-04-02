@@ -27,54 +27,47 @@ function mySetInterval(fn, millisec){
 
 ### 3. call模拟实现
 ```JavaScript
-Function.prototype.call2 = function (context) {
-    var context = context || window;
-    context.fn = this;
-    var args = [];
-    for(var i = 1, len = arguments.length; i < len; i++) {
-        args.push('arguments[' + i + ']');
-    }
-    var result = eval('context.fn(' + args +')');
-    delete context.fn
+Function.prototype.call2 = function(content = window) {
+    content.fn = this;
+    let args = [...arguments].slice(1);
+    let result = content.fn(...args);
+    delete content.fn;
     return result;
 }
 ```
 ### 4. apply模拟实现
 ```JavaScript
-Function.prototype.apply = function (context, arr) {
-    var context = Object(context) || window;
-    context.fn = this;
-    var result;
-    if (!arr) {
-        result = context.fn();
+Function.prototype.apply2 = function(context = window) {
+    context.fn = this
+    let result;
+    // 判断是否有第二个参数
+    if(arguments[1]) {
+        result = context.fn(...arguments[1])
+    } else {
+        result = context.fn()
     }
-    else {
-        var args = [];
-        for (var i = 0, len = arr.length; i < len; i++) {
-            args.push('arr[' + i + ']');
-        }
-        result = eval('context.fn(' + args + ')')
-    }
-    delete context.fn
-    return result;
+    delete context.fn()
+    return result
 }
 ```
 ### 5. bind模拟实现
 ```JavaScript
-Function.prototype.bind2 = function (context) {
-    if (typeof this !== "function") {
-      throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+Function.prototype.bind2 = function(content) {
+    if(typeof this != "function") {
+        throw Error("not a function")
     }
-    var self = this;
-    var args = Array.prototype.slice.call(arguments, 1);
-    var fNOP = function () {};
-    var fBound = function () {
-        var bindArgs = Array.prototype.slice.call(arguments);
-        return self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
+    // 若没问参数类型则从这开始写
+    let fn = this;
+    let args = [...arguments].slice(1);
+    
+    let resFn = function() {
+        return fn.apply(this instanceof resFn ? this : content,args.concat(...arguments) )
     }
-    fNOP.prototype = this.prototype;
-    fBound.prototype = new fNOP();
-    return fBound;
+    function tmp() {}
+    tmp.prototype = this.prototype;
+    resFn.prototype = new tmp();
+    
+    return resFn;
 }
 ```
 
