@@ -157,3 +157,11 @@ var combinationSum = function(candidates, target) {
 ### 未来职业规划
 ### 留不留北京，要不要户口
 ### 如何看待加班
+
+### vue双向数据绑定，讲讲观察者订阅者模式
+
+### 讲讲对d3的理解，讲讲d3与echarts的区别
++ d3正如其名 Data Driven Documents，其本质是将数据与 DOM 绑定，并将数据映射至 DOM 属性上；
++ d3与echarts的区别：
+1. d3通过svg绘制图形，可以自定义事件。svg不依赖分辨率，继续xml绘制图形，可以操作dom。支持事件处理器，复杂度高，会减慢页面的渲染速度。
+2. echarts通过canvas来绘制图形，用户通过配置 options 参数，就可很容易绘制指定图表。canvas依赖分辨率，基于js绘制图形，不支持事件处理，能以png或者jpg的格式保存图片。
