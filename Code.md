@@ -27,11 +27,11 @@ function mySetInterval(fn, millisec){
 
 ### 3. call模拟实现
 ```JavaScript
-Function.prototype.call2 = function(content = window) {
-    content.fn = this;
+Function.prototype.call2 = function(context = window) {
+    context.fn = this;
     let args = [...arguments].slice(1);
-    let result = content.fn(...args);
-    delete content.fn;
+    let result = context.fn(...args);
+    delete context.fn;
     return result;
 }
 ```
@@ -52,39 +52,38 @@ Function.prototype.apply2 = function(context = window) {
 ```
 ### 5. bind模拟实现
 ```JavaScript
-Function.prototype.bind2 = function(content) {
+Function.prototype.bind2 = function(context) {
     if(typeof this != "function") {
         throw Error("not a function")
     }
     // 若没问参数类型则从这开始写
     let fn = this;
     let args = [...arguments].slice(1);
-    
+
     let resFn = function() {
-        return fn.apply(this instanceof resFn ? this : content,args.concat(...arguments) )
+        return fn.apply(this instanceof resFn ? this : context,args.concat(...arguments) )
     }
     function tmp() {}
     tmp.prototype = this.prototype;
     resFn.prototype = new tmp();
-    
+
     return resFn;
 }
 ```
 
 ### 6. new模拟实现
 ```JavaScript
-function create() {
-	// 创建一个空的对象
-    var obj = new Object(),
-	// 获得构造函数，arguments中去除第一个参数
-    Con = [].shift.call(arguments);
-	// 链接到原型，obj 可以访问到构造函数原型中的属性
-    obj.__proto__ = Con.prototype;
-	// 绑定 this 实现继承，obj 可以访问到构造函数中的属性
-    var ret = Con.apply(obj, arguments);
-	// 优先返回构造函数返回的对象
-	return ret instanceof Object ? ret : obj;
-};
+function New(func) {
+    var res = {};
+    if (func.prototype !== null) {
+        res.__proto__ = func.prototype;
+    }
+    var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));
+    if ((typeof ret === "object" || typeof ret === "function") && ret !== null) {
+        return ret;
+    }
+    return res;
+}
 ```
 
 ### 7. 两个升序数组合并成一个升序数组
@@ -335,5 +334,47 @@ function curry(fn,currArgs){
             return curry.call(this,fn,args);
         return fn.apply(this,args);
     }
+}
+```
+
+### 手写实现promise
+```javascript
+function myPromise(constructor){
+    let self=this;
+    self.status="pending" //定义状态改变前的初始状态
+    self.value=undefined;//定义状态为resolved的时候的状态
+    self.reason=undefined;//定义状态为rejected的时候的状态
+    function resolve(value){
+        //两个==="pending"，保证了状态的改变是不可逆的
+       if(self.status==="pending"){
+          self.value=value;
+          self.status="resolved";
+       }
+    }
+    function reject(reason){
+        //两个==="pending"，保证了状态的改变是不可逆的
+       if(self.status==="pending"){
+          self.reason=reason;
+          self.status="rejected";
+       }
+    }
+    //捕获构造异常
+    try{
+       constructor(resolve,reject);
+    }catch(e){
+       reject(e);
+    }
+}
+myPromise.prototype.then=function(onFullfilled,onRejected){
+   let self=this;
+   switch(self.status){
+      case "resolved":
+        onFullfilled(self.value);
+        break;
+      case "rejected":
+        onRejected(self.reason);
+        break;
+      default:       
+   }
 }
 ```
