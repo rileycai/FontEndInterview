@@ -30,6 +30,13 @@ var constantize=(obj)=>{
     }  
   )}
 ```
++ let、const、class命令声明的全局变量，不属于顶层对象的属性。
+```javascript
+var a = 1;
+window.a // 1
+let b = 1;
+window.b // undefined
+```
 
 ##### 3. 讲讲set结构
 + es6方法,Set本身是一个 **构造函数**，它类似于数组，但是成员值都是唯一的。
