@@ -72,3 +72,14 @@ obj.time // 35
 + Object.keys()：返回对象自身的所有可枚举的属性的键名。
 + JSON.stringify()：只串行化对象自身的可枚举的属性。
 + Object.assign()： 忽略enumerable为false的属性，只拷贝对象自身的可枚举的属性。
+
+### 7.属性的五种遍历方法？
++ for...in循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。
++ Object.keys返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。
++ Object.getOwnPropertyNames返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。
++ Object.getOwnPropertySymbols返回一个数组，包含对象自身的所有 Symbol 属性的键名。
++ Reflect.ownKeys返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。
+
+### 8.CommonJS模块与es6模块的差异？
++ CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。
++ CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。
