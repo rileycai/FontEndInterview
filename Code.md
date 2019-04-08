@@ -51,23 +51,22 @@ Function.prototype.apply2 = function(context = window) {
 }
 ```
 ### 5. bind模拟实现
++ bind 返回了一个函数，对于函数来说有两种方式调用，一种是直接调用，一种是通过 new 的方式。
 ```JavaScript
-Function.prototype.bind2 = function(context) {
-    if(typeof this != "function") {
-        throw Error("not a function")
+Function.prototype.myBind = function (context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  const _this = this
+  const args = [...arguments].slice(1)
+  // 返回一个函数
+  return function F() {
+    // 因为返回了一个函数，我们可以 new F()，所以需要判断
+    if (this instanceof F) {
+      return new _this(...args, ...arguments)
     }
-    // 若没问参数类型则从这开始写
-    let fn = this;
-    let args = [...arguments].slice(1);
-
-    let resFn = function() {
-        return fn.apply(this instanceof resFn ? this : context,args.concat(...arguments) )
-    }
-    function tmp() {}
-    tmp.prototype = this.prototype;
-    resFn.prototype = new tmp();
-
-    return resFn;
+    return _this.apply(context, args.concat(...arguments))
+  }
 }
 ```
 
