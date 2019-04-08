@@ -8,18 +8,17 @@
 + 存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，
 + 反射型的话.不存储在数据库中，往往表现为将攻击代码放在URL地址的请求参数中。
 + 防御:
-1. cookie设置HttpOnly属性,HttpOnly的作用不是过滤XSS跨站脚本攻击，而是浏览器将禁止页面的Javascript访问带有HttpOnly属性的Cookie
-2. 对用户的输入进行检查，进行特殊字符串的过滤
+1. **转义字符** 对于用户的输入应该是永远不信任的。最普遍的做法就是转义输入输出的内容，对于引号、尖括号、斜杠进行转义。
+2. **CSP** CSP 本质上就是建立白名单，开发者明确告诉浏览器哪些外部资源可以加载和执行。我们只需要配置规则，如何拦截是由浏览器自己实现的。我们可以通过这种方式来尽量减少 XSS 攻击。通常可以通过两种方式来开启 CSP：1.设置 HTTP Header 中的 Content-Security-Policy；2.设置 meta 标签的方式 <meta http-equiv="Content-Security-Policy">。
 
 ### 3.简要介绍一下CSRF(跨站请求伪造)以及如何防御
-CSRF可以理解为攻击者盗用了用户的身份，以用户的名义发送了恶意请求。比如，用户登录银行网站，又登录了攻击者的钓鱼网站，攻击者发送一个恶意请求，假如用户的浏览器与银行网站之间的 session 尚未过期，浏览器的 cookie 之中含有用户的认证信息，那就悲剧了。
+CSRF原理就是攻击者构造出一个后端请求地址，诱导用户点击或者通过某些途径自动发起请求。如果用户是在登录状态下的话，后端就以为是用户在操作，从而进行相应的逻辑。
 + 防御方法：
 1. 验证 HTTP Referer 字段；它记录了该 HTTP 请求的来源地址。
-2. 在请求地址中添加 token 并验证；
+2. 在请求地址中添加 token 并验证；服务器下发一个随机 Token，每次发起请求时将 Token 携带上，服务器验证 Token 是否有效。
 3. 在 HTTP 头中自定义属性并验证。把token放到HTTP头的自定义属性里面
-```JavaScript
-config.headers['X-Token'] = getToken()
-```
+4. 不让第三方网站访问到用户 Cookie。可以对 Cookie 设置 SameSite 属性。该属性表示 Cookie 不随着跨域请求发送，可以很大程度减少 CSRF 的攻击，但是该属性目前并不是所有浏览器都兼容。
+
 
 ### 4. DNS劫持与DNS污染
 + **DNS劫持** DNS劫持就是通过劫持了DNS服务器，通过某些手段取得某域名的解析记录控制权，进而修改此域名的解析结果，导致对该域名的访问由原IP地址转入到修改后的指定IP。DNS劫持通过篡改DNS服务器上的数据返回给用户一个错误的查询结果来实现的。
@@ -38,5 +37,30 @@ config.headers['X-Token'] = getToken()
 5. 应用的异常信息应该给出尽可能少的提示，最好使用自定义的错误信息对原始错误信息进行包装
 6. sql注入的检测方法一般采取辅助软件或网站平台来检测，软件一般采用sql注入检测工具jsky,网站平台就有亿思网站安全平台检测工具。
 
+### 什么是点击劫持？如何防范点击劫持？
++ 点击劫持是一种视觉欺骗的攻击手段。攻击者将需要攻击的网站通过 iframe 嵌套的方式嵌入自己的网页中，并将 iframe 设置为透明，在页面中透出一个按钮诱导用户点击。
++ 对于这种攻击方式，推荐防御方法有两种：
+1. **X-FRAME-OPTIONS** 是一个 HTTP 响应头，在现代浏览器有一个很好的支持。这个 HTTP 响应头 就是为了防御用 iframe 嵌套的点击劫持攻击。该响应头有三个值可选，分别是1. DENY，表示页面不允许通过 iframe 的方式展示；2. SAMEORIGIN，表示页面可以在相同域名下通过 iframe 的方式展示； 3. ALLOW-FROM，表示页面可以在指定来源的 iframe 中展示。
+2. **JS 防御** 当通过 iframe 的方式加载页面时，攻击者的网页直接不显示所有内容了.
+```javascript
+<head>
+  <style id="click-jack">
+    html {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    if (self == top) {
+      var style = document.getElementById('click-jack')
+      document.body.removeChild(style)
+    } else {
+      top.location = self.location
+    }
+  </script>
+</body>
+```
 
 ### 7.了解CSP吗，介绍一下？
+内容安全策略 (CSP, Content Security Policy) 是一个附加的安全层，用于帮助检测和缓解某些类型的攻击，包括跨站脚本 (XSS) 和数据注入等攻击。 这些攻击可用于实现从数据窃取到网站破坏或作为恶意软件分发版本等用途。
