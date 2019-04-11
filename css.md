@@ -1,4 +1,9 @@
 ## CSS部分面试题
+参考资料：
+[50道css基础面试题](https://segmentfault.com/a/1190000013325778)
+[50道CSS基础面试题中的答案真的就只是答案吗](https://segmentfault.com/a/1190000013860482)
+[css面试总结](https://funteas.com/topic/5ada8eac230d1e5e25e45b89)
+
 
 ### 1.移动端如何解决1px问题
 用媒体查询根据dpr用“伪元素+transform”对边框进行缩放
