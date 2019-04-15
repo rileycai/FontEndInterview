@@ -32,3 +32,6 @@ request(url,success,fail);
 requestcache(url,success,fail);
 
 ### 如何拿到淘宝页面的所有不重复标签
+```javascript
+new Set([...document.querySelectorAll('*')].map(function(item){return item.nodeName;}))
+```
