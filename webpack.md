@@ -55,13 +55,9 @@ Webpack 的运行流程是一个串行的过程，从启动到结束会依次执
 + 删除死代码（Tree Shaking）。将代码中永远不会走到的片段删除掉。可以通过在启动webpack时追加参数--optimize-minimize来实现
 + 提取公共代码。
 
-### 35.AMD和CMD的区别？
-最明显的区别就是在模块定义时对依赖的处理不同
+### AMD和CMD的区别？
++ 最明显的区别就是在模块定义时对依赖的处理不同
++ AMD推崇依赖前置，在定义模块的时候就要声明其依赖的模块
++ CMD推崇就近依赖，只有在用到某个模块的时候再去require
 
-AMD推崇依赖前置，在定义模块的时候就要声明其依赖的模块
-
-CMD推崇就近依赖，只有在用到某个模块的时候再去require
-
-参考：
-
-[前端模块化，AMD与CMD的区别](https://www.cnblogs.com/futai/p/5258349.html)
+参考：[前端模块化，AMD与CMD的区别](https://www.cnblogs.com/futai/p/5258349.html)

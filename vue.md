@@ -120,3 +120,38 @@ var vm=new Vue({
 
 ### 11.什么是vue的计算属性？
 在模板中放入太多的逻辑会让模板过重且难以维护，在需要对数据进行复杂处理，且可能多次使用的情况下，尽量采取计算属性的方式。好处：①使得数据处理结构清晰；②依赖于数据，数据更新，处理结果自动更新；③计算属性内部this指向vm实例；④在template调用时，直接写计算属性名即可；⑤常用的是getter方法，获取数据，也可以使用set方法改变数据；⑥相较于methods，不管依赖的数据变不变，methods都会重新计算，但是依赖数据不变的时候computed从缓存中获取，不会重新计算。
+
+### 12. vuex原理
++ vuex的store有State、 Getter、Mutation 、Action、 Module五种属性；
++ **state** 为单一状态树，在state中需要定义我们所需要管理的数组、对象、字符串等等
++ **getters** 类似vue的计算属性，主要用来过滤一些数据。
++ **mutation** 更改store中state状态的唯一方法就是提交mutation，store.commit。
++ **action** actions可以理解为通过将mutations里面处里数据的方法变成可异步的处理数据的方法，简单的说就是异步操作数据。view 层通过 store.dispath 来分发 action。
++ **module** module其实只是解决了当state中很复杂臃肿的时候，module可以将store分割成模块，每个模块中拥有自己的state、mutation、action和getter。
+
+### 13. vue数据双向绑定
+```JavaScript
+<body>
+    <div id="app">
+    <input type="text" id="txt">
+    <p id="show"></p>
+</div>
+</body>
+<script type="text/javascript">
+    var obj = {}
+    Object.defineProperty(obj, 'txt', {
+        get: function () {
+            return obj
+        },
+        set: function (newValue) {
+            document.getElementById('txt').value = newValue
+            document.getElementById('show').innerHTML = newValue
+        }
+    })
+    document.addEventListener('keyup', function (e) {
+        obj.txt = e.target.value
+    })
+</script>
+```
+
+### 14. 父子组件如何通信，兄弟组件如何通信

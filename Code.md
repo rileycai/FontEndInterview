@@ -379,7 +379,99 @@ Cat.prototype.constructor = Cat;
     document.getElementsByTagName('head')[0].appendChild(script);
 ```
 
-### 21.手写实现promise
+### 21. 实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
++ 只需要鉴别这些类型那么使用typeof即可，要鉴别null先判断双等判断是否为null，之后使用typeof判断，如果是obejct的话，再用Array.isArray判断
+是否为数组，如果是数字再使用isNaN判断是否为NaN,（需要注意的是NaN并不是JavaScript数据类型，而是一种特殊值）如下：
+```javascript
+function type(ele) {
+  if(ele===null) {
+    return null;
+  } else if(typeof ele === 'object') {
+    if(Array.isArray(ele)) {
+      return 'array';
+    } else {
+      return typeof ele;
+    }
+  } else if(typeof ele === 'number') {
+    if(isNaN(ele)) {
+      return NaN;
+    } else {
+      return typeof ele;
+    }
+  } else{
+    return typeof ele;
+  }
+}
+```
+
+### 22.js实现数组千分位
+```JavaScript
+//正则实现
+function format (num) {  
+    var reg=/\d{1,3}(?=(\d{3})+$)/g;   
+    return num.toString().replace(reg, '$&,');  
+}
+//基础
+function format(num){
+    num+='';
+    var str="";
+    for(var i=num.length-1,j=1;i>=0;i--,j++){
+        if(j%3===0 & i!=0){
+            str+=num[i]+',';
+        }else{
+            str+=num[i];
+        }
+    }
+    return str.split('').reverse().join('');
+}
+```
+### 23. 手写快速排序算法
+```JavaScript
+var quickSort = function(arr) {
+    if(arr.length<=1)
+        return arr;
+    var left=[],right=[];    
+    var index=Math.floor(arr.length/2);
+    var midVal=arr.splice(midVal,1)[0];
+    for(var i=0;i<arr.length;i++){
+        arr[i]<midVal?left.push(arr[i]):right.push(arr[i]);
+    }
+    return quickSort(left).concat(midVal).concat(quickSort(right));
+};
+```
+### 24. 查找数组中元素和等于给定数的子数组
+```JavaScript
+var ans,res,len;
+var dfs=function(index,sum,candidates,target){
+    if(sum===target){
+        var tmp=res.map(function(item){
+            return item;
+        })
+        ans.push(tmp);
+        // console.log(res,ans);
+        return ;
+    }
+    for(var i=index;i<len;i++){
+        if(sum+candidates[i]>target)
+            continue;
+        res.push(candidates[i]);
+        dfs(i,sum+candidates[i],candidates,target);
+        res.pop();
+    }
+}
+var combinationSum = function(candidates, target) {
+    ans=[];
+    len=candidates.length;
+    candidates.sort((a,b)=>a-b);
+    for(var i=0;i<len;i++){
+        res=[candidates[i]];
+        dfs(i,candidates[i],candidates,target);
+    }
+    return ans;
+};
+```
+
+### 25.手写实现promise
 ```javascript
 function myPromise(constructor){
     let self=this;
