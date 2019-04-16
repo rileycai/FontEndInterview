@@ -1,4 +1,7 @@
 ## 浏览器相关知识点
+
+相关参考：[输入URL发生了什么？](inputUrl.rst)
+
 ### 1.实现一个postMessage跨域
 ```javascript
 // 发送消息端
