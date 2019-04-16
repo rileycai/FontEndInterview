@@ -118,3 +118,63 @@ box-sizing:border-box;
 ### 11.SVG和Canvas的区别
 Canvas：依赖分辨率；不支持事件处理器；弱的文本渲染能力；能够以 .png 或 .jpg 格式保存结果图像；最适合图像密集型的游戏，其中的许多对象会被频繁重绘
 SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染区域的应用程序（比如谷歌地图）；复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）；不适合游戏应用
+
+### 12.边距重叠解决方案BFC (块级格式化上下文)
++ 一个HTML元素要创建BFC，则满足下列的任意一个或多个条件即可：
+1. float的值不是none。
+2. position的值不是static或者relative。
+3. display的值是inline-block、table-cell、flex、table-caption或者inline-flex
+4. overflow的值不是visible
+
++ 用处：
+1. 利用BFC避免外边距折叠
+2. BFC包含浮动。浮动元素是会脱离文档流，如果一个没有高度或者height是auto的容器的子元素是浮动元素，则该容器的高度是不会被撑开的。我们通常会利用伪元素(:after或者:before)来解决这个问题。**BFC能包含浮动，也能解决容器高度不会被撑开的问题**。
+3. 使用BFC避免文字环绕。
+4. 在多列布局中使用BFC。
+
+参考： [什么是BFC](https://www.cnblogs.com/libin-1/p/7098468.html)
+
+
+#### 13.宽高比4:3自适应
++ **垂直方向的padding**: 在css中，padding-top或padding-bottom的百分比值是根据容器的width来计算的。
+```css
+.wrap{
+       position: relative;
+       height: 0;  //容器的height设置为0
+       width: 100%;
+       padding-top: 75%;  //100%*3/4
+}
+.wrap > *{
+       position: absolute;//容器的内容的所有元素absolute,然子元素内容都将被padding挤出容器
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+}
+```
++ **padding & calc()**: 跟第一种方法原理相同
+```css
+padding-top: calc(100%*9/16);
+```
++ **padding & 伪元素**
++ **视窗单位**： 浏览器100vw表示浏览器的视窗宽度
+```javaScript
+	width:100vw;
+	height:calc(100vw*3/4)
+```
+
+参考： [CSS实现长宽比的几种方案](https://www.w3cplus.com/css/aspect-ratio.html)
+
+#### 14.让一个图片无限旋转
+```JavaScript
+ <img class="circle" src="001.jpg" width="400" height="400"/>
+
+ //infinite 表示动画无限次播放 linear表示动画从头到尾的速度是相同的
+ .circle{
+         animation: myRotation 5s linear infinite;
+     }
+@keyframes myRotation {
+         from {transform: rotate(0deg);}
+         to {transform: rotate(360deg);}
+}
+```

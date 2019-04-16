@@ -3,99 +3,9 @@
 
 闭包是指有权访问另外一个函数作用域中的变量的函数
 
-参考：
-
-[深入理解JavaScript原型与闭包](https://www.cnblogs.com/wangfupeng1988/p/3977924.html)
-
-1. 判断一个变量是不是对象非常简单。值类型(undefined, number, string, boolean)的类型判断用typeof，引用类型(函数、数组、对象)的类型判断用instanceof，一切引用类型都是对象，对象是属性的集合。
-
-2. 对象都是通过函数创建的,函数是对象
-
-3. 每个函数都有一个属性叫做prototype。这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。
-
-Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。因为每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
-
-4. 每个函数function都有一个prototype,每个对象都有一个__proto__,称为隐式原型。特例：Object.prototype是对象，它的__proto__指向的是null
-
-![](https://images0.cnblogs.com/blog/138012/201409/181510403153733.png)
-
-5. A instancee of B,沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
-```javascript
-console.log(Object instanceof Function) //true
-console.log(Function instanceof Object) //true
-console.log(Function instanceof Function) //true
-```
+参考：[深入理解JavaScript原型与闭包](https://www.cnblogs.com/wangfupeng1988/p/3977924.html)
 
 ![](https://images0.cnblogs.com/blog/138012/201409/181637013624694.png)
-
-6. 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值；
-```javascript
-console.log(f1)    //function fl(){}
-function fl(){}    //函数声明
-console.log(f2)    //undefined
-var f2=function(){}    //函数表达式
-```
-
-7. this
-
-1情况1：构造函数
-```javascript
-function Foo(){
-   this.name="haha";
-   this.year=1998;
-   console.log(this);
-}
-var f1=new Foo();  // Foo {name: "haha", year: 1998}
-Foo();     //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
-```
-
-情况2：函数作为对象的一个属性
-```javascript
-var obj={
-   x:10,
-   fn:function(){console.log(this);console.log(this.x);}
-}
-obj.fn()     // {x: 10, fn: ƒ}   10
-var fn1=obj.fn;    
-fn1();      //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}   undefined
-```
-
-情况3：函数用call或者apply调用
-```javascript
-var obj={
-   x:10
-}
-var fn=function(){console.log(this);console.log(this.x);}
-fn.call(obj)      //Object {x:10}  10
-```
-
-情况4：全局 & 调用普通函数
-```javascript
-var obj={
-   x:10,
-   fn:function(){
-      function f(){
-         console.log(this);
-         console.log(this.x);
-      }
-      fn();       //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}   undefined
-   }
-}
-
-```
-
-8. javascript没有块级作用域，javascript除了全局作用域之外，只有函数可以创建的作用域。作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。
-
-9. 从自由变量到作用域链。要到创建这个函数的那个作用域中取值——是“创建”，而不是“调用”
-```javascript
-var a=10;
-function fn(){var b=20; function bar(){console.log(a+b);} return bar;}
-var x=fn();
-var b=200;
-var x();    //30
-```
-
-10. 闭包的两种应用————函数作为返回值，函数作为参数传递。
 
 ### 2. 引起JavaScript内存泄漏的操作有哪些
 
@@ -111,13 +21,7 @@ var x();    //30
 
 5. 被遗忘的计时器
 
-参考：
-
-[JavaScript深入之4类常见内存泄漏及如何避免](https://github.com/yygmind/blog/issues/16)
-
-[【译】JavaScript 内存泄漏问题](http://octman.com/blog/2016-06-28-four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
-
-[JavaScript 常见的内存泄漏原因](https://juejin.im/entry/58158abaa0bb9f005873a843)
+参考：[JavaScript深入之4类常见内存泄漏及如何避免](https://github.com/yygmind/blog/issues/16)  [【译】JavaScript 内存泄漏问题](http://octman.com/blog/2016-06-28-four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)  [JavaScript 常见的内存泄漏原因](https://juejin.im/entry/58158abaa0bb9f005873a843)
 
 ### 3. ajax请求的五种状态
 + 0 － （未初始化）XMLHttprequset对象已经存在
@@ -151,29 +55,23 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 });
 ```
 
-参考：
-
-[实现AJAX的基本步骤](https://www.cnblogs.com/kennyliu/p/3876729.html)
-
-[w3school AJAX教程](http://www.w3school.com.cn/ajax/index.asp)
+参考：[实现AJAX的基本步骤](https://www.cnblogs.com/kennyliu/p/3876729.html)  [w3school AJAX教程](http://www.w3school.com.cn/ajax/index.asp)
 
 ### 5. 简要介绍ES6
 
-1. 新的变量声明方式 let/const，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升。同时不能重复声明。
+1. 新的变量声明方式 let/const，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升，同时不能重复声明。
 
 2. 解构赋值
 
-3. ES6 引入了一种新的原始数据类型 Symbol ，表示独一无二的值，最大的用法是用来定义对象的唯一属性名。Symbol 函数栈不能用 new 命令，因为 Symbol 是原始数据类型（null,undefined,Boolean,String,Number,Symbol），不是对象。
+3. ES6 引入了一种新的原始数据类型 Symbol ，表示独一无二的值，最大的用法是用来定义对象的唯一属性名。Symbol 函数栈不能用 new 命令，因为 Symbol 是原始数据类型，不是对象。
 
 4. ES6对字符串、 数组、正则、对象、函数等拓展了一些方法
 
-5. 为解决异步回调问题，引入了promise和 generator
+5. 为解决异步回调问题，引入了promise和 generator，es7引入了async
 
 6. 实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到浏览器兼容性，我们在实际开发中需要使用babel进行编译。
 
-参考：
-
-[ES6教程](http://www.runoob.com/w3cnote/es6-tutorial.html)
+参考：[ES6教程](http://www.runoob.com/w3cnote/es6-tutorial.html)
 
 ### 6. 对JS模块化的理解
 在ES6出现之前，js没有标准的模块化概念，这也就造成了js多人写作开发容易造成全局污染的情况，以前我们可能会采用立即执行函数、对象等方式来尽量减少变量这种情况，后面社区为了解决这个问题陆续提出了 **AMD规范** 和 **CMD规范** ，这里不同于Node.js的 CommonJS的原因在于服务端所有的模块都是存在于硬盘中的，加载和读取几乎是不需要时间的，而浏览器端因为加载速度取决于网速，因此需要采用异步加载，*AMD规范中使用define来定义一个模块，使用require方法来加载一个模块，现在ES6也推出了标准的模块加载方案，通过export和import来导出和导入模块*。
@@ -187,15 +85,6 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 [js中的事件委托或是事件代理详解](https://www.cnblogs.com/liugang-vip/p/5616484.html)
 
 
-### 8. 使用new操作符实例化一个对象的具体步骤
-
-1.构造一个新的对象
-
-2.将构造函数的作用域赋给新对象（也就是说this指向了新的对象）
-
-3.执行构造函数中的代码
-
-4.返回新对象
 
 ### 9. js如何判断网页中图片加载成功或者失败
 
@@ -369,18 +258,6 @@ setTimeout表示间隔一段时间之后执行一次调用，而setInterval则�
 
 参考： [setTimeout和setInterval从入门到精通](https://www.cnblogs.com/pelli/p/6225858.html)
 
-### 19. 同源策略是什么？
-
-同源策略是指只有具有相同源的页面才能够共享数据，比如cookie，同源是指页面具有相同的协议、域名、端口号，有一项不同就不是同源。 有同源策略能够保证web网页的安全性。
-
-DOM 同源策略：禁止对不同源页面 DOM 进行操作。这里主要场景是 iframe 跨域的情况，不同域名的 iframe 是限制互相访问的。
-
-XMLHttpRequest 同源策略：禁止使用 XHR 对象向不同源的服务器地址发起 HTTP 请求。
-
-跨域解决方法： 1. CORS（跨域资源共享）； 2. JSONP跨域； 3. 图像ping跨域； 4. 服务器代理； 5. document.domain 跨域； 6. window.name 跨域； 7. location.hash 跨域； 8. postMessage 跨域；
-
-[浏览器同源策略及跨域的解决方法](https://www.cnblogs.com/laixiangran/p/9064769.html)
-
 ### 20. ES6之前JavaScript如何实现继承？
 ES6之前的继承是通过 **原型** 来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在
 构造函数的prototype上寻找，而prototype本质上就是一个实例，因此如果prototype上还没有则会往prototype上的构造函数的prototype寻找，因此实现继承
@@ -399,11 +276,31 @@ ES6之前的继承是通过 **原型** 来实现的，也就是每一个构造�
 参考：[滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
 
 ### 24. 什么是函数节流和函数去抖？
-
-函数节流就是让一个函数无法在很短的时间间隔内连续调用，而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，比如我们为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。
-
-函数去抖是在我们事件结束后的一段时间内才会执行，会有一个延迟性。现在我们有一个需求，有一个输入框要求输入联想，在用户输入的过程中，需要按照一定的时间像后台发送ajax请求，获取数据。对于这样的需求，我们可以通过函数节流来实现
-
++ **函数去抖 debounce**： 当调用函数n秒后，才会执行该动作，若在这n秒内又调用该函数则将取消前一次并重新计算执行时间。
+```JavaScript
+var debounce = function(delay, cb) {
+    var timer;
+    return function() {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function() {
+            cb();
+        }, delay);
+    }
+}
+```
++ **函数节流 throttle**： 函数节流的基本思想是函数预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期
+```JavaScript
+var throttle = function(delay, cb) {
+    var startTime = Date.now();
+    return function() {
+        var currTime = Date.now();
+        if (currTime - startTime > delay) {
+            cb();
+            startTime = currTime;
+        }
+    }
+}
+```
 参考：[JS函数节流](https://www.cnblogs.com/mopagunda/p/5323080.html)
 
 ### 25.请说一下实现jsonp的实现思路？
@@ -480,7 +377,7 @@ function clone(origin) {
 + map返回一个新数组，原数组不会改变。
 + 没有办法终止或者跳出forEach循环，除非抛出异常，如果想执行一个数组是否满足什么条件，可以用Array.every()或者Array.some();
 
-### script标签如何异步加载？
+### 39. script标签如何异步加载？
 + 默认情况下，浏览器是同步加载 JavaScript 脚本，即渲染引擎遇到<script>标签就会停下来，等到执行完脚本，再继续向下渲染。如果是外部脚本，还必须加入脚本下载的时间。如果脚本体积很大，下载和执行的时间就会很长，因此造成浏览器堵塞，用户会感觉到浏览器“卡死”了，没有任何响应。
 ```javascript
 <script src="path/to/myModule.js" defer></script>
@@ -488,3 +385,115 @@ function clone(origin) {
 ```
 + defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。
 + 另外，如果有多个defer脚本，会按照它们在页面出现的顺序加载，而多个async脚本是不能保证加载顺序的。
+
+### 40.setTimeout的this，setTimeout()时间设置为0有什么作用
++ 超时调用的代码都是在全局作用域中执行的，因此函数中this的值在非严格模式下指向 **window对象**，在严格模式下是 **undefined**。
++ 因此，用处就在于我们可以 **改变任务的执行顺序**,因为浏览器会在执行完当前任务队列中的任务，再执行setTimeout队列中积累的的任务。
+
+### 41.讲一讲js里面的异步操作有哪些？
+1. 回调函数。 ajax典型的异步操作，利用XMLHttpRequest，回调函数获取服务器的数据传给前端。
+2. 事件监听。 当监听事件发生时，先执行回调函数，再对监听事件进行改写
+3. 观察者模式，也叫订阅发布模式。 多个观察者可以订阅同一个主题，主题对象改变时，主题对象就会通知这个观察者。
+4. promise.
+5. es7语法糖async/await
+6. co库的generator函数
+
+参考： [JS进阶 | 分析JS中的异步操作](https://www.cnblogs.com/dirkhe/p/7384743.html)
+
+### 42.讲一下let、var、const的区别，谈谈如何冻结变量
++ **var** 没有块级作用域，支持变量提升。
++ **let** 有块级作用域，不支持变量提升。不允许重复声明，暂存性死区。
++ **const** 有块级作用域，不支持变量提升，不允许重复声明，暂存性死区。声明一个变量一旦声明就不能改变，改变报错。const保证的变量的**内存地址**不得改动。如果想要将对象冻结的话，使用Object.freeze()方法
+```JavaScript
+const foo=Object.freeze({});
+foo.prop=123;
+console.log(foo.prop);//混杂模式undefined,不起作用
+```
+
+
+### 9.js事件循环机制
++ 程序开始执行之后，主程序则开始执行**同步任务**，碰到**异步任务**就把它放到任务队列中,等到同步任务全部执行完毕之后，js引擎便去查看任务队列有没有可以执行的异步任务，将异步任务转为同步任务，开始执行，执行完同步任务之后继续查看任务队列，这个过程是一直 **循环**的，因此这个过程就是所谓的**事件循环**，其中任务队列也被称为事件队列。通过一个任务队列，单线程的js实现了异步任务的执行，给人感觉js好像是多线程的。
+
+
+### 10.事件捕获和事件冒泡
++ IE的事件流叫做**事件冒泡**。即事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点window对象。
++ **事件捕获**的思想是不太具体的节点应该更早的接收到事件，而在最具体的节点应该最后接收到事件。
++ “DOM2级事件”规定事件流包括三个阶段，事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的事件捕获，为截获事件提供了机会。然后是实际的目标接收了事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。
++ 事件流是处于**目标阶段**，事件处理程序被调用的顺序是注册的顺序
++ 事件有两个属性**e.target**和**e.currentTarget**，target是真正发生事件的DOM元素，而currentTarget是当前事件发生在哪个DOM元素上。目标阶段也就是 target == currentTarget的时候。
++ 在支持addEventListener()的浏览器中，可以调用事件对象的 **stopPropagation()** 方法以阻止事件的继续传播。如果在同一对象上定义了其他处理程序，剩下的处理程序将依旧被调用，但调用 **stopPropagation()** 之后任何其他对象上的事件处理程序将不会被调用。不仅可以阻止事件在冒泡阶段的传播，还能阻止事件在捕获阶段的传播。IE9之前的IE不支持stopPropagation()方法，而是设置事件对象cancelBubble属性为true来实现阻止事件进一步传播。
++ **e.preventDefault()** 可以阻止事件的默认行为发生，默认行为是指：点击a标签就转跳到其他页面、拖拽一个图片到浏览器会自动打开、点击表单的提交按钮会提交表单。
+
+参考：[事件冒泡、事件捕获和事件委托](https://www.cnblogs.com/Chen-XiaoJun/p/6210987.html)
+
+
+### 10.事件代理(事件委托)及其好处，如何知道是哪个节点的事件
++ 事件委托就是利用 **事件冒泡** ，只指定一个事件处理程序，就可以管理某一类型的所有事件。
++ Event对象提供了一个属性叫target，可以返回事件的目标节点，简称事件源。
+```javascript
+window.onload = function(){
+　　var oUl = document.getElementById("ul1");
+　　oUl.onclick = function(ev){
+　　　　var ev = ev || window.event;
+　　　　var target = ev.target || ev.srcElement;
+　　　　if(target.nodeName.toLowerCase() == 'li'){
+　 　　　　　　	alert(123);
+　　　　　　　  alert(target.innerHTML);
+　　　　}
+　　}
+}
+```
+
+### 14.如何拦截变量属性
++ 使用proxy。**new Proxy()** 表示生成一个 **Proxy** 实例，**target** 参数表示所要拦截的目标对象，**handler** 参数也是一个对象，用来定制拦截行为。
+```javascript
+var proxy = new Proxy({}, {
+  get: function(target, property) {
+    return 35;
+  }
+});
+let obj = Object.create(proxy);
+obj.time // 35
+```
+
+### 15.箭头函数和普通函数的区别是什么？
++ 普通函数this：
+1. this总是代表它的直接调用者。
+2. 在默认情况下，没找到直接调用者，this指的是window。
+3. 在严格模式下，没有直接调用者的函数中的this是undefined。
+4. 使用call,apply,bind绑定，this指的是绑定的对象。
++ 箭头函数this：
+1. 在使用=>定义函数的时候，this的指向是 **定义时所在的对象**，而不是使用时所在的对象；
+2. **不能够用作构造函数**，这就是说，不能够使用new命令，否则就会抛出一个错误；
+3. 不能够使用 **arguments** 对象；
+4. 不能使用 **yield** 命令；
+
+
+### 16.null和undefined的区别
++ null表示"没有对象"，即该处不应该有值。典型用法是：（1）作为函数的参数，表示该函数的参数不是对象。（2）作为对象原型链的终点。
++ undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。典型用法是：
+（1）变量被声明了，但没有赋值时，就等于undefined。
+（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。
+（3）对象没有赋值的属性，该属性的值为undefined。
+（4）函数没有返回值时，默认返回undefined。
+
+### 19.函数柯里化理解
++ 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。
++ 用途：1.延迟计算；2.参数复用；3.动态生成函数
+```JavaScript
+function curry (fn, currArgs) {
+    return function() {
+        let args = [].slice.call(arguments);
+        // 首次调用时，若未提供最后一个参数currArgs，则不用进行args的拼接
+        if (currArgs !== undefined) {
+            args = args.concat(currArgs);
+        }
+        // 递归调用
+        if (args.length < fn.length) {
+            return curry(fn, args);
+        }
+        // 递归出口
+        return fn.apply(null, args);
+    }
+}
+```

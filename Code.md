@@ -225,7 +225,7 @@ function permute(arr){
 }
 ```
 
-### 如何实现一个深拷贝？
+### 14.如何实现一个深拷贝？
 ```JavaScript
 var isObject=obj=>{return typeof obj === 'object' && obj != null;}
 function deepClone(obj,hash=new Map()){
@@ -247,7 +247,7 @@ function deepClone(obj,hash=new Map()){
   return target;
 }
 ```
-### 实现双向数据绑定
+### 15.实现双向数据绑定
 ```JavaScript
 <body>
   <input type="text" id="message" />
@@ -272,7 +272,7 @@ function deepClone(obj,hash=new Map()){
 </script>
 ```
 
-### 手写快速排序算法
+### 16.手写快速排序算法
 ```JavaScript
 function quickSort(arr){
     if(arr.length<=1)
@@ -290,7 +290,7 @@ function quickSort(arr){
 }
 ```
 
-### 实现堆排序
+### 17.实现堆排序
 ```JavaScript
 function swap(arr,i,j){
     let temp=arr[i];
@@ -321,7 +321,7 @@ function heapSort(arr){
     }
 }
 ```
-### 函数柯里化实现
+### 18.函数柯里化实现
 ```JavaScript
 function curry(fn,currArgs){
     var currArgs=currArgs || [];
@@ -336,7 +336,50 @@ function curry(fn,currArgs){
 }
 ```
 
-### 手写实现promise
+### 19.写个js继承的例子
+```JavaScript
+//寄生组合继承
+function Animal (name) {
+  // 属性
+  this.name = name || 'Animal';
+  // 实例方法
+  this.sleep = function(){
+    console.log(this.name + '正在睡觉！');
+  }
+}
+// 原型方法
+Animal.prototype.eat = function(food) {
+  console.log(this.name + '正在吃：' + food);
+};
+function Cat(name){
+  Animal.call(this);
+  this.name = name || 'Tom';
+}
+(function(){
+  // 创建一个没有实例方法的类
+  var Super = function(){};
+  Super.prototype = Animal.prototype;
+  //将实例作为子类的原型
+  Cat.prototype = new Super();
+})();
+Cat.prototype.constructor = Cat;
+```
+参考： [JS继承实现方式](https://www.cnblogs.com/humin/p/4556820.html)
+
+
+### 20.写一个jsonp的实现
++ 利用了 **script** 标签没有跨域限制这一“漏洞”来达到与第三方通讯的目的。简单地说，该协议就是，允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名包裹json数据，这样客户端就可以随意定制自己的函数自动处理返回的数据了。
+```JavaScript
+    var flightHandler = data=>{
+      console.log(data);
+    }
+    var url = "http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998&callback=flightHandler";
+    var script = document.createElement('script');
+    script.setAttribute('src', url);
+    document.getElementsByTagName('head')[0].appendChild(script);
+```
+
+### 21.手写实现promise
 ```javascript
 function myPromise(constructor){
     let self=this;
