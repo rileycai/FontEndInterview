@@ -15,10 +15,8 @@
 | [web安全部分](webSecurity.md) |
 | [webpack部分](webpack.md) |
 | [代码部分](code.md) |
+| [性能优化部分](performance.md) |
 | [大厂面试题汇总](realInterviwe.md) |
-| [输入URL发生了什么？](inputUrl.rst) |
-| [网页性能管理详解-阮一峰](http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html) |
-| [Web前端性能优化——如何提高页面加载速度](https://www.cnblogs.com/MarcoHan/p/5295398.html) |
 
 
 Copyright (c) 2019-present ZhenzhenCai
