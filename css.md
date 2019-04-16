@@ -134,8 +134,7 @@ SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染�
 
 参考： [什么是BFC](https://www.cnblogs.com/libin-1/p/7098468.html)
 
-
-#### 13.宽高比4:3自适应
+### 13.宽高比4:3自适应
 + **垂直方向的padding**: 在css中，padding-top或padding-bottom的百分比值是根据容器的width来计算的。
 ```css
 .wrap{
@@ -165,7 +164,7 @@ padding-top: calc(100%*9/16);
 
 参考： [CSS实现长宽比的几种方案](https://www.w3cplus.com/css/aspect-ratio.html)
 
-#### 14.让一个图片无限旋转
+### 14.让一个图片无限旋转
 ```JavaScript
  <img class="circle" src="001.jpg" width="400" height="400"/>
 

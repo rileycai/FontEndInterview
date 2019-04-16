@@ -22,6 +22,7 @@ alias: {
 }
 import A from '@/components/a.vue'
 ```
+
 ### 3.vue如何实现双向绑定
 + vue数据双向绑定是通过 **数据劫持** 结合 **发布者-订阅者模式** 的方式来实现的.
 + vue是通过Object.defineProperty()来实现数据劫持的。它可以来控制一个对象属性的一些特有操作，比如读写权、是否可以枚举.有get和set两个方法。
