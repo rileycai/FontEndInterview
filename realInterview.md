@@ -12,9 +12,10 @@
 | [搜狐](interview/sohu.md) | 2 |
 | [招商银行信用卡中心](interview/zhaohang.md) | 2 |
 | [依图科技](interview/yitu.md) | 2 |
-| 拼多多 |  |
-| 网易互娱 |  |
-| 度小满金融 | | 
+| 拼多多 | 放弃面试 |
+| 网易互娱 | 放弃面试 |
+| 网易雷火 | 放弃面试 |
+| 度小满金融 | 放弃面试 |
 
 
 Copyright (c) 2019-present ZhenzhenCai
