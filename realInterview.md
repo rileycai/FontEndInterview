@@ -7,11 +7,11 @@
 | [阿里巴巴](interview/alibaba.md) | 1 |
 | [百度](interview/baidu.md) | 2 |
 | [字节跳动](interview/Bytedance.md) | 7 |
-| [腾讯](interview/tecent.md) | 6 |
+| [腾讯](interview/tecent.md) | 7 |
 | [快手](interview/kuaishou.md) | 2 |
 | [搜狐](interview/sohu.md) | 2 |
 | [招商银行信用卡中心](interview/zhaohang.md) | 2 |
-| [依图科技](interview/yitu.md) | 2 |
+| [依图科技](interview/yitu.md) | 2 + 放弃面试 |
 | 拼多多 | 放弃面试 |
 | 网易互娱 | 放弃面试 |
 | 网易雷火 | 放弃面试 |
