@@ -7,6 +7,17 @@
 1. **test** 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。
 2. **use** 属性，表示进行转换时，应该使用哪个 loader。
 
+### loader特性
++ loader 支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
++ loader 可以是同步的，也可以是异步的。
++ loader 运行在 Node.js 中，并且能够执行任何可能的操作。
++ loader 接收查询参数。用于对 loader 传递配置。
++ loader 也能够使用 options 对象进行配置。
++ 除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。
++ 插件(plugin)可以为 loader 带来更多特性。
++ loader 能够产生额外的任意文件。
+
+
 ### postcss-loader
 + PostCSS是一个用 JavaScript 工具和插件转换 CSS 代码的工具，它有很多插件来转换css，可以大胆的使用未来语法。
 + 我们用的最多的插件就是autoprefixer：自动添加浏览器前缀，添加css兼容性写法。
