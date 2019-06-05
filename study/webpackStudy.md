@@ -1,6 +1,11 @@
 # webpack学习笔记
 
 ## loader
++ loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
++ 本质上，webpack loader 将所有类型的文件，转换为应用程序的依赖图（和最终的 bundle）可以直接引用的模块。
++ 在更高层面，在 webpack 的配置中 loader 有两个目标：
+1. **test** 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。
+2. **use** 属性，表示进行转换时，应该使用哪个 loader。
 
 ### postcss-loader
 + PostCSS是一个用 JavaScript 工具和插件转换 CSS 代码的工具，它有很多插件来转换css，可以大胆的使用未来语法。
