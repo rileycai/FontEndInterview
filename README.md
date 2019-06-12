@@ -22,6 +22,8 @@
 ## 学习笔记
 | 主要内容 |
 | ------ |
+| [JavaScript开发者应懂的33个概念](https://github.com/stephentian/33-js-concepts) |
+| [JavaScript算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md) |
 | [git 学习笔记](study/gitStudy.md) |
 | [webpack 学习笔记](study/webpackStudy.md) |
 
@@ -32,8 +34,6 @@
 | [webpack 中文文档](https://www.webpackjs.com/guides/getting-started/) |
 | [ECMAScript6 入门](http://es6.ruanyifeng.com/) |
 | [Flutter 中文网](https://flutterchina.club/) |
-| []() |
-| []() |
 | []() |
 | []() |
 | []() |
