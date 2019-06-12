@@ -35,8 +35,7 @@
 | [ECMAScript6 入门](http://es6.ruanyifeng.com/) |
 | [Flutter 中文网](https://flutterchina.club/) |
 | [JS函数式子编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/) |
-| []() |
-| []() |
+| [next.js 中文文档](https://nextjs.org/docs) |
 | []() |
 
 ## 优秀的技术分享文章
