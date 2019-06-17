@@ -36,7 +36,7 @@
 | [Flutter 中文网](https://flutterchina.club/) | |
 | [JS函数式子编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/) | |
 | [next.js 中文文档](https://nextjs.org/docs) | |
-| [图说设计模式](https://design-patterns.readthedocs.io/zh_CN/latest/index.html) | [github](https://github.com/me115/design_patterns) |
+| [学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/) |  |
 | [ReactJS 小书](http://huziketang.mangojuice.top/books/react/)|
 
 ## 优秀的技术分享文章
