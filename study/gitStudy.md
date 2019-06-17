@@ -2,6 +2,23 @@
 
 参考链接：[git 基础](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-Git-%E5%9F%BA%E7%A1%80)
 
+## git 使用技巧
+### 拉去某个分支代码并强制覆盖本地
+```git
+git checkout -b newBranch  //切换到某个分支
+git branch --set-upstream-to=origin/newBranch newBranch  //将本地分支和远程分支绑定
+git fetch --all
+git reset --hard origin/newBranch
+```
+### 合并前面的几次提交
+```git
+git log  //选择要回退的版本
+git reset --soft becf4bc188cc
+git add .
+git commit -m "合并前面的几次提交"
+git push --force
+```
+
 ### git diff
 + 此命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
 + 若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 ***git diff --cached*** 命令。
