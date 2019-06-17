@@ -39,13 +39,16 @@ const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ## 组件的生命周期
 + 当组件实例被创建并插入 DOM 中时，其生命周期调用顺序如下：
 1. constructor()
-2. static getDerivedStateFromProps()
+2. componentWillMount(),组件挂载开始之前，也就是在组件调用 render 方法之前调用。
 3. render()
-4. componentDidMount()
-+ 当组件的 props 或 state 发生变化时会触发更新。组件更新的生命周期调用顺序如下：
-1. static getDerivedStateFromProps()
-2. shouldComponentUpdate()
-3. render()
-4. getSnapshotBeforeUpdate()
-5. componentDidUpdate()
-+  当组件从 DOM 中移除时会调用如下方法：componentWillUnmount()
+4. componentDidMount(),组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。
++  当组件从 DOM 中移除时会调用如下方法：componentWillUnmount()，可以用于清除组件的定时器和其他数据清理工作。
++ 更新阶段生命周期
+1. shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。
+2. componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。
+3. componentWillUpdate()：组件开始重新渲染之前调用。
+4. componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。
+
+## ref 和 React.js 中的 DOM 操作
++ 我们可以给任意代表 HTML 元素标签加上 ref 从而获取到它 DOM 元素然后调用 DOM API。但是记住一个原则：能不用 ref 就不用。特别是要避免用 ref 来做 React.js 本来就可以帮助你做到的页面自动更新的操作和事件监听。
+
