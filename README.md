@@ -26,17 +26,18 @@
 | [JavaScript算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md) |
 | [git 学习笔记](study/gitStudy.md) |
 | [webpack 学习笔记](study/webpackStudy.md) |
-
+| [react 学习笔记](study/reactStudy.md) |
 
 ## 学习网站
-| 主要内容 |
-| ------ |
-| [webpack 中文文档](https://www.webpackjs.com/guides/getting-started/) |
-| [ECMAScript6 入门](http://es6.ruanyifeng.com/) |
-| [Flutter 中文网](https://flutterchina.club/) |
-| [JS函数式子编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/) |
-| [next.js 中文文档](https://nextjs.org/docs) |
-| []() |
+| 主要内容 | github地址 |
+| ------ | ------ |
+| [webpack 中文文档](https://www.webpackjs.com/guides/getting-started/) | |
+| [ECMAScript6 入门](http://es6.ruanyifeng.com/) | |
+| [Flutter 中文网](https://flutterchina.club/) | |
+| [JS函数式子编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/) | |
+| [next.js 中文文档](https://nextjs.org/docs) | |
+| [图说设计模式](https://design-patterns.readthedocs.io/zh_CN/latest/index.html) | [github](https://github.com/me115/design_patterns) |
+| [ReactJS 小书](http://huziketang.mangojuice.top/books/react/)|
 
 ## 优秀的技术分享文章
 | 文章名 |
