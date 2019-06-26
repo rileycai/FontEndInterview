@@ -44,6 +44,14 @@
 | ------ |
 | [图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g) |
 | [让页面滑动流畅得飞起的新特性：Passive Event Listeners](https://blog.csdn.net/dj0379/article/details/52883315) |
+| [分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07) |
+
+
+## 优秀的面试材料
+| 标题 |
+| ------ |
+| [这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d) |
+| [送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca) |
 
 
 
