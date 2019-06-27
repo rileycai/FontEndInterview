@@ -45,6 +45,8 @@
 | [图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g) |
 | [让页面滑动流畅得飞起的新特性：Passive Event Listeners](https://blog.csdn.net/dj0379/article/details/52883315) |
 | [分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07) |
+| [近1w字的es6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5) |
+| [前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44) | 
 
 
 ## 优秀的面试材料
@@ -52,6 +54,7 @@
 | ------ |
 | [这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d) |
 | [送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca) |
+
 
 
 

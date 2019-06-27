@@ -177,3 +177,38 @@ padding-top: calc(100%*9/16);
          to {transform: rotate(360deg);}
 }
 ```
+
+### 15. 清除浮动有哪些方法
+```html
+<style>
+    .inner {
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+</style>
+<div class='outer'>
+    <div class='inner'></div>
+    <div class='inner'></div>
+    <div class='inner'></div>
+</div>
+```
+1. 利用clear属性
++ 在 <div class='outer'> 内创建一个空元素，对其设置 clear: both; 的样式。
++ 优点：简单，代码少，浏览器兼容性好。
++ 缺点：需要添加大量无语义的html元素，代码不够优雅，后期不容易维护。
+
+2. 利用 clear 属性 + 伪元素
+```javascript
+.outer:after{
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+```
+3. 利用BFC布局规则
++ position 为 absolute 或 fixed
++ overflow 不为 visible 的块元素
++ display 为 inline-block, table-cell, table-caption
