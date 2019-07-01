@@ -108,6 +108,7 @@ const { SourceMapConsumer, SourceNode } = require("source-map");
 ### 3.1 函数的默认值
 + ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。
 + 参数变量是默认声明的，所以不能用let或const再次声明。
++ 指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length属性将失真。
 
 ### 3.2 箭头函数
 1. 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
@@ -117,3 +118,100 @@ const { SourceMapConsumer, SourceNode } = require("source-map");
 
 + this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。
 + 箭头函数转成 ES5 的代码如下。
+
+
+## 4. Proxy
+Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。
+```javascript
+var proxy = new Proxy(target, handler);
+```
+
+
+## 4. Promise 对象
++ Promise对象有以下两个特点。
+1. 对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。
+2. 一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。
+
+### 4.1 Promise.prototype.then()
++ Promise 实例具有then方法，也就是说，then方法是定义在原型对象Promise.prototype上的。它的作用是为 Promise 实例添加状态改变时的回调函数。
+```javascript
+getJSON("/post/1.json").then(
+  post => getJSON(post.commentURL)
+).then(
+  comments => console.log("resolved: ", comments),
+  err => console.log("rejected: ", err)
+);
+```
+
+### 4.2 Promise.prototype.catch()
++ Promise.prototype.catch方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。
+
+### 4.3 Promise.prototype.finally()
++ finally方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。
++ finally方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是fulfilled还是rejected。这表明，finally方法里面的操作，应该是与状态无关的，不依赖于 Promise 的执行结果。
+```javascript
+// 服务器使用 Promise 处理请求，然后使用finally方法关掉服务器。
+server.listen(port)
+  .then(function () {
+    // ...
+  })
+  .finally(server.stop);
+```
+
+### 4.4 Promise.all()
++ Promise.all方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
++ p的状态由p1、p2、p3决定:
+1. 只有p1、p2、p3的状态都变成fulfilled，p的状态才会变成fulfilled，此时p1、p2、p3的返回值组成一个数组，传递给p的回调函数。
+2. 只要p1、p2、p3之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会传递给p的回调函数。
+```javascript
+const p = Promise.all([p1, p2, p3]);
+// 生成一个Promise对象的数组
+const promises = [2, 3, 5, 7, 11, 13].map(function (id) {
+  return getJSON('/post/' + id + ".json");
+});
+
+Promise.all(promises).then(function (posts) {
+  // ...
+}).catch(function(reason){
+  // ...
+});
+```
+
+### 4.5 Promise.race()
++ Promise.race方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
++ 只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给p的回调函数。
+
+### 4.6 Promise.resolve()
++ 有时需要将现有对象转为 Promise 对象，Promise.resolve方法就起到这个作用。
+1. 参数是一个 Promise 实例。 如果参数是 Promise 实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。
+2. 参数是一个thenable对象。 Promise.resolve方法会将这个对象转为 Promise 对象，然后就立即执行thenable对象的then方法。
+3. 参数不是具有then方法的对象，或根本就不是对象。 如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的 Promise 对象，状态为resolved。
+4. 不带有任何参数。 Promise.resolve()方法允许调用时不带参数，直接返回一个resolved状态的 Promise 对象。
+
+### 4.7 Promise.reject()
++ Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
+
+### 4.8 应用
++ 加载图片
+```javascript
+const preloadImage = function (path) {
+  return new Promise(function (resolve, reject) {
+    const image = new Image();
+    image.onload  = resolve;
+    image.onerror = reject;
+    image.src = path;
+  });
+};
+```
+### 4.9 Promise.try()
++ 实际开发中，经常遇到一种情况：不知道或者不想区分，函数f是同步函数还是异步操作，但是想用 Promise 来处理它。因为这样就可以不管f是否包含异步操作，都用then方法指定下一步流程，用catch方法处理f抛出的错误。一般就会采用下面的写法.
+```javascript
+Promise.resolve().then(f)
+```
++ 上面的写法有一个缺点，就是如果f是同步函数，那么它会在本轮事件循环的末尾执行。
+
+
+
+
+
+

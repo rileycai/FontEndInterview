@@ -81,6 +81,8 @@
 7. **[总结了17年初到18年初百场前端面试的面试经验(含答案)](https://juejin.im/post/5b44a485e51d4519945fb6b7)**
 8. **[「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.im/post/5c9c3989e51d454e3a3902b6)**
 9. **[五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)**
+10. **[一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)**
+11. **[2019 前端面试 | “HTML + CSS + JS”专题](https://juejin.im/post/5ce4171ff265da1bd04eb4f3)**
 
 
 Copyright (c) 2019-present ZhenzhenCai
