@@ -26,8 +26,6 @@
 9. **[webpack部分](topic/webpack.md)**
 10. **[代码部分](topic/mycode.md)**
 11. **[性能优化部分](topic/performance.md)**
-12. **[大厂面试题汇总](realInterview.md)**
-
 
 ## 2019年春招实习面试经验
 
@@ -46,14 +44,13 @@
 | 网易雷火 | 放弃面试 |
 | 度小满金融 | 放弃面试 |
 
-
-##学习笔记
+## 学习笔记
 
 1. **[git学习笔记](study/gitStudy.md)**
 2. **[webpack学习笔记](study/webpackStudy.md)**
 3. **[react学习笔记](study/reactStudy.md)**
 
-##学习网站
+## 学习网站
 
 1. **[JavaScript开发者应懂的33个概念](https://github.com/stephentian/33-js-concepts)**
 2. **[JavaScript算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)**
@@ -65,7 +62,7 @@
 8. **[学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)****
 9. **[ReactJS小书](http://huziketang.mangojuice.top/books/react/)**
 
-##优秀的技术分享文章
+## 优秀的技术分享文章
 
 1. **[图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)**
 2. **[分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)**
@@ -73,7 +70,7 @@
 4. **[前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)**
 
 
-##优秀的面试题库
+## 优秀的面试题库
 
 1. **[这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d)**
 2. **[送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)**
@@ -84,7 +81,6 @@
 7. **[总结了17年初到18年初百场前端面试的面试经验(含答案)](https://juejin.im/post/5b44a485e51d4519945fb6b7)**
 8. **[「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.im/post/5c9c3989e51d454e3a3902b6)**
 9. **[五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)**
-
 
 
 Copyright (c) 2019-present ZhenzhenCai
