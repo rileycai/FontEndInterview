@@ -83,6 +83,12 @@
 9. **[五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)**
 10. **[一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)**
 11. **[2019 前端面试 | “HTML + CSS + JS”专题](https://juejin.im/post/5ce4171ff265da1bd04eb4f3)**
+12. **[前端100问：能搞懂80%的请把简历给我](https://juejin.im/post/5d23e750f265da1b855c7bbe)**
+13. **[前端面试之道小册](https://yuchengkai.cn/docs/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)**
+
+## 优秀的面试题
+1. **[]()**
+1. **[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)**
 
 
 Copyright (c) 2019-present ZhenzhenCai
