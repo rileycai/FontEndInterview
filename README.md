@@ -68,7 +68,8 @@
 2. **[分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)**
 3. **[近1w字的es6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)**
 4. **[前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)**
-
+5. **[一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)**
+6. **[【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)**
 
 ## 优秀的面试题库
 
@@ -87,8 +88,8 @@
 13. **[前端面试之道小册](https://yuchengkai.cn/docs/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)**
 
 ## 优秀的面试题
-1. **[]()**
-1. **[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)**
+1. **[面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)**
+2. **[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)3. **[CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)**
 
 
 Copyright (c) 2019-present ZhenzhenCai
