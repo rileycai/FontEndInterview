@@ -188,6 +188,59 @@ ES6之前的继承是通过 **原型** 来实现的，也就是每一个构造�
 
 参考：[滚动加载图片（懒加载）实现原理](https://www.cnblogs.com/flyromance/p/5042187.html)
 
+#### 使用 IntersectionObserver 
++ IntersectionObserver API为开发者提供了一种可以异步监听目标元素与其祖先或视窗(viewport)处于交叉状态的方式。祖先元素与视窗(viewport)被称为根(root)。
+``` javascript
+const config = {
+    root: null,    // 默认指向浏览器的视口，但可以是任意DOM元素
+    rootMargin: '0px',  // 计算交叉时，root边界盒的偏移量
+    threshold: 0.5   // 监听对象的交叉区域与边界区域的比率
+}
+let observer = new IntersectionObserver(fucntion(entries){
+    // ...
+}, config)
+
+new IntersectionObserver(function(entries, self))
+
+```
++ 在entries我们得到我们的回调函数作为Array是特殊类型的：IntersectionObserverEntry 首先IntersectionObserverEntry含有三个不同的矩形的信息
++ 此外,IntersectionObserverEntry还提供了isIntersecting，这是一个方便的属性,返回观察元素是否与捕获框架相交，
++ 另外,IntersectionObserverEntry提供了利于计算的遍历属性intersctionRatio:返回intersectionRect 与 boundingClientRect 的比例值.
+
+#### 图片懒加载实现代码
++ 以加载图片为例子,我们需要将img标签中设置一个data-src属性,它指向的是实际上我们需要加载的图像,而img的src指向一张默认的图片,如果为空的话也会向服务器发送请求。
+``` html
+    <img src="default.jpg" data-src="www.example.com/1.jpg">
+```
+``` javascript
+const images = document.querySelectorAll('[data-src]')
+const config = {
+    rootMargin: '0px',
+    threshold: 0
+};
+let observer = new IntersectionObserver((entries, self)=>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+         // 加载图像
+         preloadImage(entry.target);
+         // 解除观察
+           self.unobserve(entry.target)
+        }
+    })
+}， config)
+
+images.forEach(image => {
+  observer.observe(image);
+});
+
+function preloadImage(img) {
+  const src = img.dataset.src
+  if (!src) { return; }
+  img.src = src;
+}
+```
+
+
 ### 17. 什么是函数节流和函数去抖？
 + **函数去抖 debounce**： 当调用函数n秒后，才会执行该动作，若在这n秒内又调用该函数则将取消前一次并重新计算执行时间。
 ```JavaScript
