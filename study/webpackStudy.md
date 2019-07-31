@@ -8,7 +8,7 @@
 2. **use** 属性，表示进行转换时，应该使用哪个 loader。
 
 ### loader特性
-+ loader 支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
++ loader 支持 **链式传递**。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行(从右到左)。loader 链中的第一个 loader 返回值给下一个loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
 + loader 可以是同步的，也可以是异步的。
 + loader 运行在 Node.js 中，并且能够执行任何可能的操作。
 + loader 接收查询参数。用于对 loader 传递配置。
@@ -70,6 +70,9 @@
 ### html-webpack-plugin
 [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 + 该插件将为您生成一个HTML5文件，其中包含使用脚本标记的正文中的所有webpack包。
++ 它主要有两个作用：
+1. 为html文件中引入的外部资源如script、link动态添加每次compile后的hash，防止引用缓存的外部文件问题
+2. 可以生成创建html入口文件，比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口
 
 ### clean-webpack-plugin
 + 由于过去的指南和代码示例遗留下来，导致我们的 /dist 文件夹相当杂乱。webpack 会生成文件，然后将这些文件放置在 /dist 文件夹中，但是 webpack 无法追踪到哪些文件是实际在项目中用到的。通常，在每次构建前清理 /dist 文件夹，是比较推荐的做法，因此只会生成用到的文件。
@@ -79,6 +82,28 @@
 
 ### CommonsChunkPlugin
 + **CommonsChunkPlugin** 插件可以将公共的依赖模块提取到已有的入口 chunk 中，或者提取到一个新生成的 chunk。
+
+### webpack-dev-server
+webpack-dev-server 为你提供了一个简单的 web 服务器，并且能够实时重新加载(live reloading)。
+``` json
+    devServer: {
+        host: '0.0.0.0',
+        contentBase: './src',
+        inline: true,
+        hot: true,
+        port: 22222,
+        proxy: {
+            'home/page': {
+                target: 'http://10.3.23.77:20086/',
+                changeOrigin: true,
+            },
+        },
+        quiet: true,
+        overlay: {
+            errors: true,
+        },
+    },
+```
 
 ## 开发
 ### 使用 source map

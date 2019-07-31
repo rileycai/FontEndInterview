@@ -1,6 +1,6 @@
 
 impJS/
-# Editor directories and files
-.pdf
 *.pdf
-.js
+*.pdf
+*.js
+loadsh.js
