@@ -26,29 +26,17 @@
 9. **[webpack部分](topic/webpack.md)**
 10. **[代码部分](topic/mycode.md)**
 11. **[性能优化部分](topic/performance.md)**
-
-## 2019年春招实习面试经验
-
-| 主要内容 | 面试次数 |
-| ------ | ------ |
-| [阿里巴巴](interview/alibaba.md) | 1 |
-| [百度](interview/baidu.md) | 2 |
-| [字节跳动](interview/Bytedance.md) | 7 |
-| [腾讯](interview/tecent.md) | 7 |
-| [快手](interview/kuaishou.md) | 2 |
-| [搜狐](interview/sohu.md) | 2 |
-| [招商银行信用卡中心](interview/zhaohang.md) | 2 |
-| [依图科技](interview/yitu.md) | 2 + 放弃面试 |
-| 拼多多 | 放弃面试 |
-| 网易互娱 | 放弃面试 |
-| 网易雷火 | 放弃面试 |
-| 度小满金融 | 放弃面试 |
+12. **[移动端部分](topic/phone.md)**
+13. **[react部分](topic/react.md)**
 
 ## 学习笔记
 
 1. **[git学习笔记](study/gitStudy.md)**
 2. **[webpack学习笔记](study/webpackStudy.md)**
 3. **[react学习笔记](study/reactStudy.md)**
+4. **[浏览器学习笔记](study/browerStudy.md)**
+5. **[设计模式学习笔记](study/designStudy.md)**
+6. **[git学习笔记](study/gitStudy.md)**
 
 ## 学习网站
 
@@ -90,6 +78,24 @@
 ## 优秀的面试题
 1. **[面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)**
 2. **[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)3. **[CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)**
+
+
+## 2019年春招实习面试经验
+
+| 主要内容 | 面试次数 |
+| ------ | ------ |
+| [阿里巴巴](interview/alibaba.md) | 1 |
+| [百度](interview/baidu.md) | 2 |
+| [字节跳动](interview/Bytedance.md) | 7 |
+| [腾讯](interview/tecent.md) | 7 |
+| [快手](interview/kuaishou.md) | 2 |
+| [搜狐](interview/sohu.md) | 2 |
+| [招商银行信用卡中心](interview/zhaohang.md) | 2 |
+| [依图科技](interview/yitu.md) | 2 + 放弃面试 |
+| 拼多多 | 放弃面试 |
+| 网易互娱 | 放弃面试 |
+| 网易雷火 | 放弃面试 |
+| 度小满金融 | 放弃面试 |
 
 
 Copyright (c) 2019-present ZhenzhenCai

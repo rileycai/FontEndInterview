@@ -85,7 +85,7 @@
 
 ### webpack-dev-server
 webpack-dev-server 为你提供了一个简单的 web 服务器，并且能够实时重新加载(live reloading)。
-``` json
+```
     devServer: {
         host: '0.0.0.0',
         contentBase: './src',
