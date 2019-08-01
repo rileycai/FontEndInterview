@@ -18,72 +18,72 @@
 
 ## 前端面试题目（自己整理）
 
-- [ ] **[JavaScript部分](topic/JavaScript.md)**
-- [ ]**[html部分](topic/html.md)**
-- [ ]**[css部分](topic/css.md)**
-- [ ]**[es6部分](topic/ESsix.md)**
-- [ ]**[vue部分](topic/vue.md)**
-- [ ]**[浏览器部分](topic/brower.md)**
-- [ ]**[网络部分](topic/network.md)**
-- [ ]**[web安全部分](topic/webSecurity.md)**
-- [ ]**[webpack部分](topic/webpack.md)**
-- [ ]**[代码部分](topic/mycode.md)**
-- [ ]**[性能优化部分](topic/performance.md)**
-- [ ]**[移动端部分](topic/phone.md)**
-- [ ]**[react部分](topic/react.md)**
+- [ ]  **[JavaScript部分](topic/JavaScript.md)**
+- [ ] **[html部分](topic/html.md)**
+- [ ] **[css部分](topic/css.md)**
+- [ ] **[es6部分](topic/ESsix.md)**
+- [ ] **[vue部分](topic/vue.md)**
+- [ ] **[浏览器部分](topic/brower.md)**
+- [ ] **[网络部分](topic/network.md)**
+- [ ] **[web安全部分](topic/webSecurity.md)**
+- [ ] **[webpack部分](topic/webpack.md)**
+- [ ] **[代码部分](topic/mycode.md)**
+- [ ] **[性能优化部分](topic/performance.md)**
+- [ ] **[移动端部分](topic/phone.md)**
+- [ ] **[react部分](topic/react.md)**
 
 ## 学习笔记
 
-- [ ]**[git学习笔记](study/gitStudy.md)**
-- [ ]**[webpack学习笔记](study/webpackStudy.md)**
-- [ ]**[react学习笔记](study/reactStudy.md)**
-- [ ]**[浏览器学习笔记](study/browerStudy.md)**
-- [ ]**[设计模式学习笔记](study/designStudy.md)**
-- [ ]**[git学习笔记](study/gitStudy.md)**
+- [ ] **[git学习笔记](study/gitStudy.md)**
+- [ ] **[webpack学习笔记](study/webpackStudy.md)**
+- [ ] **[react学习笔记](study/reactStudy.md)**
+- [ ] **[浏览器学习笔记](study/browerStudy.md)**
+- [ ] **[设计模式学习笔记](study/designStudy.md)**
+- [ ] **[git学习笔记](study/gitStudy.md)**
 
 ## 学习网站
 
-- [ ]**[JavaScript开发者应懂的33个概念](https://github.com/stephentian/33-js-concepts)**
-- [ ]**[JavaScript算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)**
-- [ ]**[webpack中文文档](https://www.webpackjs.com/guides/getting-started/)**
-- [ ]**[ECMAScript6入门](http://es-ruanyifeng.com/)**
-- [ ]**[Flutter中文网](https://flutterchina.club/)**
-- [ ]**[JS函数式子编程指南](https://llh91100-gitbooks.io/mostly-adequate-guide-chinese/content/)**
-- [ ]**[next.js中文文档](https://nextjs.org/docs)**
-- [ ]**[学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)**
-- [ ]**[ReactJS小书](http://huziketang.mangojuice.top/books/react/)**
+- [ ] **[JavaScript开发者应懂的33个概念](https://github.com/stephentian/33-js-concepts)**
+- [ ] **[JavaScript算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)**
+- [ ] **[webpack中文文档](https://www.webpackjs.com/guides/getting-started/)**
+- [ ] **[ECMAScript6入门](http://es-ruanyifeng.com/)**
+- [ ] **[Flutter中文网](https://flutterchina.club/)**
+- [ ] **[JS函数式子编程指南](https://llh91100-gitbooks.io/mostly-adequate-guide-chinese/content/)**
+- [ ] **[next.js中文文档](https://nextjs.org/docs)**
+- [ ] **[学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)**
+- [ ] **[ReactJS小书](http://huziketang.mangojuice.top/books/react/)**
 
 ## 优秀的技术分享文章
 
-- [ ]**[图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)**
-- [ ]**[分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)**
-- [ ]**[近1w字的es6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)**
-- [ ]**[前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)**
-- [ ]**[一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)**
-- [ ]**[【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)**
+- [ ] **[图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)**
+- [ ] **[分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)**
+- [ ] **[近1w字的es6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)**
+- [ ] **[前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)**
+- [ ] **[一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)**
+- [ ] **[【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)**
 
 ## 优秀的面试题库
 
-- [ ]**[这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d)**
-- [ ]**[送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)**
-- [ ]**[前端知识点汇总——面试看这一篇就够了](https://juejin.im/post/5d06fbc2e51d45106b15ff1f)**
-- [ ]**[【面试篇】寒冬求职季之你必须要懂的原生JS(上)](https://juejin.im/post/5cab0c45f265da2513734390)**
-- [ ]**[【面试篇】寒冬求职季之你必须要懂的原生JS(中)](https://juejin.im/post/5cbd1e33e51d45789161d053)**
-- [ ]**[(中篇)中高级前端大厂面试秘籍，寒冬中为您保驾护航，直通大厂](https://juejin.im/post/5c92f499f265da612647b754)**
-- [ ]**[总结了17年初到18年初百场前端面试的面试经验(含答案)](https://juejin.im/post/5b44a485e51d4519945fb6b7)**
-- [ ]**[「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.im/post/5c9c3989e51d454e3a3902b6)**
-- [ ]**[五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)**
-- [ ]**[一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)**
-- [ ]**[2019 前端面试 | “HTML + CSS + JS”专题](https://juejin.im/post/5ce4171ff265da1bd04eb4f3)**
-- [ ]**[前端100问：能搞懂80%的请把简历给我](https://juejin.im/post/5d23e750f265da1b855c7bbe)**
-- [ ]**[前端面试之道小册](https://yuchengkai.cn/docs/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)**
-- [ ]**[面试的信心来源于过硬的基础](https://segmentfault.com/a/1190000013331105)**
+- [ ] **[这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d)**
+- [ ] **[送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)**
+- [ ] **[前端知识点汇总——面试看这一篇就够了](https://juejin.im/post/5d06fbc2e51d45106b15ff1f)**
+- [ ] **[【面试篇】寒冬求职季之你必须要懂的原生JS(上)](https://juejin.im/post/5cab0c45f265da2513734390)**
+- [ ] **[【面试篇】寒冬求职季之你必须要懂的原生JS(中)](https://juejin.im/post/5cbd1e33e51d45789161d053)**
+- [ ] **[(中篇)中高级前端大厂面试秘籍，寒冬中为您保驾护航，直通大厂](https://juejin.im/post/5c92f499f265da612647b754)**
+- [ ] **[总结了17年初到18年初百场前端面试的面试经验(含答案)](https://juejin.im/post/5b44a485e51d4519945fb6b7)**
+- [ ] **[「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.im/post/5c9c3989e51d454e3a3902b6)**
+- [ ] **[五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)**
+- [ ] **[一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)**
+- [ ] **[2019 前端面试 | “HTML + CSS + JS”专题](https://juejin.im/post/5ce4171ff265da1bd04eb4f3)**
+- [ ] **[前端100问：能搞懂80%的请把简历给我](https://juejin.im/post/5d23e750f265da1b855c7bbe)**
+- [ ] **[前端面试之道小册](https://yuchengkai.cn/docs/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)**
+- [ ] **[面试的信心来源于过硬的基础](https://segmentfault.com/a/1190000013331105)**
 
 
 ## 优秀的面试题
-- [ ]**[面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)**
-- [ ]**[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)**
-- [ ]**[CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)**
+- [ ] **[面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)**
+- [ ] **[常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)**
+- [ ] **[CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)**
 
 
 ## 2019年春招实习面试经验
