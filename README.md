@@ -18,7 +18,7 @@
 
 ## 前端面试题目（自己整理）
 
-- [ ]**[JavaScript部分](topic/JavaScript.md)**
+- [ ] **[JavaScript部分](topic/JavaScript.md)**
 - [ ]**[html部分](topic/html.md)**
 - [ ]**[css部分](topic/css.md)**
 - [ ]**[es6部分](topic/ESsix.md)**
