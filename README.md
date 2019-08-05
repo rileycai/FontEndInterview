@@ -61,6 +61,8 @@
 - [ ] **[前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)**
 - [ ] **[一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)**
 - [ ] **[【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)**
+- [ ] **[从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)**
+- [ ] **[js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)**
 
 ## 优秀的面试题库
 

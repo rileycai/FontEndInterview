@@ -280,7 +280,7 @@ jsonp的原理是使用script标签来实现跨域，因为script标签的的src
 ### 20.什么是深拷贝，什么是浅拷贝？
 浅拷贝是指仅仅复制对象的引用，而不是复制对象本身；深拷贝则是把复制对象所引用的全部对象都复制一遍。
 ```JavaScript
-var isObject=obj=>{return typeof obj === 'object' && obj != null;}
+var isObject=obj=>{return (typeof obj === 'object' || typeof obj === 'function') && obj != null;}
 function deepClone(obj,hash=new Map()){
   if(!isObject(obj))
     return obj;
@@ -288,15 +288,9 @@ function deepClone(obj,hash=new Map()){
     return hash.get(obj);
   var target=Array.isArray(obj)?[]:{};
   hash.set(obj,target);
-  for(var i in obj){
-    if(Object.prototype.hasOwnProperty.call(obj,i)){
-      if(isObject(obj[i]))
-        target[i]=deepClone(obj[i],hash);
-      else {
-        target[i]=obj[i];
-      }
-    }
-  }
+  reflect.ownKeys(obj).foreach(key => {
+      target[key] = isObejct(obj[key])? deepClone(obj[key],hash) : obj[key]
+  })
   return target;
 }
 ```
@@ -477,4 +471,14 @@ function _new(fn, ...arg) {
     const ret = fn.apply(obj, arg);
     return ret instanceof Object ? ret : obj;
 }
+```
+
+### 38. call、apply、bind 的区别
++ call、apply与bind的差别：
+1. call和apply改变了函数的this上下文后便执行该函数,而bind则是返回改变了上下文后的一个函数。
++ call、apply的区别：
+1. call和aplly的第一个参数都是要改变上下文的对象，而call从第二个参数开始以参数列表的形式展现，apply则是把除了改变上下文对象的参数放在一个数组里面作为它的第二个参数。
+```javascript
+fn.call(obj, arg1, arg2, arg3...);
+fn.apply(obj, [arg1, arg2, arg3...]);
 ```
