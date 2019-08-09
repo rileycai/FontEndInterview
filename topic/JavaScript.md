@@ -454,6 +454,7 @@ function curry (fn, currArgs) {
 2. 这个新对象被执行 [[原型]] 连接
 3. 执行构造函数方法，属性和方法被添加到this引用的对象中
 4. 如果构造函数中没有返回其它对象，那么返回this，即创建的这个的新对象，否则，返回构造函数中返回的对象。
+
 ```javascript
 function _new() {
     let target = {};
@@ -465,7 +466,7 @@ function _new() {
     }
     return target;
 }
-// 究极代码
+// 究极简化代码
 function _new(fn, ...arg) {
     const obj = Object.create(fn.prototype);
     const ret = fn.apply(obj, arg);

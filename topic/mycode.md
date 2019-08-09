@@ -1,33 +1,70 @@
-## 代码面试题
+## 前端常见代码面试题
 
-###  1. bilibili 面试
-不考虑兼容性且不能更改dom结构，需求如下：
-
-  1.完成经典的上 header ，下 footer ，左边是侧边栏，右边是内容。
-
-  2.去掉列表前面的 · ，列表项水平排列，注意里面的br标签需要换行，同时每两个li后有一条竖线。
-
-  3.点击列表项不跳转，弹出href内的内容
-
-[来源](https://juejin.im/post/5c878397f265da2dde07293b)  [题目](https://github.com/zhenzhencai/FontEndInterview/blob/master/html/Questions.html)  [答案](https://github.com/zhenzhencai/FontEndInterview/blob/master/html/Answer.html)
-
-### 2. 用setTimeout实现setInterval
-
+### 1. 用setTimeout实现setInterval
 ```javascript
-function mySetInterval(fn, millisec){
-  function interval(){
-    setTimeout(interval, millisec);
-    fn();
-  }
-  setTimeout(interval, millisec)
+const _setInterval = (fn, misc) => {
+    const interval = () => {
+        setTimeout(interval, misc);
+        fn();
+    }
+    setTimeout(interval, misc);
 }
 ```
-参考：
-[用setTimeout实现setInterval](https://www.jianshu.com/p/32479bdfd851)
+
+### 2. 手写实现Promise
+```javascript
+// 简单版本
+class Promise{
+  constructor(executor){
+    // 初始化state为等待态
+    this.state = 'pending';
+    // 成功的值
+    this.value = undefined;
+    // 失败的原因
+    this.reason = undefined;
+    let resolve = value => {
+      // state改变,resolve调用就会失败
+      if (this.state === 'pending') {
+        // resolve调用后，state转化为成功态
+        this.state = 'fulfilled';
+        // 储存成功的值
+        this.value = value;
+      }
+    };
+    let reject = reason => {
+      // state改变,reject调用就会失败
+      if (this.state === 'pending') {
+        // reject调用后，state转化为失败态
+        this.state = 'rejected';
+        // 储存失败的原因
+        this.reason = reason;
+      }
+    };
+    // 如果executor执行报错，直接执行reject
+    try{
+      executor(resolve, reject);
+    } catch (err) {
+      reject(err);
+    }
+  }
+  then(onFulfilled,onRejected) {
+    // 状态为fulfilled，执行onFulfilled，传入成功的值
+    if (this.state === 'fulfilled') {
+      onFulfilled(this.value);
+    };
+    // 状态为rejected，执行onRejected，传入失败的原因
+    if (this.state === 'rejected') {
+      onRejected(this.reason);
+    };
+  }
+}
+```
+
+参考链接： [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
 
 ### 3. call模拟实现
 ```JavaScript
-Function.prototype.call2 = function(context = window) {
+Function.prototype.myCall = (context = window) => {
     context.fn = this;
     let args = [...arguments].slice(1);
     let result = context.fn(...args);
@@ -35,108 +72,45 @@ Function.prototype.call2 = function(context = window) {
     return result;
 }
 ```
+
 ### 4. apply模拟实现
 ```JavaScript
-Function.prototype.apply2 = function(context = window) {
-    context.fn = this
-    let result;
-    // 判断是否有第二个参数
-    if(arguments[1]) {
-        result = context.fn(...arguments[1])
-    } else {
-        result = context.fn()
-    }
-    delete context.fn()
-    return result
+Function.prototype.myApply = (context = window) => {
+    context.fn = this;
+    let result = arguments[1] ? context.fn(...arguments[1]) : context.fn();
+    delete context.fn;
+    return result;
 }
 ```
+
 ### 5. bind模拟实现
-+ bind 返回了一个函数，对于函数来说有两种方式调用，一种是直接调用，一种是通过 new 的方式。
 ```JavaScript
-Function.prototype.myBind = function (context) {
-  if (typeof this !== 'function') {
-    throw new TypeError('Error')
-  }
-  const _this = this
-  const args = [...arguments].slice(1)
-  // 返回一个函数
-  return function F() {
-    // 因为返回了一个函数，我们可以 new F()，所以需要判断
-    if (this instanceof F) {
-      return new _this(...args, ...arguments)
+Function.prototype.myBind = (context = window) => {
+    if (typeof this != 'function') {
+        throw new TypeError('error');
     }
-    return _this.apply(context, args.concat(...arguments))
-  }
+    const _this = this;
+    let args = [...arguments].slice(1);
+    return function F() {
+        if (this instanceof F){
+            return new _this(...args, ...arguments);
+        }
+
+        return _this.apply(context, args.concat(arguments));
+    }
 }
 ```
 
 ### 6. new模拟实现
 ```JavaScript
-function New(func) {
-    var res = {};
-    if (func.prototype !== null) {
-        res.__proto__ = func.prototype;
-    }
-    var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));
-    if ((typeof ret === "object" || typeof ret === "function") && ret !== null) {
-        return ret;
-    }
-    return res;
+const _new = (fn, ...args) => {
+    let obj = Object.creat(fn.prototype);
+    let ret = fn.apply(obj, args);
+    ret instanceof Object ? ret : obj;
 }
 ```
 
-### 7. 两个升序数组合并成一个升序数组
-```JavaScript
-function merge(left, right){
-    let result  = [],
-        il      = 0,
-        ir      = 0;
-    while (il < left.length && ir < right.length) {
-        result.push(left[il] < right[ir] ? left[il++] : right[ir++]);
-    }
-    return result.concat(left.slice(il)).concat(right.slice(ir));
-}
-```
-
-### 8. 数组去重
-```javascript
-//优化遍历数组法
-function distinct(arr){
-    var temp=[];
-    var len=arr.length;
-    for(var i=0;i<len;i++){
-        for(var j=i+1;j<len;j++){
-            if(arr[i]===arr[j]){
-                i++;
-                j=i;
-            }
-        }
-        temp.push(arr[i]);
-    }
-    return temp;
-}
-```
-
-### 9. 给定两个数组，写一个方法来计算它们的交集。
-```javascript
-function intersect(arr1,arr2){
-    var map=new Map();
-    var arr=[];
-    for(var i=0;i<arr1.length;i++){
-        var temp=map.get(arr1[i]);
-        map.set(arr1[i],(temp?temp:0)+1);
-    }
-    for(var i=0;i<arr2.length;i++){
-        if(map.has(arr2[i]) &&map.get(arr2[i])!=0){
-            arr.push(arr2[i]);
-            map.set(arr2[i],map.get(arr2[i])-1)
-        }
-    }
-    return arr;
-}
-```
-
-### 10.promise实现ajax
+### 7.promise实现ajax
 ```Javascript
 //promise 实现ajax
 function ajax(method, url, data) {
@@ -162,72 +136,9 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 });
 ```
 
-### 11. 返回字符串中重复最多的字符
+### 8.如何实现一个深拷贝？
 ```JavaScript
-function count(arr){
-    var map =new Map();
-    for(var i=0;i<arr.length;i++){
-        if(map.get(arr[i])){
-            map.set(arr[i],map.get(arr[i])+1)
-        }else{
-            map.set(arr[i],1);
-        }
-    }
-    var max=0;
-    var val='';
-    map.forEach(function(value,key,map){
-        if(value>max){
-            max=value;
-            val=key;
-        }
-    })
-    return val;
-}
-```
-### 12. 生成n为随机字符串
-```JavaScript
-function random(length){
-    var arr=Math.random().toString(36).substr(2);
-    if(arr.length>length)
-        return arr.substr(0,length);
-    return arr+=random(length-arr.length);
-}
-```
-
-### 13. 给定一个没有重复数字的序列，返回所有的全排列
-```JavaScript
-var hash,res,ans,len;
-function dfs(num,arr){
-    if(num===len){
-        var temp=res.map(function(item){
-            return item;
-        });
-        ans.push(temp);
-        return;
-    }
-    for(var i=0;i<len;i++){
-        if(hash[i])
-            continue;
-        hash[i]=true;
-        res.push(arr[i]);
-        dfs(num+1,arr);
-        hash[i]=false;
-        res.pop();
-    }
-}
-function permute(arr){
-    hash=[];
-    res=[];
-    ans=[];
-    len=arr.length;
-    dfs(0,arr);
-    return ans;
-}
-```
-
-### 14.如何实现一个深拷贝？
-```JavaScript
-var isObject=obj=>{return typeof obj === 'object' && obj != null;}
+var isObject=obj=>{return (typeof obj === 'object' || typeof obj === 'function') && obj != null;}
 function deepClone(obj,hash=new Map()){
   if(!isObject(obj))
     return obj;
@@ -235,19 +146,14 @@ function deepClone(obj,hash=new Map()){
     return hash.get(obj);
   var target=Array.isArray(obj)?[]:{};
   hash.set(obj,target);
-  for(var i in obj){
-    if(Object.prototype.hasOwnProperty.call(obj,i)){
-      if(isObject(obj[i]))
-        target[i]=deepClone(obj[i],hash);
-      else {
-        target[i]=obj[i];
-      }
-    }
-  }
+  reflect.ownKeys(obj).foreach(key => {
+      target[key] = isObejct(obj[key])? deepClone(obj[key],hash) : obj[key]
+  })
   return target;
 }
 ```
-### 15.实现双向数据绑定
+
+### 9.实现双向数据绑定
 ```JavaScript
 <body>
   <input type="text" id="message" />
@@ -272,7 +178,7 @@ function deepClone(obj,hash=new Map()){
 </script>
 ```
 
-### 16.手写快速排序算法
+### 10.手写快速排序算法
 ```JavaScript
 function quickSort(arr){
     if(arr.length<=1)
@@ -290,53 +196,21 @@ function quickSort(arr){
 }
 ```
 
-### 17.实现堆排序
+### 11.函数柯里化实现
 ```JavaScript
-function swap(arr,i,j){
-    let temp=arr[i];
-    arr[i]=arr[j];
-    arr[j]=temp;
-}
-function shiftDown(arr,i,len){
-    let temp=arr[i];
-    for(let j=2*i+1;j<len;j=2*j+1){
-        temp=arr[i];
-        if(j+1<len && arr[j]<arr[j+1])
-            j++;
-        if(arr[j]>temp){
-            swap(arr,i,j);
-            i=j;
-        }
-        else
-            break;
-    }
-}
-function heapSort(arr){
-    len=arr.length;
-    for(let i=Math.floor(len/2-1);i>=0;i--)
-        shiftDown(arr,i,len);
-    for(let i=len-1;i>=0;i--){
-        swap(arr,0,i);
-        shiftDown(arr,0,i);
-    }
-}
-```
-### 18.函数柯里化实现
-```JavaScript
-function curry(fn,currArgs){
-    var currArgs=currArgs || [];
-    return function(){
-        var args=[].slice.call(arguments);
+const curry = (fn, currArgs=[]) => {
+    return function() {
+        let args = Array.from(arguments);
         [].push.apply(args,currArgs);
-
-        if(args.length<fn.length)
+        if (args.length < fn.length) {
             return curry.call(this,fn,args);
+        }
         return fn.apply(this,args);
     }
 }
 ```
 
-### 19.写个js继承的例子
+### 12.写个js继承的例子
 ```JavaScript
 //寄生组合继承
 function Animal (name) {
@@ -367,8 +241,7 @@ Cat.prototype.constructor = Cat;
 参考： [JS继承实现方式](https://www.cnblogs.com/humin/p/4556820.html)
 
 
-### 20.写一个jsonp的实现
-+ 利用了 **script** 标签没有跨域限制这一“漏洞”来达到与第三方通讯的目的。简单地说，该协议就是，允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名包裹json数据，这样客户端就可以随意定制自己的函数自动处理返回的数据了。
+### 13.写一个jsonp的实现
 ```JavaScript
     var flightHandler = data=>{
       console.log(data);
@@ -379,136 +252,42 @@ Cat.prototype.constructor = Cat;
     document.getElementsByTagName('head')[0].appendChild(script);
 ```
 
-### 21. 实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
-+ 只需要鉴别这些类型那么使用typeof即可，要鉴别null先判断双等判断是否为null，之后使用typeof判断，如果是obejct的话，再用Array.isArray判断
-是否为数组，如果是数字再使用isNaN判断是否为NaN,（需要注意的是NaN并不是JavaScript数据类型，而是一种特殊值）如下：
-```javascript
-function type(ele) {
-  if(ele===null) {
-    return null;
-  } else if(typeof ele === 'object') {
-    if(Array.isArray(ele)) {
-      return 'array';
-    } else {
-      return typeof ele;
+### 14. 函数去抖
+```JavaScript
+var debounce = function(delay, cb) {
+    var timer;
+    return function() {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function() {
+            cb();
+        }, delay);
     }
-  } else if(typeof ele === 'number') {
-    if(isNaN(ele)) {
-      return NaN;
-    } else {
-      return typeof ele;
-    }
-  } else{
-    return typeof ele;
-  }
 }
 ```
 
-### 22.js实现数组千分位
+### 15. 函数节流
 ```JavaScript
-//正则实现
-function format (num) {  
-    var reg=/\d{1,3}(?=(\d{3})+$)/g;   
-    return num.toString().replace(reg, '$&,');  
-}
-//基础
-function format(num){
-    num+='';
-    var str="";
-    for(var i=num.length-1,j=1;i>=0;i--,j++){
-        if(j%3===0 & i!=0){
-            str+=num[i]+',';
-        }else{
-            str+=num[i];
+var throttle = function(delay, cb) {
+    var startTime = Date.now();
+    return function() {
+        var currTime = Date.now();
+        if (currTime - startTime > delay) {
+            cb();
+            startTime = currTime;
         }
     }
-    return str.split('').reverse().join('');
 }
-```
-### 23. 手写快速排序算法
-```JavaScript
-var quickSort = function(arr) {
-    if(arr.length<=1)
-        return arr;
-    var left=[],right=[];    
-    var index=Math.floor(arr.length/2);
-    var midVal=arr.splice(midVal,1)[0];
-    for(var i=0;i<arr.length;i++){
-        arr[i]<midVal?left.push(arr[i]):right.push(arr[i]);
-    }
-    return quickSort(left).concat(midVal).concat(quickSort(right));
-};
-```
-### 24. 查找数组中元素和等于给定数的子数组
-```JavaScript
-var ans,res,len;
-var dfs=function(index,sum,candidates,target){
-    if(sum===target){
-        var tmp=res.map(function(item){
-            return item;
-        })
-        ans.push(tmp);
-        // console.log(res,ans);
-        return ;
-    }
-    for(var i=index;i<len;i++){
-        if(sum+candidates[i]>target)
-            continue;
-        res.push(candidates[i]);
-        dfs(i,sum+candidates[i],candidates,target);
-        res.pop();
-    }
-}
-var combinationSum = function(candidates, target) {
-    ans=[];
-    len=candidates.length;
-    candidates.sort((a,b)=>a-b);
-    for(var i=0;i<len;i++){
-        res=[candidates[i]];
-        dfs(i,candidates[i],candidates,target);
-    }
-    return ans;
-};
 ```
 
-### 25.手写实现promise
+### 16. 实现一个instanceof
 ```javascript
-function myPromise(constructor){
-    let self=this;
-    self.status="pending" //定义状态改变前的初始状态
-    self.value=undefined;//定义状态为resolved的时候的状态
-    self.reason=undefined;//定义状态为rejected的时候的状态
-    function resolve(value){
-        //两个==="pending"，保证了状态的改变是不可逆的
-       if(self.status==="pending"){
-          self.value=value;
-          self.status="resolved";
-       }
+function instanceOf(left,right) {
+    let proto = left.__proto__;
+    let prototype = right.prototype
+    while(true) {
+        if(proto === null) return false;
+        if(proto === prototype) return true;
+        proto = proto.__proto__;
     }
-    function reject(reason){
-        //两个==="pending"，保证了状态的改变是不可逆的
-       if(self.status==="pending"){
-          self.reason=reason;
-          self.status="rejected";
-       }
-    }
-    //捕获构造异常
-    try{
-       constructor(resolve,reject);
-    }catch(e){
-       reject(e);
-    }
-}
-myPromise.prototype.then=function(onFullfilled,onRejected){
-   let self=this;
-   switch(self.status){
-      case "resolved":
-        onFullfilled(self.value);
-        break;
-      case "rejected":
-        onRejected(self.reason);
-        break;
-      default:       
-   }
 }
 ```
