@@ -30,7 +30,6 @@
 + http的连接是无状态的，https协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
 + 提示：https的ssl加密是在 **传输层** 实现的。
 
-
 ### 4.ssl加密使用了哪种算法，如何加密
 1. 在客户端与服务器间传输的数据是通过使用对称算法（如 DES 或 RC4）进行加密的。
 2. 公用密钥算法（通常为 RSA）是用来获得加密密钥交换和数字签名的，此算法使用服务器的SSL数字证书中的公用密钥。
@@ -104,11 +103,17 @@ ESTABLISHED状态，完成三次握手
 + Get 多用于无副作用，幂等的场景，例如搜索关键字。Post 多用于副作用，不幂等的场景，例如注册。
 + 备注：副作用指对服务器上的资源做改变，搜索是无副作用的，注册是副作用的。幂等指发送 M 和 N 次请求（两者不相同且都大于 1），服务器上资源的状态一致，比如注册 10 个和 11 个帐号是不幂等的，对文章进行更改 10 次和 11 次是幂等的。因为前者是多了一个账号（资源），后者只是更新同一个资源。
 
-### 14.什么是正向代理？什么是反向代理？
+### 14. post请求常见的content-type
+1. **application/x-www-form-urlencoded**: 最常见的 POST 提交数据的方式了。浏览器的原生 form 表单，如果不设置 enctype 属性.
+2. **multipart/form-data**: 使用表单上传文件时，必须让 form 的 enctyped 等于这个值。一般用来上传文件。
+3. **application/json**：告诉服务端消息主体是序列化后的 JSON 字符串。上传复杂的结构化数据。
+4. **text/xml**：使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。
+
+### 15.什么是正向代理？什么是反向代理？
 + **正向代理** 就是客户端向代理服务器发送请求，并且指定目标服务器，之后代理向目标服务器转交并且将获得的内容返回给客户端。服务器并不知道是谁发的请求，比如翻墙。
 + **反向代理** 代理的是服务器，代理会判断请求走向何处，并将请求转交给客户端，客户端只会觉得这个代理是一个真正的服务器。Nginx就是性能非常好的反向代理服务器，用来做负载均衡。
 
-### 17.介绍一下HTTPS的连接过程
+### 16.介绍一下HTTPS的连接过程
 + HTTPS 还是通过了 HTTP 来传输信息，但是信息通过 TLS 协议进行了加密。
 + TLS 协议位于传输层之上，应用层之下。首次进行 TLS 协议传输需要两个 RTT ，接下来可以通过 Session Resumption 减少到一个 RTT。
 + 在 TLS 中使用了两种加密技术，分别为：对称加密和非对称加密。
@@ -119,7 +124,7 @@ ESTABLISHED状态，完成三次握手
 4. 服务端收到加密过的随机值并使用私钥解密获得第三个随机值，这时候两端都拥有了三个随机值，可以通过这三个随机值按照之前约定的加密方式生成密钥，接下来的通信就可以通过该密钥来加密解密
 + 在 TLS 握手阶段，两端使用**非对称加密的方式来通信**，但是因为非对称加密损耗的性能比对称加密大，所以在正式传输数据时，两端使用**对称加密的方式通信**。
 
-### 18.介绍一下DNS的查找过程？
+### 17.介绍一下DNS的查找过程？
 递归查询
 
 第一步：在hosts静态文件、DNS解析器缓存中查找某主机的ip地址
@@ -134,40 +139,51 @@ ESTABLISHED状态，完成三次握手
 
 迭代查询参考：[DNS查询过程](https://www.cnblogs.com/vickey-wu/p/6557439.html)
 
-### 19.http连接性能优化，长连接，keep-alive
+### 18.http连接性能优化，长连接，keep-alive
 + HTTP1.1开始,默认采用持久连接,使用了一种叫做keepalive connections 的机制,它可以在传输数据后仍然保持连接,当客户端再次获取数据时,直接使用刚刚空闲下来的连接,而无需再次握手.低线路负载，提高传输速度.
 + Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。实现长连接需要客户端和服务端都支持长连接。
 + HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。
 
-### 20. websocket 和http区别
+### 19. websocket 和http区别
 1. websocket是持久连接的协议,而http是非持久连接的协议.
 2. websocket是双向通信协议,模拟socket协议,可以双向发送消息,而http是单向的.
 3. websocket的服务端可以主动向客服端发送信息,而http的服务端只有在客户端发起请求时才能发送数据,无法主动向客户端发送信息.
 
 参考： [http,websocket和socket详解](https://blog.csdn.net/qq_38859786/article/details/80523642)
 
-### 23.post请求常见的content-type
-1. **application/x-www-form-urlencoded**: 最常见的 POST 提交数据的方式了。浏览器的原生 form 表单，如果不设置 enctype 属性.
-2. **multipart/form-data**: 使用表单上传文件时，必须让 form 的 enctyped 等于这个值。一般用来上传文件。
-3. **application/json**：告诉服务端消息主体是序列化后的 JSON 字符串。上传复杂的结构化数据。
-4. **text/xml**：使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。
-
-### 24.强制缓存和协商缓存
+### 20. 强制缓存和协商缓存
 + **强制缓存**： 浏览器在请求某一资源时，会先获取该资源缓存的header信息，判断是否命中强缓存（cache-control和expires信息），若命中直接从缓存中获取资源信息，包括缓存header信息；本次请求根本就不会与服务器进行通信；
 + **协商缓存**： 如果没有命中强缓存，浏览器会发送请求到服务器，请求会携带第一次请求返回的有关缓存的header字段信息（Last-Modified/If-Modified-Since和Etag/If-None-Match），由服务器根据请求中的相关header信息来比对结果是否协商缓存命中；若命中，则服务器返回新的响应header信息更新缓存中的对应header信息，但是并不返回资源内容，它会告知浏览器可以直接从缓存获取；否则返回最新的资源内容
 
 参考： [http协商缓存VS强缓存](https://www.cnblogs.com/wonyun/p/5524617.html)
 
-### 25.跨域有哪些方法
-1. **JSONP**
+### 21. 什么是跨域，跨域有哪些方法？
++ 只要协议、域名、端口有任何一个不同，都被当作是不同的域。
++ 跨域有如下几种方法：
+1. **JSONP**，只能用get方法
 2. **通过修改document.domain来跨子域。** 只能把document.domain设置成自身或更高一级的父域。
 3. **使用window.name来进行跨域** ；window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
 4. **使用HTML5中新引进的window.postMessage方法来跨域传送数据** 使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。
-5. **CORS**
+5. **CORS** CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。
 6. **服务器代理**
 7. **flash**
 
-### 26.写一个jsonp的实现
+### 22. 什么是CORS？如何实现？
++ 允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。
++ 简单请求：
+1. 对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个**Origin**字段。Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
+2. 如果Origin指定的源，不在许可范围内，服务器会返回一个正常的HTTP回应。浏览器发现，这个回应的头信息没有包含**Access-Control-Allow-Origin**字段（详见下文），就知道出错了，从而抛出一个错误，被XMLHttpRequest的onerror回调函数捕获。
+3. CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发到服务器，一方面要服务器同意，指定**Access-Control-Allow-Credentials**。另一方面，开发者必须在AJAX请求中打开**withCredentials**属性。
++ 非简单请求：非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为"预检"请求（preflight）。
+1. 浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。
+2. "预检"请求用的请求方法是OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
+3. 除了Origin字段，"预检"请求的头信息包括两个特殊字段。Access-Control-Request-Method和 Access-Control-Request-Headers。
+4. 服务器收到"预检"请求以后，检查了Origin、Access-Control-Request-Method和Access-Control-Request-Headers字段以后，确认允许跨源请求，就可以做出回应。
+5. 一旦服务器通过了"预检"请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个Origin头信息字段。服务器的回应，也都会有一个Access-Control-Allow-Origin头信息字段。
+
+参考材料： [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
+### 23.写一个jsonp的实现
 + 利用了 **script** 标签没有跨域限制这一“漏洞”来达到与第三方通讯的目的。简单地说，该协议就是，允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名包裹json数据，这样客户端就可以随意定制自己的函数自动处理返回的数据了。
 ```JavaScript
     var flightHandler = data=>{
@@ -178,16 +194,3 @@ ESTABLISHED状态，完成三次握手
     script.setAttribute('src', url);
     document.getElementsByTagName('head')[0].appendChild(script);
 ```
-
-### 27.如何解决跨域问题
-跨域解决方法： 1. CORS（跨域资源共享）； 2. JSONP跨域； 3. 图像ping跨域； 4. 服务器代理； 5. document.domain 跨域； 6. window.name 跨域； 7. location.hash 跨域； 8. postMessage 跨域；
-
-参考： [浏览器同源策略及跨域的解决方法](https://www.cnblogs.com/laixiangran/p/9064769.html)
-
-### 28.HTTP状态码
-**200 OK**  请求已成功，请求所希望的响应头或数据体将随此响应返回。
-**304 Not Modified** 服务器内容没有修改。
-**307 Temporary Redirect** 重定向
-**401 Unauthorized** 当前请求需要用户验证。
-**404 Not Found** 请求失败。
-**500 Internal Server Error** 服务器出错。
