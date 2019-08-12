@@ -4,13 +4,19 @@
 [50道CSS基础面试题中的答案真的就只是答案吗](https://segmentfault.com/a/1190000013860482)
 [css面试总结](https://funteas.com/topic/5ada8eac230d1e5e25e45b89)
 
-
-### 1.移动端如何解决1px问题
-用媒体查询根据dpr用“伪元素+transform”对边框进行缩放
-
-用JS根据屏幕尺寸和dpr精确地设置不同屏幕所应有的rem基准值和initial-scale缩放值。
-
-参考： [移动端高清适配方案（解决图片模糊问题、1px细线问题）](http://www.cnblogs.com/superlizhao/p/8729190.html)
+### 1. 解释一下display的几个常用的属性值，inline，block，inline-block
++ inline（行内元素）:
+1. 使元素变成行内元素，拥有行内元素的特性，即可以与其他行内元素共享一行，不会独占一行. 
+2. 不能更改元素的height，width的值，大小由内容撑开. 
+3. 可以使用padding上下左右都有效，margin只有left和right产生边距效果，但是top和bottom就不行.
++ block（块级元素）:
+1. 使元素变成块级元素，独占一行，在不设置自己的宽度的情况下，块级元素会默认填满父级元素的宽度. 
+2. 能够改变元素的height，width的值. 
+3. 可以设置padding，margin的各个属性值，top，left，bottom，right都能够产生边距效果.
++ inline-block（融合行内于块级）:
+1. 可以和其他元素共享一行；
+2. 能够改变元素的height，width的值. 
+3. 可以设置padding，margin的各个属性值，top，left，bottom，right都能够产生边距效果.
 
 ### 2. 介绍flex布局，用flex实现三列布局
 Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。
@@ -34,28 +40,19 @@ Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型�
 
 ### 3.水平居中的方法
 1. 元素为行内元素，设置父元素text-align:center
-
 2. 如果元素宽度固定，可以设置左右margin为auto;
-
 3. 如果元素宽度固定,通过使用绝对定位，以及设置元素margin-left为其宽度的一半；
-
 4. 如果元素为绝对定位，设置父元素position为relative，元素设left:0;right:0;margin:auto;
-
 5. 使用flex-box布局，指定justify-content属性为center
-
 6. display设置为tabel-ceil,text-aligin:center
 
 参考：[水平居中](https://blog.csdn.net/dengdongxia/article/details/80297116)
 
 ### 4.垂直居中的方法
 1. 将显示方式设置为表格，display:table-cell,同时设置vertial-align：middle
-
 2. 使用flex布局，设置为align-item：center
-
 3. 绝对定位中设置bottom:0,top:0,并设置margin:auto
-
 4. 绝对定位中固定高度时设置top:50%，margin-top值为高度一半的负值
-
 5. 文本垂直居中设置line-height为height值
 
 参考：[垂直居中](https://www.cnblogs.com/hutuzhu/p/4450850.html)
@@ -76,7 +73,8 @@ Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型�
 ```
 
 #### 6. 讲讲盒模型
-+ 盒模型分为标准模型和IE模型两种
++ 盒模型分为标准模型和IE模型两种。
++ 盒模型从内到外分别是content，padding，border，margin。
 + 盒模型的宽高只是内容（content）的宽高，而在IE模型中盒模型的宽高是内容(content)+填充(padding)+边框(border)的总宽高。
 ```
 /* 标准模型 */
@@ -93,10 +91,9 @@ box-sizing:border-box;
 + **inherit**  规定应该从父元素继承 position 属性的值。
 
 ### 8. CSS选择器分类
-+ 不同级别：排序：!important > 行内样式>ID选择器 > 类选择器=伪类=属性 > 标签=伪元素 > 通配符 > 继承 > 浏览器默认属性
++ 不同级别：排序：!important > 行内样式 > ID选择器 > 类选择器=伪类=属性 > 标签=伪元素 > 通配符 > 继承 > 浏览器默认属性
 + 同一级别：后写的会覆盖先写的。
 + 联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）。
-
 
 ### 9.使元素消失的方法
 + **opacity：0**：该元素隐藏起来，但不会改变页面布局，如果该元素绑定了事件会触发。
@@ -116,8 +113,8 @@ box-sizing:border-box;
 ```
 
 ### 11.SVG和Canvas的区别
-Canvas：依赖分辨率；不支持事件处理器；弱的文本渲染能力；能够以 .png 或 .jpg 格式保存结果图像；最适合图像密集型的游戏，其中的许多对象会被频繁重绘
-SVG：不依赖分辨率；支持事件处理器；最适合带有大型渲染区域的应用程序（比如谷歌地图）；复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）；不适合游戏应用
++ **Canvas：** 依赖分辨率；不支持事件处理器；弱的文本渲染能力；能够以 .png 或 .jpg 格式保存结果图像；最适合图像密集型的游戏，其中的许多对象会被频繁重绘
++ **SVG：** 不依赖分辨率；支持事件处理器；最适合带有大型渲染区域的应用程序（比如谷歌地图）；复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）；不适合游戏应用
 
 ### 12.边距重叠解决方案BFC (块级格式化上下文)
 + 一个HTML元素要创建BFC，则满足下列的任意一个或多个条件即可：
