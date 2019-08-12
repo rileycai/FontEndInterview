@@ -203,7 +203,7 @@ const curry = (fn, currArgs=[]) => {
         let args = Array.from(arguments);
         [].push.apply(args,currArgs);
         if (args.length < fn.length) {
-            return curry.call(this,fn,args);
+            return curry.call(this,fn,...args);
         }
         return fn.apply(this,args);
     }
