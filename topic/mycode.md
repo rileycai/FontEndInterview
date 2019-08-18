@@ -151,6 +151,84 @@ function deepClone(obj,hash=new Map()){
   })
   return target;
 }
+
+// 复杂版本
+const clone = parent => {
+  // 判断类型
+  const isType = (obj, type) => {
+    if (typeof obj !== "object") return false;
+    const typeString = Object.prototype.toString.call(obj);
+    let flag;
+    switch (type) {
+      case "Array":
+        flag = typeString === "[object Array]";
+        break;
+      case "Date":
+        flag = typeString === "[object Date]";
+        break;
+      case "RegExp":
+        flag = typeString === "[object RegExp]";
+        break;
+      default:
+        flag = false;
+    }
+    return flag;
+  };
+
+  // 处理正则
+  const getRegExp = re => {
+    var flags = "";
+    if (re.global) flags += "g";
+    if (re.ignoreCase) flags += "i";
+    if (re.multiline) flags += "m";
+    return flags;
+  };
+  // 维护两个储存循环引用的数组
+  const parents = [];
+  const children = [];
+
+  const _clone = parent => {
+    if (parent === null) return null;
+    if (typeof parent !== "object") return parent;
+
+    let child, proto;
+
+    if (isType(parent, "Array")) {
+      // 对数组做特殊处理
+      child = [];
+    } else if (isType(parent, "RegExp")) {
+      // 对正则对象做特殊处理
+      child = new RegExp(parent.source, getRegExp(parent));
+      if (parent.lastIndex) child.lastIndex = parent.lastIndex;
+    } else if (isType(parent, "Date")) {
+      // 对Date对象做特殊处理
+      child = new Date(parent.getTime());
+    } else {
+      // 处理对象原型
+      proto = Object.getPrototypeOf(parent);
+      // 利用Object.create切断原型链
+      child = Object.create(proto);
+    }
+
+    // 处理循环引用
+    const index = parents.indexOf(parent);
+
+    if (index != -1) {
+      // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
+      return children[index];
+    }
+    parents.push(parent);
+    children.push(child);
+
+    for (let i in parent) {
+      // 递归
+      child[i] = _clone(parent[i]);
+    }
+
+    return child;
+  };
+  return _clone(parent);
+};
 ```
 
 ### 9.实现双向数据绑定
@@ -213,30 +291,24 @@ const curry = (fn, currArgs=[]) => {
 ### 12.写个js继承的例子
 ```JavaScript
 //寄生组合继承
-function Animal (name) {
+function Parent (name) {
   // 属性
-  this.name = name || 'Animal';
+  this.name = name || 'Sony';
   // 实例方法
   this.sleep = function(){
     console.log(this.name + '正在睡觉！');
   }
 }
 // 原型方法
-Animal.prototype.eat = function(food) {
+Parent.prototype.eat = function(food) {
   console.log(this.name + '正在吃：' + food);
 };
-function Cat(name){
-  Animal.call(this);
+function Child(name){
+  Parent.call(this);
   this.name = name || 'Tom';
 }
-(function(){
-  // 创建一个没有实例方法的类
-  var Super = function(){};
-  Super.prototype = Animal.prototype;
-  //将实例作为子类的原型
-  Cat.prototype = new Super();
-})();
-Cat.prototype.constructor = Cat;
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
 ```
 参考： [JS继承实现方式](https://www.cnblogs.com/humin/p/4556820.html)
 
@@ -254,29 +326,40 @@ Cat.prototype.constructor = Cat;
 
 ### 14. 函数去抖
 ```JavaScript
-var debounce = function(delay, cb) {
-    var timer;
-    return function() {
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(function() {
-            cb();
-        }, delay);
-    }
-}
+const debounce = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+};
 ```
 
 ### 15. 函数节流
 ```JavaScript
-var throttle = function(delay, cb) {
-    var startTime = Date.now();
-    return function() {
-        var currTime = Date.now();
-        if (currTime - startTime > delay) {
-            cb();
-            startTime = currTime;
-        }
+const throttle = (fn, delay = 500) => {
+  let startTime = Date.now();
+  return (...args) => {
+    let currTime = Date.now();
+    if(currTime - startTime > delay){
+      fn.apply(this,args);
+      startTime = currTime;
     }
+  }
 }
+const throttle = (fn, delay = 500) => {
+  let flag = true;
+  return (...args) => {
+    if (!flag) return;
+    flag = false;
+    setTimeout(() => {
+      fn.apply(this, args);
+      flag = true;
+    }, delay);
+  };
+};
 ```
 
 ### 16. 实现一个instanceof
@@ -289,5 +372,16 @@ function instanceOf(left,right) {
         if(proto === prototype) return true;
         proto = proto.__proto__;
     }
+}
+```
+
+### 17. 模拟Object.create
++ Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
+```javascript
+function create(proto) {
+  function F() {}
+  F.prototype = proto;
+
+  return new F();
 }
 ```

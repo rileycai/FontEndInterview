@@ -163,6 +163,10 @@ var vm=new Vue({
 5. provide/inject：以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效，这成为了跨组件通信的基础
 
 ### 15. Proxy与Object.defineProperty的优劣对比?
++ **Object.defineProperty的缺点**
+1. 无法监听数组变化。Vue的文档提到了Vue是可以检测到数组变化的，但是只有以下八种方法,vm.items[indexOfItem] = newValue这种是无法检测的。
+2. 只能劫持对象的属性,因此我们需要对每个对象的每个属性进行遍历，如果属性值也是对象那么需要深度遍历,显然能劫持一个完整的对象是更好的选择。。
++ **Proxy的优点：**
 1. Proxy可以直接监听对象而非属性
 2. Proxy可以直接监听数组的变化
 3. Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等是Object.defineProperty不具备的
