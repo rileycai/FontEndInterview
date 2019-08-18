@@ -297,7 +297,7 @@ Cat.prototype.constructor = Cat;
 参考： [HTTP1.0、HTTP1.1 和 HTTP2.0 的区别](https://mp.weixin.qq.com/s/GICbiyJpINrHZ41u_4zT-A)
 
 ### 2.post请求常见的content-type
-1. **application/x-www-form-urlencoded**: 最常见的 POST 提交数据的方式了。浏览器的原生 form 表单，如果不设置 enctype 属性.
+1. **application/x-www-form-urlencoded**: 最常见的 POST 提交数据的方式了。浏览器的原生 form 表单。
 2. **multipart/form-data**: 使用表单上传文件时，必须让 form 的 enctyped 等于这个值。一般用来上传文件。
 3. **application/json**：告诉服务端消息主体是序列化后的 JSON 字符串。上传复杂的结构化数据。
 4. **text/xml**：使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。
