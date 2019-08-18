@@ -66,7 +66,7 @@
 + **卸载阶段：**
 1. componentWillUnmount: 当我们的组件被卸载或者销毁了就会调用，我们可以在这个函数里去清除一些定时器，取消网络请求，清理无效的DOM元素等垃圾清理工作
 
-![lifecycles](image/react-lifecycles.png)
+![lifecycles](../image/react-lifecycles.png)
 
 ### 8. React的请求应该放在哪个生命周期中?
 + React的异步请求到底应该放在哪个生命周期里,有人认为在componentWillMount中可以提前进行异步请求,避免白屏,其实这个观点是有问题的.
@@ -88,7 +88,7 @@
 5. 发布订阅模式: 发布者发布事件，订阅者监听事件并做出反应,我们可以通过引入event模块进行通信
 6. 全局状态管理工具: 借助Redux或者Mobx等全局状态管理工具进行通信,这种工具会维护一个全局状态中心Store,并根据不同的事件产生新的状态
 
-### 11. 什么是高阶组件？
+### 11. 什么是高阶组件(HOC)？
 + 高阶组件就是一个 React 组件包裹着另外一个 React 组件
 + 两种实现方法：
 1. **属性代理 Props Proxy**
@@ -120,3 +120,82 @@ Inheritance Inversion 允许 HOC 通过 this 访问到 WrappedComponent，意味
 + 你可以用 Inheritance Inversion 做什么？
 1. 渲染劫持
 2. 操作 state
+
+### 12. mixin、hoc、render props、react-hooks的优劣如何？
+#### **Mixin的缺陷**
+1. 组件与 Mixin 之间存在隐式依赖（Mixin 经常依赖组件的特定方法，但在定义组件时并不知道这种依赖关系）
+2. 多个 Mixin 之间可能产生冲突（比如定义了相同的state字段）
+3. Mixin 倾向于增加更多状态，这降低了应用的可预测性（The more state in your application, the harder it is to reason about it.），导致复杂度剧增
+4. 隐式依赖导致依赖关系不透明，维护成本和理解成本迅速攀升：
+#### **HOC相比Mixin的优势**
+1. HOC通过外层组件通过 Props 影响内层组件的状态，而不是直接改变其 State不存在冲突和互相干扰,这就降低了耦合度
+2. 不同于 Mixin 的打平+合并，HOC 具有天然的层级结构（组件树结构），这又降低了复杂度
+#### **HOC的缺陷**
+1. 扩展性限制: HOC 无法从外部访问子组件的 State因此无法通过shouldComponentUpdate滤掉不必要的更新,React 在支持 ES6 Class 之后提供了React.PureComponent来解决这个问题
+2. Ref 传递问题: Ref 被隔断,后来的React.forwardRef 来解决这个问题
+3. Wrapper Hell: HOC可能出现多层包裹组件的情况,多层抽象同样增加了复杂度和理解成本
+4. 命名冲突: 如果高阶组件多次嵌套,没有使用命名空间的话会产生冲突,然后覆盖老属性
+5. 不可见性: HOC相当于在原有组件外层再包装一个组件,你压根不知道外层的包装是啥,对于你是黑盒
+#### **Render Props优点:**
+1. 上述HOC的缺点Render Props都可以解决
+#### **Render Props缺陷:**
+1. 使用繁琐: HOC使用只需要借助装饰器语法通常一行代码就可以进行复用,Render Props无法做到如此简单
+2. 嵌套过深: Render Props虽然摆脱了组件多层嵌套的问题,但是转化为了函数回调的嵌套
+#### **React Hooks优点:**
+1. 简洁: React Hooks解决了HOC和Render Props的嵌套问题,更加简洁
+2. 解耦: React Hooks可以更方便地把 UI 和状态分离,做到更彻底的解耦
+3. 组合: Hooks 中可以引用另外的 Hooks形成新的Hooks,组合变化万千
+4. 函数友好: React Hooks为函数组件而生,从而解决了类组件的几大问题:
+this 指向容易错误
+分割在不同声明周期中的逻辑使得代码难以理解和维护
+代码复用成本高（高阶组件容易使代码量剧增）
+#### **React Hooks缺点:**
+1. 额外的学习成本
+2. 写法上有限制（不能出现在条件、循环中），并且写法限制增加了重构成本
+3. 破坏了PureComponent、React.memo浅比较的性能优化效果（
+4. 在闭包场景可能会引用到旧的state、props值
+5. 内部实现上不直观（依赖一份可变的全局状态，不再那么“纯”）
+6. React.memo并不能完全替代shouldComponentUpdate（因为拿不到 state change，只针对 props change）
+
+### 13. 你对 Time Slice的理解?
+1. React 在渲染（render）的时候，不会阻塞现在的线程
+2. 如果你的设备足够快，你会感觉渲染是同步的
+3. 如果你设备非常慢，你会感觉还算是灵敏的
+4. 虽然是异步渲染，但是你将会看到完整的渲染，而不是一个组件一行行的渲染出来
+
+### 14. redux的工作流程?
++ 核心概念如下：
+1. Store：保存数据的地方，你可以把它看成一个容器，整个应用只能有一个Store。
+2. State：Store对象包含所有数据，如果想得到某个时点的数据，就要对Store生成快照，这种时点的数据集合，就叫做State。
+3. Action：State的变化，会导致View的变化。但是，用户接触不到State，只能接触到View。所以，State的变化必须是View导致的。Action就是View发出的通知，表示State应该要发生变化了。
+4. Action Creator：View要发送多少种消息，就会有多少种Action。如果都手写，会很麻烦，所以我们定义一个函数来生成Action，这个函数就叫Action Creator。
+5. Reducer：Store收到Action以后，必须给出一个新的State，这样View才会发生变化。这种State的计算过程就叫做Reducer。Reducer是一个函数，它接受Action和当前State作为参数，返回一个新的State。
+6. dispatch：是View发出Action的唯一方法。
++ 然后我们过下整个工作流程
+1. 首先，用户（通过View）发出Action，发出方式就用到了dispatch方法。
+2. 然后，Store自动调用Reducer，并且传入两个参数：当前State和收到的Action，Reducer会返回新的State
+3. State一旦有变化，Store就会调用监听函数，来更新View。
+
+### 15. react-redux是如何工作的?
+1. Provider: Provider的作用是从最外部封装了整个应用，并向connect模块传递store
+2. connect: 负责连接React和Redux
++ 获取state: connect通过context获取Provider中的store，通过store.getState()获取整个store tree 上所有state
++ 包装原组件: 将state和action通过props的方式传入到原组件内部wrapWithConnect返回一个ReactComponent对象Connect，Connect重新render外部传入的原组件WrappedComponent，并把connect中传入的mapStateToProps, mapDispatchToProps与组件上原有的props合并后，通过属性的方式传给WrappedComponent
++ 监听store tree变化: connect缓存了store tree中state的状态,通过当前state状态和变更前state状态进行比较,从而确定是否调用this.setState()方法触发Connect及其子组件的重新渲染
+
+### 16. 你对MVVM的理解?
++ **Model 层:** 对应数据层的域模型，它主要做域模型的同步。通过 Ajax/fetch 等 API 完成客户端和服务端业务 Model 的同步。在层间关系里，它主要用于抽象出 ViewModel 中视图的 Model。
++ **View 层:**作为视图模板存在，在 MVVM 里，整个 View 是一个动态模板。除了定义结构、布局外，它展示的是 ViewModel 层的数据和状态。View 层不负责处理状态，View 层做的是 数据绑定的声明、 指令的声明、 事件绑定的声明。
++ **ViewModel 层:**把 View 需要的层数据暴露，并对 View 层的 数据绑定声明、 指令声明、 事件绑定声明 负责，也就是处理 View 层的具体业务逻辑。ViewModel 底层会做好绑定属性的监听。当 ViewModel 中数据变化，View 层会得到更新；而当 View 中声明了数据的双向绑定（通常是表单元素），框架也会监听 View 层（表单）值的变化。一旦值变化，View 层绑定的 ViewModel 中的数据也会得到自动更新。
+
+![MVVM](../image/MVVM.png)
+
+### 17. MVVM的优缺点?
++ **优点**
+1. 分离视图（View）和模型（Model）,降低代码耦合，提高视图或者逻辑的重用性: 比如视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定不同的"View"上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑
+2. 提高可测试性: ViewModel的存在可以帮助开发者更好地编写测试代码
+3. 自动更新dom: 利用双向绑定,数据更新后视图自动更新,让开发者从繁琐的手动dom中解放
++ **缺点**
+1. Bug很难被调试: 因为使用双向绑定的模式，当你看到界面异常了，有可能是你View的代码有Bug，也可能是Model的代码有问题。数据绑定使得一个位置的Bug被快速传递到别的位置，要定位原始出问题的地方就变得不那么容易了。另外，数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的
+2. 一个大的模块中model也会很大，虽然使用方便了也很容易保证了数据的一致性，当时长期持有，不释放内存就造成了花费更多的内存
+3. 对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高

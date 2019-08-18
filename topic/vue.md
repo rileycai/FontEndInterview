@@ -156,3 +156,15 @@ var vm=new Vue({
 ```
 
 ### 14. 父子组件如何通信，兄弟组件如何通信
+1. props/$emit+v-on: 通过props将数据自上而下传递，而通过$emit和v-on来向上传递信息。
+2. EventBus: 通过EventBus进行信息的发布与订阅
+3. vuex: 是全局数据管理库，可以通过vuex管理全局的数据流
+4. $attrs/$listeners: Vue2.4中加入的$attrs/$listeners可以进行跨级的组件通信
+5. provide/inject：以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效，这成为了跨组件通信的基础
+
+### 15. Proxy与Object.defineProperty的优劣对比?
+1. Proxy可以直接监听对象而非属性
+2. Proxy可以直接监听数组的变化
+3. Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等是Object.defineProperty不具备的
+4. Proxy返回的是一个新对象,我们可以只操作新的对象达到目的,而Object.defineProperty只能遍历对象属性直接修改
+5. Proxy作为新标准将受到浏览器厂商重点持续的性能优化，也就是传说中的新标准的性能红利
