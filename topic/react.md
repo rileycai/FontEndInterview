@@ -66,4 +66,4 @@
 + **卸载阶段：**
 1. componentWillUnmount: 当我们的组件被卸载或者销毁了就会调用，我们可以在这个函数里去清除一些定时器，取消网络请求，清理无效的DOM元素等垃圾清理工作
 
-![lifecycles](./topic/image/react-lifecycles.png)
+![lifecycles](../image/react-lifecycles.png)
