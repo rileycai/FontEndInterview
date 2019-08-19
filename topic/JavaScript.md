@@ -442,4 +442,10 @@ const _new = (fn, ...args) => {
 }
 ```
 
+### 29. JS中substr与substring的区别？
++ js中substr和substring都是截取字符串中子串，非常相近，可以有一个或两个参数。
++ substr(start [，length]) 第一个字符的索引是0，start必选 length可选
++ substring(start [, end]) 第一个字符的索引是0，start必选 end可选
+
+
 

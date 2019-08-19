@@ -209,3 +209,10 @@ padding-top: calc(100%*9/16);
 + position 为 absolute 或 fixed
 + overflow 不为 visible 的块元素
 + display 为 inline-block, table-cell, table-caption
+
+### less和scss的区别是啥？
+1. 编译环境不一样，Sass的安装需要Ruby环境，是在服务端处理的，而Less是需要引入less.js来处理Less代码输出css到浏览器，也可以在开发环节使用Less，然后编译成css文件，直接放到项目中，也有 Less.app、SimpleLess、CodeKit.app这样的工具，也有在线编译地址。
+2. 变量符不一样，Less是@，而Scss是$，而且变量的作用域也不一样。
+3. 输出设置，Less没有输出设置，Sass提供4中输出选项：nested, compact, compressed 和 expanded。
+4. Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。
+5. scss引用的外部文件命名必须以_开头, 如下例所示:其中_test1.scss、_test2.scss、_test3.scss文件分别设置的h1 h2 h3。文件名如果以下划线_开头的话，Sass会认为该文件是一个引用文件，不会将其编译为css文件.

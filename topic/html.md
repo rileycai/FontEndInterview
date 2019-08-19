@@ -24,7 +24,18 @@ viewport常常使用在响应式开发以及移动web开发中，viewport顾名�
 ### 5.什么是web语义化，有什么好处？
 + web语义化：让机器可以读懂内容。有以下好处：
 + 有利于SEO，有利于搜索引擎**爬虫**更好的理解我们的网页，从而获取更多的有效信息，提升网页的权重。
++ 语义类还可以支持读屏软件，根据文章可以自动生成目录。
 + 在没有CSS的时候能够清晰的看出网页的结构，增强可读性。
 + 便于团队开发和维护，语义化的HTML可以让开发者更容易的看明白，从而提高团队的效率和协调能力。
 + 支持多终端设备的浏览器渲染。
-+ 方便特殊群体阅读信息，比如屏幕阅读器/盲人阅读器对 **strong** 会有一个加重的读音
++ 方便特殊群体阅读信息，比如屏幕阅读器/盲人阅读器对 **strong** 会有一个加重的读音。
+
+### 6. HTML5与HTML4的不同之处？
++ 文件类型声明（<!DOCTYPE>）仅有一型：<!DOCTYPE HTML>。
++ 新的解析顺序：不再基于SGML。
++ 新的元素：section, video, progress, nav, meter, time, aside, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, mark, output, rp, rt, ruby, source, summary, wbr。
++ input元素的新类型：date, email, url等等。
++ 新的属性：ping（用于a与area）, charset（用于meta）, async（用于script）。
++ 全域属性：id, tabindex, repeat。
++ 新的全域属性：contenteditable, contextmenu, draggable, dropzone, hidden, spellcheck。
++ 移除元素：acronym, applet, basefont, big, center, dir, font, frame, frameset, isindex, noframes, strike, tt
