@@ -106,28 +106,28 @@ Function.prototype.myBind = (context = window) => {
 const _new = (fn, ...args) => {
     let obj = Object.creat(fn.prototype);
     let ret = fn.apply(obj, args);
-    ret instanceof Object ? ret : obj;
+    return ret instanceof Object ? ret : obj;
 }
 ```
 
 ### 7.promise实现ajax
 ```Javascript
 //promise 实现ajax
-function ajax(method, url, data) {
-    var request = new XMLHttpRequest();
-    return new Promise(function (resolve, reject) {
-        request.onreadystatechange = function () {
-            if (request.readyState === 4) {
-                if (request.status === 200) {
+const ajax = (method, url, data) => {
+    let request = new XMLHttpRequest();
+    return new Promise((resolve, reject) => {
+        request.onreadystatechange = () => {
+            if(request.readyState === 4) {
+                if(request.status === 200) {
                     resolve(request.responseText);
                 } else {
                     reject(request.status);
                 }
             }
-        };
+        }
         request.open(method, url);
         request.send(data);
-    });
+    })
 }
 ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，获得响应内容
     log.innerText = text;
@@ -138,18 +138,20 @@ ajax('GET', '/api/categories').then(function (text) {   // 如果AJAX成功，�
 
 ### 8.如何实现一个深拷贝？
 ```JavaScript
-var isObject=obj=>{return (typeof obj === 'object' || typeof obj === 'function') && obj != null;}
-function deepClone(obj,hash=new Map()){
-  if(!isObject(obj))
-    return obj;
-  if(hash.has(obj))
-    return hash.get(obj);
-  var target=Array.isArray(obj)?[]:{};
-  hash.set(obj,target);
-  reflect.ownKeys(obj).foreach(key => {
-      target[key] = isObejct(obj[key])? deepClone(obj[key],hash) : obj[key]
-  })
-  return target;
+var isObject = obj => {
+    return (typeof obj === 'object' || typeof obj === 'function') && obj != null;
+}
+const deepClone = (obj, hash = new Map()) => {
+    if (!isObject(obj))
+        return obj;
+    if (hash.has(obj))
+        return hash.get(obj);
+    var target = Array.isArray(obj) ? [] : {};
+    hash.set(obj, target);
+    reflect.ownKeys(obj).foreach(key => {
+        target[key] = isObject(obj[key]) ? deepClone(obj[key], hash) : obj[key];
+    })
+    return target;
 }
 
 // 复杂版本
@@ -258,13 +260,13 @@ const clone = parent => {
 
 ### 10.手写快速排序算法
 ```JavaScript
-function quickSort(arr){
-    if(arr.length<=1)
+const quickSort = (arr) => {
+    if (arr.length <= 1)
         return arr;
-    var mid=Math.floor(arr.length/2);
-    var val=arr.splice(mid,1)[0];
-    var left=[],right=[];
-    for(var i=0;i<arr.length;i++){
+    let mid = Math.floor(arr.length/2);
+    let val = arr.splice(mid,1)[0];
+    let left = [], right = [];
+    for(let i=0; i<arr.length; i++) {
         if(arr[i]<val)
             left.push(arr[i]);
         else

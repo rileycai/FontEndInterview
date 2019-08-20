@@ -55,6 +55,8 @@
 
 ### getElementsByName和querySelectorAll的区别？
 
+### input标签的type有哪些类型？
+
 ### 代码题： 写一个bind的实现？
 
 ### 代码题： 写一个Math.pow(x,y)的实现？
