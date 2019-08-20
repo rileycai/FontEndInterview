@@ -366,12 +366,14 @@ const throttle = (fn, delay = 500) => {
 
 ### 16. 实现一个instanceof
 ```javascript
-function instanceOf(left,right) {
+const _instanceOf = (left, right) => {
     let proto = left.__proto__;
-    let prototype = right.prototype
+    let prototype = right.prototype;
     while(true) {
-        if(proto === null) return false;
-        if(proto === prototype) return true;
+        if (proto === null)
+            return false;
+        if (proto === prototype)
+            return true;
         proto = proto.__proto__;
     }
 }
@@ -380,10 +382,10 @@ function instanceOf(left,right) {
 ### 17. 模拟Object.create
 + Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
 ```javascript
-function create(proto) {
-  function F() {}
-  F.prototype = proto;
+const create = (prototype) => {
+    function F() {};
+    F.prototype = prototype;
 
-  return new F();
+    return new F();
 }
 ```
