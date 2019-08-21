@@ -56,3 +56,9 @@ data = [
     ]},
 ]
 ```
+
+### 代码题： 字符串assdee转换成edsa，去重反转
+```javascript
+    let str = 'assdee';
+    [...new Set(str.split(''))].reverse().join('')
+```
