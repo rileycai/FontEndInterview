@@ -61,3 +61,14 @@ Webpack 的运行流程是一个串行的过程，从启动到结束会依次执
 + CMD推崇就近依赖，只有在用到某个模块的时候再去require
 
 参考：[前端模块化，AMD与CMD的区别](https://www.cnblogs.com/futai/p/5258349.html)
+
+### 13. 介绍模块化发展历程
++ 模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
+1. IIFE： 使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
+2. AMD： 使用requireJS 来编写模块化，特点：依赖必须提前声明好。
+3. CMD： 使用seaJS 来编写模块化，特点：支持动态引入依赖文件。
+4. CommonJS： nodejs 中自带的模块化。
+5. UMD：兼容AMD，CommonJS 模块化语法。
+6. webpack(require.ensure)：webpack 2.x 版本中的代码分割。
+7. ES Modules： ES6 引入的模块化，支持import 来引入另一个 js 。
+

@@ -389,3 +389,28 @@ const create = (prototype) => {
     return new F();
 }
 ```
+
+### 18. 实现promise.all
+```javascript
+Promise.all = function (list) {
+    if(!Array.isArray(list)){
+        return reject(new TypeError("argument must be anarray"))
+    }
+    return new Promise((resolve, reject) => {
+        let resValues = [];
+        let counts = 0;
+        let len = list.length;
+        for (let i=0; i<len; i++) {
+            Promise.resolve(list[i]).then(res => {
+                counts++;
+                resValues[i] = res;
+                if (counts === len) {
+                    resolve(resValues)
+                }
+            }, err => {
+                reject(err)
+            })
+        }
+    })
+}
+```

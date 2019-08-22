@@ -68,6 +68,9 @@
 
 ![lifecycles](../image/react-lifecycles.png)
 
++ 旧版本的生命周期
+![lifecycles](../image/react-life.jpg)
+
 ### 8. React的请求应该放在哪个生命周期中?
 + React的异步请求到底应该放在哪个生命周期里,有人认为在componentWillMount中可以提前进行异步请求,避免白屏,其实这个观点是有问题的.
 + 由于JavaScript中异步事件的性质，当您启动API调用时，浏览器会在此期间返回执行其他工作。当React渲染一个组件时，它不会等待componentWillMount它完成任何事情 - React继续前进并继续render,没有办法“暂停”渲染以等待数据到达。

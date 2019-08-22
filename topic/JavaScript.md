@@ -447,5 +447,16 @@ const _new = (fn, ...args) => {
 + substr(start [，length]) 第一个字符的索引是0，start必选 length可选
 + substring(start [, end]) 第一个字符的索引是0，start必选 end可选
 
+### 30. 举出三种判断数组的方法？
++ **Object.prototype.toString.call()**
++ **instanceof**
++ **Array.isArray()**
+```javascript
+Object.prototype.toString.call(an); // "[object Array]"
+[]  instanceof Array; // true
+Array.isArray(arr);  // true
+```
 
-
+### 31. 使用 sort() 对数组 [3, 15, 8, 29, 102, 22] 进行排序，输出结果？
++ sort 函数，可以接收一个函数，返回值是比较两个数的相对顺序的值
++ 根据MDN上对Array.sort()的解释，默认的排序方法会将数组元素转换为字符串，然后比较字符串中字符的UTF-16编码顺序来进行排序。所以'102' 会排在 '15' 前面。结果是[102, 15, 22, 29, 3, 8]

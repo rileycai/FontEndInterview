@@ -126,3 +126,53 @@ let barPromise = getBar();
 let foo = await fooPromise;
 let bar = await barPromise;
 ```
+
+### 14. 介绍下 Promise.all 使用、原理实现及错误处理
++ Promise.all()接受一个由promise任务组成的数组，可以同时处理多个promise任务，当所有的任务都执行完成时，Promise.all()返回resolve，但当有一个失败(reject)，则返回失败的信息，即使其他promise执行成功，也会返回失败。
+```javascript
+Promise.all = function (list) {
+    if(!Array.isArray(list)){
+        return reject(new TypeError("argument must be anarray"))
+    }
+    return new Promise((resolve, reject) => {
+        let resValues = [];
+        let counts = 0;
+        let len = list.length;
+        for (let i=0; i<len; i++) {
+            Promise.resolve(list[i]).then(res => {
+                counts++;
+                resValues[i] = res;
+                if (counts === len) {
+                    resolve(resValues)
+                }
+            }, err => {
+                reject(err)
+            })
+        }
+    })
+}
+```
+
+### 15. 设计并实现promise.race
+```javascript
+Promise._race = promises => new Promise((resolve, reject) => {
+	promises.forEach(promise => {
+		promise.then(resolve, reject)
+	})
+})
+```
+### 16. 设计并实现promise.finally
++ finally() 方法返回一个Promise。在promise结束时，无论结果是fulfilled或者是rejected，都会执行指定的回调函数。这为在Promise是否成功完成后都需要执行的代码提供了一种方式。
+```javascript
+Promise.prototype.finally = function (callback) {
+  let P = this.constructor;
+  return this.then(
+    value  => P.resolve(callback()).then(() => value),
+    reason => P.resolve(callback()).then(() => { throw reason })
+  );
+};
+```
+
+### 17. WeakSet 与 Set 的区别
++ WeakSet 只能储存对象引用，不能存放值，而 Set 对象都可以
++ WeakSet 对象中储存的对象值都是被弱引用的，即垃圾回收机制不考虑 WeakSet 对该对象的应用，如果没有其他的变量或属性引用这个对象值，则这个对象将会被垃圾回收掉（不考虑该对象还存在于 WeakSet 中），所以，WeakSet 对象里有多少个成员元素，取决于垃圾回收机制有没有运行，运行前后成员个数可能不一致，遍历结束之后，有的成员可能取不到了（被垃圾回收了），WeakSet 对象是无法被遍历的（ES6 规定 WeakSet 不可遍历），也没有办法拿到它包含的所有元素

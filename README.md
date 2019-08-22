@@ -15,6 +15,8 @@
 
 > 包括自己整理的前端面试题目，大厂的面试经历，以及一些优秀的文章资源
 
+## 秋招面试情况
+- [ ]  **[秋招面试](interview-autumn/overview.md)**
 
 ## 前端面试题目（自己整理）
 
@@ -52,6 +54,11 @@
 - [ ] **[next.js中文文档](https://nextjs.org/docs)**
 - [ ] **[学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)**
 - [ ] **[ReactJS小书](http://huziketang.mangojuice.top/books/react/)**
+
+## 优秀的面试相关博客
+- [ ] **[木易杨前端进阶](https://muyiy.vip/question/)**
+- [ ] **[前端面试与进阶指南](https://www.cxymsg.com/)**
+
 
 ## 优秀的技术分享文章
 
