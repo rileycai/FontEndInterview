@@ -414,3 +414,138 @@ Promise.all = function (list) {
     })
 }
 ```
+
+### 19. 使用迭代的方式实现 flatten 函数
+```javascript
+let arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]]
+// 方法一
+const flat = (arr) => {
+    let arrs = [];
+    arr.map((item) => {
+        if (Array.isArray(item)) {
+            arrs.push(...flat(item));
+        } else {
+            arrs.push(item);
+        }
+    });
+    return arrs;
+}
+// 方法二
+arr.toString().split(',').map(item => {return +item})
+```
+
+### 20. 实现 (5).add(3).minus(2) 功能
+```javascript
+Number.prototype.add = function(n) {
+  return this.valueOf() + n;
+};
+Number.prototype.minus = function(n) {
+  return this.valueOf() - n;
+};
+```
+
+### 21. {1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null, null, null, null, null]
+```javascript
+let obj = {1:222, 2:123, 5:888};
+const result = Array.from({ length: 12 }).map((_, index) => obj[index + 1] || null);
+console.log(result)
+```
+
+### 21, 从字符串S中查找是否含有子串T
+```javascript
+const find = (S, T) => {
+    if (S.length < T.length) {
+        return -1;
+    }
+    for(let i=0; i< S.length - T.length; i++) {
+        if (S.substr(i, T.length) === T) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+### 22. 旋转数组，将数组向右移动k位置
+```javascript
+const rotate = (arr, k) => {
+    const len = arr.length;
+    const step = k % len;
+    return arr.slice(-step).concat(arr.slice(0, len-step))
+}
+```
+
+### 23. 打印0-10000之间的所有对称数
+```javascript
+[...Array(10000).keys()].filter(item => {
+    return item.toString().length >1 && item === Number(item.toString().split('').reverse().join(''));
+})
+```
+
+### 24. 移动所有的零到末尾
+```javascript
+const moveZero = (arr) => {
+    const len = arr.length;
+    for(let j=0,i=0; j<len-i;j++) {
+        if (arr[j] === 0) {
+            arr.splice(j,1);
+            arr.push(0);
+            j--;
+            i++;
+        }
+    }
+    return arr;
+}
+```
+
+### 25. 实现 convert 方法，把原始 list 转换成树形结构，要求尽可能降低时间复杂度
+```javascript
+let list =[
+    {id:1,name:'部门A',parentId:0},
+    {id:2,name:'部门C',parentId:1},
+    {id:3,name:'部门D',parentId:1},
+    {id:4,name:'部门E',parentId:3},
+];
+const result = convert(list, ...);
+
+result = [{
+  id:1,name:'部门A',parentId:0,
+  children: [
+     {id:2,name:'部门C',parentId:1},
+     {id:3,name:'部门D',parentId:1,
+      children:[{{id:4,name:'部门E',parentId:3},}]
+     },
+  ]
+}]
+// 答案
+const convert = (list) => {
+    const res = [];
+    const map = list.reduce((acc, cur) => (acc[cur.id] = cur, acc),{});
+    for (const item of list) {
+        if (item.parentId === 0) {
+            res.push(item);
+            continue;
+        }
+        if (item.parentId in map) {
+            const parent = map[item.parentId];
+            parent.children = parent.children || [];
+            parent.children.push(item);
+        }
+    }
+    return res;
+}
+```
+
+### 26. 输入1234 整数返回 “4321”字符串
+```javascript
+const reverse = (num) => {
+    let num1 = num/10;
+    let num2 = num%10;
+    if(num<1) { 
+        return num;
+    } else {
+        num1 = Math.floor(num1);
+        return `${num2}${reverse(num1)}`
+    }
+}
+```
