@@ -104,7 +104,7 @@ Function.prototype.myBind = (context = window) => {
 ### 6. new模拟实现
 ```JavaScript
 const _new = (fn, ...args) => {
-    let obj = Object.creat(fn.prototype);
+    let obj = Object.create(fn.prototype);
     let ret = fn.apply(obj, args);
     return ret instanceof Object ? ret : obj;
 }
