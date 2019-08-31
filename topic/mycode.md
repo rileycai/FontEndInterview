@@ -346,7 +346,7 @@ const throttle = (fn, delay = 500) => {
   return (...args) => {
     let currTime = Date.now();
     if(currTime - startTime > delay){
-      fn.apply(this,args);
+      fn.apply(this, args);
       startTime = currTime;
     }
   }
