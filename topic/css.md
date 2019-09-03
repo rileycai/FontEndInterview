@@ -23,7 +23,7 @@ Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型�
 + 容器的属性:
 1. flex-direction: row | row-reverse | column | column-reverse;
 2. flex-wrap: nowrap | wrap | wrap-reverse;
-3. flex-flow: <flex-direction> || <flex-wrap>;
+3. flex-flow: flex-direction || flex-wrap;
 4. justify-content: flex-start(默认) | flex-end | center | space-between | space-around;
 5. align-items: flex-start | flex-end | center | baseline | stretch(默认);
 6. align-content: flex-start | flex-end | center | space-between | space-around | stretch;
@@ -84,7 +84,7 @@ box-sizing:border-box;
 ```
 
 ### 7.position定位方式
-+ **absolute**  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
++ **absolute**  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。如果不存在就逐级向上排查，直到相对于body元素，即相对于浏览器窗口。
 + **fixed**  生成绝对定位的元素，相对于浏览器窗口进行定位。
 + **relative**  生成相对定位的元素，相对于其正常位置进行定位。
 + **static**  默认值。没有定位，元素出现在正常的流中
@@ -104,7 +104,7 @@ box-sizing:border-box;
 ### 10.如何画一个三角形
 左右边框设置为透明，长度为底部边框的一半。左右边框长度必须设置，不设置则只有底部一条边框，是不能展示的。
 ```css
-.child{
+.child {
   	width: 0;
     height: 0;
     border-bottom: 100px solid cyan;
@@ -192,13 +192,13 @@ padding-top: calc(100%*9/16);
 </div>
 ```
 1. 利用clear属性
-+ 在 <div class='outer'> 内创建一个空元素，对其设置 clear: both; 的样式。
++ 在 `<div class='outer'>` 内创建一个空元素，对其设置 clear: both; 的样式。
 + 优点：简单，代码少，浏览器兼容性好。
 + 缺点：需要添加大量无语义的html元素，代码不够优雅，后期不容易维护。
 
 2. 利用 clear 属性 + 伪元素
 ```javascript
-.outer:after{
+.outer::after{
     content: '';
     display: block;
     clear: both;

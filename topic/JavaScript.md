@@ -18,6 +18,7 @@
 3. 缺点：垃圾收集后有可能会造成大量的 **内存碎片**。
 + **引用计数算法：**
 1. 引用计数的含义是跟踪记录每个值被引用的次数，如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。
+2. 缺点： 循环引用没法回收。
 
 ### 3. 引起JavaScript内存泄漏的操作有哪些，如何防止内存泄漏？
 + 内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。
@@ -162,8 +163,8 @@ const _setInterval = (fn, misc) => {
 
 ### 10. 谈谈对requestAnimationFrame的理解？为什么不用setTimeout？
 + 浏览器专门为动画提供的 API，让 DOM 动画、Canvas 动画、SVG 动画、WebGL 动画等有一个统一的刷新机制。
-+ **按帧对网页进行重绘。**该方法告诉浏览器希望执行动画并请求浏览器在下一次重绘之前调用回调函数来更新动画。
-+ **由系统来决定回调函数的执行时机**，在运行时浏览器会自动优化方法的调用
++ **按帧对网页进行重绘。** 该方法告诉浏览器希望执行动画并请求浏览器在下一次重绘之前调用回调函数来更新动画。
++ **由系统来决定回调函数的执行时机**，在运行时浏览器会自动优化方法的调用。
 + requestAnimationFrame与setTimeout的区别：
 1. **提升性能，防止掉帧**： setTimeout通过设置一个间隔时间不断改变图像，达到动画效果。该方法在一些低端机上会出现卡顿、抖动现象。这是因为setTimeout任务被放进异步队列中，只有当主线程上的任务执行完以后，才会去检查该队列的任务是否需要开始执行。所以，setTimeout的实际执行时间一般比其设定的时间晚一些。使用 requestAnimationFrame 执行动画，最大优势是能保证回调函数在屏幕每一次刷新间隔中只被执行一次，这样就不会引起丢帧，动画也就不会卡顿。
 2. **函数节流**：在高频事件（resize，scroll等）中，使用requestAnimationFrame可以防止在一个刷新间隔内发生多次函数执行，这样保证了流畅性，也节省了函数执行的开销。
@@ -173,24 +174,23 @@ const _setInterval = (fn, misc) => {
 ```JavaScript
 //寄生组合继承
 function Parent (name) {
-    this.name = name || 'parent';
-    this.sleep = function(){
-        console.log(this.name + '正在睡觉！');
-    }
+  // 属性
+  this.name = name || 'Sony';
+  // 实例方法
+  this.sleep = function(){
+    console.log(this.name + '正在睡觉！');
+  }
 }
+// 原型方法
 Parent.prototype.eat = function(food) {
   console.log(this.name + '正在吃：' + food);
 };
-function Son(name){
+function Child(name){
   Parent.call(this);
   this.name = name || 'Tom';
 }
-(function(){
-  var Super = function(){};
-  Super.prototype = Parent.prototype;
-  Son.prototype = new Super();
-})();
-Son.prototype.constructor = Son;
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
 ```
 
 ### 12. 如何阻止事件冒泡和默认事件？
@@ -373,7 +373,6 @@ window.onload = function(){
 　　　　var ev = ev || window.event;
 　　　　var target = ev.target || ev.srcElement;
 　　　　if(target.nodeName.toLowerCase() == 'li'){
-　 　　　　　　	alert(123);
 　　　　　　　  alert(target.innerHTML);
 　　　　}
 　　}
@@ -430,7 +429,7 @@ const curry = (fn, currArgs=[]) => {
 
 ### 28. new的实现原理
 1. 创建一个空对象，构造函数中的this指向这个空对象
-2. 这个新对象被执行 [[原型]] 连接
+2. 这个新对象被执行 **原型** 连接
 3. 执行构造函数方法，属性和方法被添加到this引用的对象中
 4. 如果构造函数中没有返回其它对象，那么返回this，即创建的这个的新对象，否则，返回构造函数中返回的对象。
 
