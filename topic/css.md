@@ -217,3 +217,21 @@ padding-top: calc(100%*9/16);
 3. 输出设置，Less没有输出设置，Sass提供4中输出选项：nested, compact, compressed 和 expanded。
 4. Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。
 5. scss引用的外部文件命名必须以_开头, 如下例所示:其中_test1.scss、_test2.scss、_test3.scss文件分别设置的h1 h2 h3。文件名如果以下划线_开头的话，Sass会认为该文件是一个引用文件，不会将其编译为css文件.
+
+### 实现多行省略号
++ 这样写，就算在不是webkit内核的浏览器，也可以 **优雅降级**（高度=行高*行数（webkit-line-clamp）
+```css
+div {
+    width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border:1px solid #ccc;
+    text-overflow: ellipsis;  // 省略号
+    padding:0 10px;
+    display: -webkit-box;   
+    -webkit-line-clamp: 2;    // 2行
+    -webkit-box-orient: vertical;
+    line-height:30px;    // 降级处理
+    height:60px;
+}
+```
