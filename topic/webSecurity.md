@@ -66,3 +66,14 @@
 
 ### 7.了解CSP吗，介绍一下？
 内容安全策略 (CSP, Content Security Policy) 是一个附加的安全层，用于帮助检测和缓解某些类型的攻击，包括跨站脚本 (XSS) 和数据注入等攻击。 这些攻击可用于实现从数据窃取到网站破坏或作为恶意软件分发版本等用途。
+
+### 8. cookie有哪些属性？
++ name： 字段为一个cookie的名称。
++ value： 字段为一个cookie的值。
++ domain： 字段为可以访问此cookie的域名。
++ path： 字段为可以访问此cookie的页面路径。
++ **expires/Max-Age：** 字段为此cookie超时时间。若设置其值为一个时间，那么当到达此时间后，此cookie失效。不设置的话默认值是Session，意思是cookie会和session一起失效。当浏览器关闭(不是浏览器标签页，而是整个浏览器) 后，此cookie失效。
++ size： 此cookie大小。
++ **httpOnly：**  此属性可以规定只有通过HTTP（s）请求时，才会带上该 Cookie。可以防止通过JavaScript脚本获取cookie信息，有效的防止XSS攻击。
++ **secure：**  此属性规定cookie只能在https协议下才能够发送到服务器。如果当前采用的是http协议，那么浏览器在接受服务器发来的cookie的时候会自动忽略Secure属性。可以在一定程度上防止信息在传递的过程中被监听捕获后信息泄漏。
++ **sameSite：**  准确的说 SameSite 这个属性有两个可选值，分别是 Strict 和 Lax 。其中 Strict 为严格模式，另一个域发起的任何请求都不会携带该类型的 cookie，能够完美的阻止 CSRF 攻击，但是也可能带来了少许不便之处，例如通过一个导航网站的超链接打开另一个域的网页会因为没有携带 cookie 而导致没有登录等问题。因此 Lax 相对于 Strict 模式来说，放宽了一些。简单来说就是，用 「安全」的 HTTP 方法（GET、HEAD、OPTIONS 和 TRACE）改变了当前页面或者打开了新页面时，可以携带该类型的 cookie。
