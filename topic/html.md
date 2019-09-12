@@ -26,3 +26,76 @@ viewport常常使用在响应式开发以及移动web开发中，viewport顾名�
 1. 开发者友好：使用语义类标签增强了可读性，开发者也能够清晰地看出网页的结构，也更为便于团队的开发和维护。
 2. 搜索引擎友好： 有利于SEO，有利于搜索引擎 **爬虫** 更好的理解我们的网页，从而获取更多的有效信息，提升网页的权重。
 3. 机器友好：语义类还可以支持读屏软件，根据文章可以自动生成目录。方便特殊群体阅读信息，比如屏幕阅读器/盲人阅读器对 **strong** 会有一个加重的读音。
+
+### 6. meta标签的定义和作用？
++ meta标签是head部的一个辅助性标签，提供关于 HTML 文档的元数据。它并不会显示在页面上，但对于机器是可读的。可用于浏览器（如何显示内容或重新加载页面），搜索引擎（SEO），或其他 web 服务。
++ meta标签里的数据是供机器解读的，其主要作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等等。
++ **http-equiv属性**
+1. **charset** 用以说明网页制作所使用的文字以及语言
+2. **cache-control、Pragma、Expires** 设置网页的过期时间，一旦过期则必须到服务器上重新获取。
+3. **refresh** 定时让网页在指定的时间n内，跳转到页面
+4. **set-cookie** Cookie设定，如果网页过期，存盘的cookie将被删除。 
++ **name属性**
+```html
+<!-- 设定字符集 -->
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+<!-- 页面关键词 keywords -->
+<meta name="keywords" content="your keywords">
+ 
+<!-- 页面描述内容 description -->
+<meta name="description" content="your description">
+ 
+<!-- 定义网页作者 author -->
+<meta name="author" content="author,email address">
+ 
+<!-- 定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。 -->
+<meta name="robots" content="index,follow">
+ 
+<!-- 优先使用最新的chrome版本 -->
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+ 
+<!-- 禁止自动翻译 -->
+<meta name="google" value="notranslate">
+ 
+<!-- 禁止转码 -->
+<meta http-equiv="Cache-Control" content="no-transform">
+ 
+<!-- 选择使用的浏览器解析内核 -->
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+ 
+<!-- 移动端 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+<meta name="format-detection" content="telphone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+
+```
+
