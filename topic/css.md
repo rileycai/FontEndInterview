@@ -218,7 +218,7 @@ padding-top: calc(100%*9/16);
 4. Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。
 5. scss引用的外部文件命名必须以_开头, 如下例所示:其中_test1.scss、_test2.scss、_test3.scss文件分别设置的h1 h2 h3。文件名如果以下划线_开头的话，Sass会认为该文件是一个引用文件，不会将其编译为css文件.
 
-### 实现多行省略号
+### 如何用 css 或 js 实现多行文本溢出省略效果，考虑兼容性？
 + 这样写，就算在不是webkit内核的浏览器，也可以 **优雅降级**（高度=行高*行数（webkit-line-clamp）
 ```css
 div {
@@ -233,5 +233,14 @@ div {
     -webkit-box-orient: vertical;
     line-height:30px;    // 降级处理
     height:60px;
+}
+```
++ js实现： 通过scrollHeight与clientHeight判断是否溢出
+```javascript
+const p = document.querySelector('p')
+let words = p.innerHTML.split(/(?<=[\u4e00-\u9fa5])|(?<=\w*?\b)/g)
+while (p.scrollHeight > p.clientHeight) {
+  words.pop()
+  p.innerHTML = words.join('') + '...'
 }
 ```
