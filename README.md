@@ -71,6 +71,7 @@
 - [ ] **[【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)**
 - [ ] **[从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)**
 - [ ] **[js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)**
+- [ ] **[Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)**
 
 ## 优秀的面试题库
 
