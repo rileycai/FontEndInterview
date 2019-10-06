@@ -15,6 +15,7 @@
 
 > 包括自己整理的前端面试题目，大厂的面试经历，以及一些优秀的文章资源
 
+
 ## 2019年秋招面试情况
 
 | 公司 | 轮次 | 岗位 | 时间 |  星期 | 结果 | 形式 | 类型 | 笔试|
@@ -57,6 +58,7 @@
 | 老虎集团 |  | 前端 | 10月8日 | 周二 | 放弃面试 | 现场 | 正常投递 | 笔试通过 |
 
 
+
 ## 2019年春招实习面试情况
 | 主要内容 | 面试次数 |
 | ------| ------|
@@ -72,6 +74,7 @@
 | 网易互娱 | 放弃面试 |
 | 网易雷火 | 放弃面试 |
 | 度小满金融 | 放弃面试 |
+
 
 
 ## 前端面试题目（自己整理）
@@ -91,14 +94,19 @@
 - [ ] [react部分](topic/react.md)
 - [ ] [工程化部分](topic/project.md)
 
-## 优秀的面试相关博客
+
+
+## 博客
+
 - [ ] [木易杨前端进阶](https://muyiy.vip/question/)
 - [ ] [前端面试与进阶指南](https://www.cxymsg.com/)
 - [ ] [前端进阶之道](https://yuchengkai.cn/home/)
 - [ ] [yhlben的前端日志](https://yhlben.github.io/)
 - [ ] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 
-## 学习笔记
+
+
+## 个人学习笔记
 
 - [ ] [git学习笔记](study/gitStudy.md)
 - [ ] [webpack学习笔记](study/webpackStudy.md)
@@ -106,6 +114,8 @@
 - [ ] [浏览器学习笔记](study/browerStudy.md)
 - [ ] [设计模式学习笔记](study/designStudy.md)
 - [ ] [git学习笔记](study/gitStudy.md)
+
+
 
 ## 学习网站
 
@@ -119,7 +129,9 @@
 - [ ] [学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)
 - [ ] [ReactJS小书](http://huziketang.mangojuice.top/books/react/)
 
-## 优秀的技术分享文章
+
+
+## 技术分享文章
 
 - [ ] [图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)
 - [ ] [分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)
@@ -131,7 +143,9 @@
 - [ ] [js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)
 - [ ] [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
 
-## 优秀的面试题库
+
+
+## 面试题库
 
 - [ ] [这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d)
 - [ ] [送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)
@@ -149,10 +163,12 @@
 - [ ] [面试的信心来源于过硬的基础](https://segmentfault.com/a/1190000013331105)
 
 
-## 优秀的面试题
+
+## 面试题文章
 - [ ] [面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)
 - [ ] [常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
 - [ ] [CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)
+
 
 
 Copyright (c) 2019-present ZhenzhenCai
