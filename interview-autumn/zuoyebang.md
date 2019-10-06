@@ -1,14 +1,14 @@
 # 作业帮一面
-时间： 2019年8月21日 下午2:30分
-时长： 1小时
++ 时间： 2019年8月21日 下午2:30分
++ 时长： 1小时
 
-### 自我介绍，了解项目
+##### 自我介绍，了解项目
 
-### css盒模型
+##### css盒模型
 
-### 内联元素，块元素，内联-块元素，举例？
+##### 内联元素，块元素，内联-块元素，举例？
 
-### 闭包题目
+##### 闭包题目
 ```javascript
 var a = 1;
 function F () {
@@ -21,7 +21,7 @@ F();  // undefined, 1
 new F(); // undefined, undefined;
 ```
 
-### 原型链题目
+##### 原型链题目
 ```javascript
 function A (val) {
     this.val = val || 1;
@@ -39,7 +39,7 @@ B.val; // undefined
 new B().val // 1
 ```
 
-### 代码题
+##### 代码题
 ```javascript
 var data = [
     {name:'a',id:1,pid:0},
@@ -57,7 +57,7 @@ data = [
 ]
 ```
 
-### 代码题： 字符串assdee转换成edsa，去重反转
+##### 代码题： 字符串assdee转换成edsa，去重反转
 ```javascript
     let str = 'assdee';
     [...new Set(str.split(''))].reverse().join('')
