@@ -72,3 +72,6 @@ new Promise((resolve, reject) => {
 
 ### 讲讲ajax请求？
 
+### 遇见过移动端touchend不响应的问题吗？如何用touchmove模拟scroll事件？
+
+### 节流函数怎么实现？
