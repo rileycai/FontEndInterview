@@ -60,9 +60,9 @@
 | - | [拼多多](interview-autumn/pinduoduo.md) | hr面 | 前端 | 10月8日 | 周二 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [旷视科技](interview-autumn/megvii.md) | 三四面 | 前端 | 10月12日 | 周六 | **通过** | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | 三面 | 前端 | 10月16日 | 周三 | 未知 | 视频 | 正常投递 | 笔试通过 |
-| 26 | [微软](interview-autumn/microsoft.md) | 一面 | 前端 | 10月16日 | 周三 | 未知 | 视频 | 正常投递 | 免笔试 |
-| - | [图森未来](interview-autumn/tusimple.md) | 四面 | 前端 | 10月16日 | 周三 | 未知 | 现场 | 正常投递 | 免笔试 |
+| 26 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 闯关失败 | 视频 | 正常投递 | 免笔试 |
 | 27 | 联想 |  | 前端 | 10月19日 | 周六 | 放弃面试 | 现场 | 正常投递 | 免笔试 |
+| - | [图森未来](interview-autumn/tusimple.md) | 四面 | 前端 | 10月18日 | 周五 | 未知 | 现场 | 正常投递 | 免笔试 |
 
 
 ## 2019年春招实习面试情况
