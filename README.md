@@ -61,8 +61,8 @@
 | - | [旷视科技](interview-autumn/megvii.md) | 三四面 | 前端 | 10月12日 | 周六 | **通过** | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | 三面 | 前端 | 10月16日 | 周三 | 未知 | 视频 | 正常投递 | 笔试通过 |
 | 26 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 闯关失败 | 视频 | 正常投递 | 免笔试 |
-| 27 | 联想 |  | 前端 | 10月19日 | 周六 | 放弃面试 | 现场 | 正常投递 | 免笔试 |
 | - | [图森未来](interview-autumn/tusimple.md) | 四面 | 前端 | 10月18日 | 周五 | 未知 | 现场 | 正常投递 | 免笔试 |
+| 27 | 联想 |  | 前端 | 10月19日 | 周六 | 放弃面试 | 现场 | 正常投递 | 免笔试 |
 
 
 ## 2019年春招实习面试情况
@@ -109,6 +109,8 @@
 - [ ] [前端进阶之道](https://yuchengkai.cn/home/)
 - [ ] [yhlben的前端日志](https://yhlben.github.io/)
 - [ ] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
+- [ ] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/)
+- [ ] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 
 
 
@@ -134,6 +136,8 @@
 - [ ] [next.js中文文档](https://nextjs.org/docs)
 - [ ] [学用JAVAScript设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/)
 - [ ] [ReactJS小书](http://huziketang.mangojuice.top/books/react/)
+- [ ] [TypeScript Handbook（中文版）](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+- [ ] [图解Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
 
 
@@ -148,6 +152,8 @@
 - [ ] [从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
 - [ ] [js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)
 - [ ] [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
+- [ ] [一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
+- [ ] [常见六大Web安全攻防解析](https://github.com/ljianshu/Blog/issues/56)
 
 
 
