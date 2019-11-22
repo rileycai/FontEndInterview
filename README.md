@@ -47,8 +47,8 @@
 | - | [图森未来](interview-autumn/tusimple.md) | 三面 | 前端 | 9月20日 | 周五 | **通过** | 电话 | 正常投递 | 免笔试 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | 二面 | 前端 | 9月20日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | 17 | [百度](interview-autumn/baidu.md) | 一二三面 | 前端 | 9月21日 | 周六 | **通过** | 现场 | 正常投递 | 笔试通过 |
-| 18 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 09月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
-| - | [Bigo](interview-autumn/bigo.md) | 二面 | 前端 | 09月23日 | 周一 | **通过** | 视频 | 正常投递 | 笔试通过 |
+| 18 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 9月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
+| - | [Bigo](interview-autumn/bigo.md) | 二面 | 前端 | 9月23日 | 周一 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [美团到店-转上海](interview-autumn/meituan.md) | 二面 | 前端 | 9月30日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | hr面 | 前端 | 10月8日 | 周二 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [旷视科技](interview-autumn/megvii.md) | 三四面 | 前端 | 10月12日 | 周六 | **通过** | 现场 | 正常投递 | 免笔试 |
