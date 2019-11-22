@@ -20,7 +20,7 @@
 
 | 编号 | 公司 | 轮次 | 岗位 | 时间 |  星期 | 结果 | 形式 | 类型 | 笔试|
 | ------| ------| ------| ------| ------| ------| ------| ------| ------| ------|
-| 1 | [阿里巴巴淘宝](interview-autumn/alibaba.md) | 一面 | 前端 | 8月5日 | 周二 | 祭天 | 电话 | 内推 | 免笔试 |
+| 1 | [阿里巴巴](interview-autumn/alibaba.md) | 一面 | 前端 | 8月5日 | 周二 | 祭天 | 电话 | 内推 | 免笔试 |
 | 2 | [腾讯微信](interview-autumn/tencent.md) | 一面 | 运营开发 | 8月9日 | 周五 | **通过** | 电话 | 正常投递 | 免笔试 |
 | 3 | [图森未来](interview-autumn/tusimple.md) | 一面 | 前端 | 8月9日 | 周五 | **通过** | 电话 | 正常投递 |免笔试 |
 | 4 | [地平线机器人](interview-autumn/horizon.md) | 一面 | 前端 | 8月10日 | 周六 | **通过** | 电话 | 提前批 |免笔试 |
@@ -28,44 +28,38 @@
 | 5 | [美团到店](interview-autumn/meituan.md) | 一二三面 | 前端 | 8月19日 | 周一 | 转岗 | 现场 | 内推 |免笔试 |
 | 6 | [作业帮](interview-autumn/zuoyebang.md) | 一面 | 前端 | 8月21日 | 周三 | 失败 | 现场 | 正常投递 |免笔试 |
 | 7 | [猿辅导](interview-autumn/yuanfudao.md) | 一二面 | 前端 | 8月23日 | 周五 | 失败 | 现场 | 正常投递 |免笔试 |
-| 8 | [腾讯CISG新零售](interview-autumn/tencent.md) | 一面 | 前端 | 8月23日 | 周五 | **通过** | 电话 | 正常投递| 免笔试 |
-| - | [腾讯CISG新零售](interview-autumn/tencent.md) | 二面 | 前端 | 8月24日 | 周六 | **通过** | 视频 | 正常投递 |免笔试 |
+| 8 | [腾讯](interview-autumn/tencent.md) | 一面 | 前端 | 8月23日 | 周五 | **通过** | 电话 | 正常投递| 免笔试 |
+| - | [腾讯](interview-autumn/tencent.md) | 二面 | 前端 | 8月24日 | 周六 | **通过** | 视频 | 正常投递 |免笔试 |
 | - | [地平线机器人](interview-autumn/horizon.md) | 三面 | 前端 | 8月24日 | 周六 | **通过** | 电话 | 正常投递 | 免笔试 |
-| - | [腾讯CISG新零售](interview-autumn/tencent.md) | 三面 | 前端 | 8月27日 | 周一 | **通过** | 视频 | 正常投递 |免笔试 |
+| - | [腾讯](interview-autumn/tencent.md) | 三面 | 前端 | 8月27日 | 周一 | **通过** | 视频 | 正常投递 |免笔试 |
 | 9 | [星环科技](interview-autumn/xinghuan.md) | 一面 | 前端 | 8月28日 | 周三 | 失败 | 电话 | 正常投递 | 免笔试 |
 | - | [地平线机器人](interview-autumn/horizon.md) | hr面 | 前端 | 8月28日 | 周三 | **通过** | 电话 | 正常投递 | 免笔试 |
 | 10 | [贝壳找房](interview-autumn/beike.md) | 一二面 | 前端 | 8月31日 | 周三 | 失败 | 现场 | 正常投递 | 笔试通过 |
-| - | [腾讯CISG新零售](interview-autumn/tencent.md) | hr面 | 前端 | 9月 3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
+| - | [腾讯](interview-autumn/tencent.md) | hr面 | 前端 | 9月 3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
 | 11 | [网易雷火](interview-autumn/wangyi.md) | 一面 | 前端 | 9月3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
-| 12 | 京东商业提升部 |  | 前端 | 9月4日 | 周三 | 放弃 | 现场 | 内推 |免笔试 |
-| 13 | [Bigo](interview-autumn/bigo.md) | 一面 | 前端 | 9月6日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 14 | [美团到店-转上海](interview-autumn/meituan.md) | 一面 | 前端 | 9月9日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
+| 12 | [Bigo](interview-autumn/bigo.md) | 一面 | 前端 | 9月6日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
+| 13 | [美团到店-转上海](interview-autumn/meituan.md) | 一面 | 前端 | 9月9日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
 | - | [网易雷火](interview-autumn/wangyi.md) | 二面 | 前端 | 9月10日 | 周二 | 未知 | 视频 | 正常投递 | 免笔试 |
-| 15 | [瓜子二手车](interview-autumn/guazi.md) | 一面 | 前端 | 9月10日 | 周二 | 失败 | 现场 | 正常投递 | 免笔试 |
+| 14 | [瓜子二手车](interview-autumn/guazi.md) | 一面 | 前端 | 9月10日 | 周二 | 失败 | 现场 | 正常投递 | 免笔试 |
 | - | [图森未来](interview-autumn/tusimple.md) | 二面 | 前端 | 9月10日 | 周二 | **通过** | 电话 | 正常投递 | 免笔试 |
-| 16 | [拼多多](interview-autumn/pinduoduo.md) | 一面 | 前端 | 9月15日 | 周日 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 17 | [旷视科技](interview-autumn/megvii.md) | 一二面 | 前端 | 9月16日 | 周一 | **通过** | 现场 | 正常投递 | 免笔试 |
-| 18 | [vivo](interview-autumn/vivo.md) | 一面hr面 | 前端 | 9月17日 | 周二 | 失败 | 现场 | 正常投递 | 笔试通过 |
-| 19 | [招行信用卡中心](interview-autumn/cmbchina.md) | 一面 | 前端 | 9月19日 | 周四 | 失败 | 现场 | 正常投递 | 笔试通过 |
+| 15 | [拼多多](interview-autumn/pinduoduo.md) | 一面 | 前端 | 9月15日 | 周日 | **通过** | 视频 | 正常投递 | 笔试通过 |
+| 16 | [旷视科技](interview-autumn/megvii.md) | 一二面 | 前端 | 9月16日 | 周一 | **通过** | 现场 | 正常投递 | 免笔试 |
+| 17 | [vivo](interview-autumn/vivo.md) | 一面hr面 | 前端 | 9月17日 | 周二 | 失败 | 现场 | 正常投递 | 笔试通过 |
+| 18 | [招行信用卡中心](interview-autumn/cmbchina.md) | 一面 | 前端 | 9月19日 | 周四 | 失败 | 现场 | 正常投递 | 笔试通过 |
 | - | [图森未来](interview-autumn/tusimple.md) | 三面 | 前端 | 9月20日 | 周五 | **通过** | 电话 | 正常投递 | 免笔试 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | 二面 | 前端 | 9月20日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 20 | [百度](interview-autumn/baidu.md) | 一二三面 | 前端 | 9月21日 | 周六 | **通过** | 现场 | 正常投递 | 笔试通过 |
-| 21 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 09月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
+| 19 | [百度](interview-autumn/baidu.md) | 一二三面 | 前端 | 9月21日 | 周六 | **通过** | 现场 | 正常投递 | 笔试通过 |
+| 20 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 09月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
 | - | [Bigo](interview-autumn/bigo.md) | 二面 | 前端 | 09月23日 | 周一 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 22 | 第四范式 |  | 前端 | 9月26日 | 周四 | 放弃 | 视频 | 正常投递 | 免笔试 |
-| 23 | 哔哩哔哩 |  | 前端 | 9月27日 | 周五 | 放弃 | 视频 | 正常投递 | 笔试通过 |
-| 24 | 远景能源 |  | 前端 | 9月30日 | 周一 | 放弃 | 电话 | 正常投递 | 笔试通过 |
 | - | [美团到店-转上海](interview-autumn/meituan.md) | 二面 | 前端 | 9月30日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
-| 25 | 老虎集团 |  | 前端 | 10月8日 | 周二 | 放弃 | 现场 | 正常投递 | 笔试通过 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | hr面 | 前端 | 10月8日 | 周二 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [旷视科技](interview-autumn/megvii.md) | 三四面 | 前端 | 10月12日 | 周六 | **通过** | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | 三面 | 前端 | 10月16日 | 周三 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 26 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 失败 | 视频 | 正常投递 | 免笔试 |
+| 21 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 失败 | 视频 | 正常投递 | 免笔试 |
 | - | [图森未来](interview-autumn/tusimple.md) | 四五六hr面 | 前端 | 10月18日 | 周五 | 未知 | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | hr面 | 前端 | 10月18日 | 周五 | **通过** | 电话 | 正常投递 | 笔试通过 |
-| 27 | 联想 |  | 前端 | 10月19日 | 周六 | 放弃 | 现场 | 正常投递 | 免笔试 |
-| 28 | [字节跳动](interview-autumn/bytedance.md) |  | 前端 | 10月21日 | 周一 | **通过** | 现场 | 转正答辩 | - |
-| - | [字节跳动](interview-autumn/bytedance.md) | hr面 | 前端 | 10月23日 | 周三 | **通过** | 现场 | 转正答辩 | - |
+| 22 | [字节跳动](interview-autumn/bytedance.md) | 一二三面 | 前端 | 10月21日 | 周一 | **通过** | 现场 | - | - |
+| - | [字节跳动](interview-autumn/bytedance.md) | hr面 | 前端 | 10月23日 | 周三 | **通过** | 现场 | - | - |
 
 ## 2019年春招实习面试情况
 | 主要内容 | 面试次数 |
@@ -120,7 +114,6 @@
 - [ ] [浏览器学习笔记](study/browerStudy.md)
 - [ ] [设计模式学习笔记](study/designStudy.md)
 - [ ] [git学习笔记](study/gitStudy.md)
-
 
 
 ## 学习网站
