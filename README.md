@@ -32,50 +32,49 @@
 | - | [腾讯](interview-autumn/tencent.md) | 二面 | 前端 | 8月24日 | 周六 | **通过** | 视频 | 正常投递 |免笔试 |
 | - | [地平线机器人](interview-autumn/horizon.md) | 三面 | 前端 | 8月24日 | 周六 | **通过** | 电话 | 正常投递 | 免笔试 |
 | - | [腾讯](interview-autumn/tencent.md) | 三面 | 前端 | 8月27日 | 周一 | **通过** | 视频 | 正常投递 |免笔试 |
-| 9 | [星环科技](interview-autumn/xinghuan.md) | 一面 | 前端 | 8月28日 | 周三 | 失败 | 电话 | 正常投递 | 免笔试 |
 | - | [地平线机器人](interview-autumn/horizon.md) | hr面 | 前端 | 8月28日 | 周三 | **通过** | 电话 | 正常投递 | 免笔试 |
-| 10 | [贝壳找房](interview-autumn/beike.md) | 一二面 | 前端 | 8月31日 | 周三 | 失败 | 现场 | 正常投递 | 笔试通过 |
+| 9 | [贝壳找房](interview-autumn/beike.md) | 一二面 | 前端 | 8月31日 | 周三 | 失败 | 现场 | 正常投递 | 笔试通过 |
 | - | [腾讯](interview-autumn/tencent.md) | hr面 | 前端 | 9月 3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
-| 11 | [网易雷火](interview-autumn/wangyi.md) | 一面 | 前端 | 9月3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
-| 12 | [Bigo](interview-autumn/bigo.md) | 一面 | 前端 | 9月6日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 13 | [美团到店-转上海](interview-autumn/meituan.md) | 一面 | 前端 | 9月9日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
-| - | [网易雷火](interview-autumn/wangyi.md) | 二面 | 前端 | 9月10日 | 周二 | 未知 | 视频 | 正常投递 | 免笔试 |
-| 14 | [瓜子二手车](interview-autumn/guazi.md) | 一面 | 前端 | 9月10日 | 周二 | 失败 | 现场 | 正常投递 | 免笔试 |
+| 10 | [网易雷火](interview-autumn/wangyi.md) | 一面 | 前端 | 9月3日 | 周二 | **通过** | 视频 | 正常投递 |免笔试 |
+| 11 | [Bigo](interview-autumn/bigo.md) | 一面 | 前端 | 9月6日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
+| 12 | [美团到店-转上海](interview-autumn/meituan.md) | 一面 | 前端 | 9月9日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
+| - | [网易雷火](interview-autumn/wangyi.md) | 二面 | 前端 | 9月10日 | 周二 | 失败 | 视频 | 正常投递 | 免笔试 |
 | - | [图森未来](interview-autumn/tusimple.md) | 二面 | 前端 | 9月10日 | 周二 | **通过** | 电话 | 正常投递 | 免笔试 |
-| 15 | [拼多多](interview-autumn/pinduoduo.md) | 一面 | 前端 | 9月15日 | 周日 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 16 | [旷视科技](interview-autumn/megvii.md) | 一二面 | 前端 | 9月16日 | 周一 | **通过** | 现场 | 正常投递 | 免笔试 |
-| 17 | [vivo](interview-autumn/vivo.md) | 一面hr面 | 前端 | 9月17日 | 周二 | 失败 | 现场 | 正常投递 | 笔试通过 |
-| 18 | [招行信用卡中心](interview-autumn/cmbchina.md) | 一面 | 前端 | 9月19日 | 周四 | 失败 | 现场 | 正常投递 | 笔试通过 |
+| 13 | [拼多多](interview-autumn/pinduoduo.md) | 一面 | 前端 | 9月15日 | 周日 | **通过** | 视频 | 正常投递 | 笔试通过 |
+| 14 | [旷视科技](interview-autumn/megvii.md) | 一二面 | 前端 | 9月16日 | 周一 | **通过** | 现场 | 正常投递 | 免笔试 |
+| 15 | [vivo](interview-autumn/vivo.md) | 一面hr面 | 前端 | 9月17日 | 周二 | 失败 | 现场 | 正常投递 | 笔试通过 |
+| 16 | [招行信用卡中心](interview-autumn/cmbchina.md) | 一面 | 前端 | 9月19日 | 周四 | 失败 | 现场 | 正常投递 | 笔试通过 |
 | - | [图森未来](interview-autumn/tusimple.md) | 三面 | 前端 | 9月20日 | 周五 | **通过** | 电话 | 正常投递 | 免笔试 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | 二面 | 前端 | 9月20日 | 周五 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 19 | [百度](interview-autumn/baidu.md) | 一二三面 | 前端 | 9月21日 | 周六 | **通过** | 现场 | 正常投递 | 笔试通过 |
-| 20 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 09月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
+| 17 | [百度](interview-autumn/baidu.md) | 一二三面 | 前端 | 9月21日 | 周六 | **通过** | 现场 | 正常投递 | 笔试通过 |
+| 18 | [快手](interview-autumn/kuaishou.md) | 一面 | 前端 | 09月22日 | 周日 | 失败 | 视频 | 正常投递 | 笔试通过 |
 | - | [Bigo](interview-autumn/bigo.md) | 二面 | 前端 | 09月23日 | 周一 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [美团到店-转上海](interview-autumn/meituan.md) | 二面 | 前端 | 9月30日 | 周一 | **通过** | 视频 | 内推 | 免笔试 |
 | - | [拼多多](interview-autumn/pinduoduo.md) | hr面 | 前端 | 10月8日 | 周二 | **通过** | 视频 | 正常投递 | 笔试通过 |
 | - | [旷视科技](interview-autumn/megvii.md) | 三四面 | 前端 | 10月12日 | 周六 | **通过** | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | 三面 | 前端 | 10月16日 | 周三 | **通过** | 视频 | 正常投递 | 笔试通过 |
-| 21 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 失败 | 视频 | 正常投递 | 免笔试 |
-| - | [图森未来](interview-autumn/tusimple.md) | 四五六hr面 | 前端 | 10月18日 | 周五 | 未知 | 现场 | 正常投递 | 免笔试 |
+| 19 | [微软](interview-autumn/microsoft.md) | 一二面 | 前端 | 10月16日 | 周三 | 失败 | 视频 | 正常投递 | 免笔试 |
+| - | [图森未来](interview-autumn/tusimple.md) | 四五六hr面 | 前端 | 10月18日 | 周五 | 被鸽 | 现场 | 正常投递 | 免笔试 |
 | - | [Bigo](interview-autumn/bigo.md) | hr面 | 前端 | 10月18日 | 周五 | **通过** | 电话 | 正常投递 | 笔试通过 |
-| 22 | [字节跳动](interview-autumn/bytedance.md) | 一二三面 | 前端 | 10月21日 | 周一 | **通过** | 现场 | - | - |
+| 20 | [字节跳动](interview-autumn/bytedance.md) | 一二三面 | 前端 | 10月21日 | 周一 | **通过** | 现场 | - | - |
 | - | [字节跳动](interview-autumn/bytedance.md) | hr面 | 前端 | 10月23日 | 周三 | **通过** | 现场 | - | - |
 
+
 ## 2019年春招实习面试情况
-| 主要内容 | 面试次数 |
-| ------| ------|
-| [阿里巴巴](interview/alibaba.md) | 1 |
-| [百度](interview/baidu.md) | 2 |
-| [字节跳动](interview/Bytedance.md) | 7 |
-| [腾讯](interview/tecent.md) | 7 |
-| [快手](interview/kuaishou.md) | 2 |
-| [搜狐](interview/sohu.md) | 2 |
-| [招商银行信用卡中心](interview/zhaohang.md) | 2 |
-| [依图科技](interview/yitu.md) | 2 + 放弃 |
-| 拼多多 | 放弃 |
-| 网易互娱 | 放弃 |
-| 网易雷火 | 放弃 |
-| 度小满金融 | 放弃 |
+| 编号 | 主要内容 | 面试次数 |
+| ------| ------| ------|
+| 1 | [阿里巴巴](interview/alibaba.md) | 1 |
+| 2 | [百度](interview/baidu.md) | 2 |
+| 3 | [字节跳动](interview/Bytedance.md) | 7 |
+| 4 | [腾讯](interview/tecent.md) | 7 |
+| 5 | [快手](interview/kuaishou.md) | 2 |
+| 6 | [搜狐](interview/sohu.md) | 2 |
+| 7 | [招商银行信用卡中心](interview/zhaohang.md) | 2 |
+| 8 | [依图科技](interview/yitu.md) | 2 + 放弃 |
+| 9 | 拼多多 | 放弃 |
+| 10 | 网易互娱 | 放弃 |
+| 11 | 网易雷火 | 放弃 |
+| 12 | 度小满金融 | 放弃 |
 
 
 ## 前端面试题目（自己整理）
@@ -131,24 +130,91 @@
 - [ ] [图解Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
 
-
 ## 技术分享文章
 
+### 1. CSS
+- [ ] [你未必知道的CSS知识点](https://juejin.im/post/5d9ec8b0518825651b1dffa3)
+- [ ] [前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配](https://juejin.im/post/5d70747cf265da03e16897c8)
+- [ ] [灵活运用CSS开发技巧](https://juejin.im/post/5d4d0ec651882549594e7293)
+- [ ] [一劳永逸的搞定 flex 布局](https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb)
+- [ ] [干货!各种常见布局实现+知名网站实例分析](https://juejin.im/post/5aa252ac518825558001d5de)
+- [ ] [前端基础篇之CSS世界](https://juejin.im/post/5ce607a7e51d454f6f16eb3d)
+- [ ] [彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index](https://juejin.im/post/5b876f86518825431079ddd6)
+- [ ] [【译】一行css代码搞定响应式布局](https://juejin.im/post/5d0ad9a4f265da1bae38ffe6)
+
+### 2. JavaScript
+- [ ] [浏览器的一些“滚动”行为鉴赏](https://juejin.im/post/5d75adfbe51d4561e84fcc9c)
+- [ ] [灵活运用JS开发技巧](https://juejin.im/post/5cc7afdde51d456e671c7e48)
+- [ ] [如何写出一个惊艳面试官的深拷贝?](https://juejin.im/post/5d6aa4f96fb9a06b112ad5b1)
+- [ ] [关于JS中一些重要的api实现, 巩固你的原生JS功底](https://juejin.im/post/5d635566e51d4561e224a360)
+- [ ] [Array.from() 五个超好用的用途](https://juejin.im/post/5d66b019f265da03a715e5d7)
+- [ ] [这些Web API真的有用吗? 别问，问就是有用](https://juejin.im/post/5d5df391e51d453b1e478ad0)
+- [ ] [JS原型链与继承别再被问倒了](https://juejin.im/post/58f94c9bb123db411953691b)
+- [ ] [一个合格的中级前端工程师需要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
+
+### 3. ES6
+- [ ] [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
+- [ ] [[译文]如何避开 async/await 地狱](https://juejin.im/post/5b9db6925188255c3b7d78cb)
+- [ ] [前端er，你真的会用 async 吗？](https://juejin.im/post/5c0397186fb9a049b5068e54)
+- [ ] [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
+- [ ] [近一万字的ES6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)
+
+### 4. vue
+- [ ] [Vue 开发必须知道的 36 个技巧](https://juejin.im/post/5d9d386fe51d45784d3f8637)
+- [ ] [30 道 Vue 面试题，内含详细讲解](https://juejin.im/post/5d59f2a451882549be53b170)
+- [ ] [面试官：自己搭建过vue开发环境吗？](https://juejin.im/post/5cc55c336fb9a032086dd701)
+- [ ] [vue中8种组件通信方式, 值得收藏!](https://juejin.im/post/5d267dcdf265da1b957081a3)
+- [ ] [手摸手，带你用vue撸后台 系列五](https://juejin.im/post/5c92ff94f265da6128275a85)
+
+### 5. react
+- [ ] [你要的 React 面试知识点，都在这了](https://juejin.im/post/5cf0733de51d4510803ce34e)
+- [ ] [90行代码，15个元素实现无限滚动](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
+- [ ] [你真的理解setState吗？](https://juejin.im/post/5b45c57c51882519790c7441)
+- [ ] [React 16 加载性能优化指南](https://juejin.im/post/5b506ae0e51d45191a0d4ec9)
+- [ ] [分享 50 个完整的 React Native 项目](https://juejin.im/post/58f37cb361ff4b0058f9824a)
+- [ ] [30分钟精通React Hooks](https://juejin.im/post/5be3ea136fb9a049f9121014)
+
+### 6. 浏览器与缓存
 - [ ] [图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)
-- [ ] [分享一些Chrome浏览器的前端调试技巧](https://juejin.im/post/5d09c39ee51d4576bc1a0e07)
-- [ ] [近1w字的es6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)
-- [ ] [前端工程化（5）：你所需要的npm知识储备都在这了](https://juejin.im/post/5d08d3d3f265da1b7e103a4d#heading-44)
+- [ ] [前端缓存最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)
+- [ ] [前端跨域整理](https://juejin.im/post/5815f4abbf22ec006893b431)
+- [ ] [Ajax 知识体系大梳理](https://juejin.im/post/58c883ecb123db005311861a)
+- [ ] [面试精选之http缓存](https://juejin.im/post/5b3c87386fb9a04f9a5cb037)
+- [ ] [缓存详解](https://juejin.im/post/5a6c87c46fb9a01ca560b4d7)
+- [ ] [从多线程到Event Loop全面梳理](https://juejin.im/post/5d5b4c2df265da03dd3d73e5)
+
+### 7. 前端工程化
+- [ ] [前端模块化详解(完整版)](https://juejin.im/post/5c17ad756fb9a049ff4e0a62)
+- [ ] [从 IIFE 聊到 Babel 带你深入了解前端模块化发展体系](https://juejin.im/post/5cb9e563f265da03712999e8)
+- [ ] [前端构建秘籍](https://juejin.im/post/5c9075305188252d5c743520)
+- [ ] [if 我是前端团队 Leader，怎么制定前端协作规范?](https://juejin.im/post/5d3a7134f265da1b5d57f1ed)
+- [ ] [2018 年了，你还是只会 npm install 吗？](https://juejin.im/post/5ab3f77df265da2392364341)
+- [ ] [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
+- [ ] [webpack4 的30个步骤打造优化到极致的 react 开发环境，如约而至](https://juejin.im/post/5cfe4b13f265da1bb13f26a8)
+
+### 8. 技术分享
+- [ ] [前端进阶必备，github 优质资源整理分享！](https://juejin.im/post/5d3edad9f265da03a652f133)
+- [ ] [哪些技术会决定前端开发者的未来发展？](https://juejin.im/post/5d1589c8e51d45776031b02e)
 - [ ] [一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)
 - [ ] [【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)
-- [ ] [从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
-- [ ] [js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)
-- [ ] [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
-- [ ] [一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
-- [ ] [常见六大Web安全攻防解析](https://github.com/ljianshu/Blog/issues/56)
+- [ ] [前端工作学习相关网站收集整理](https://juejin.im/post/5d003f51e51d454fbe24a661)
 
+### 9. 数据结构
+- [ ] [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
+- [ ] [我接触过的前端数据结构与算法](https://juejin.im/post/5958bac35188250d892f5c91)
 
+### 10. 其他技术拓展
+- [ ] [谁说前端不需要懂-Nginx反向代理与负载均衡](https://juejin.im/post/5b01336af265da0b8a67e5c9)
+- [ ] [写给新手前端的各种文件上传攻略，从小图片到大文件断点续传](https://juejin.im/post/5da14778f265da5bb628e590)
+- [ ] [正则表达式不要背](https://juejin.im/post/5cdcd42551882568651554e6)
+- [ ] [高性能渲染十万条数据(时间分片)](https://juejin.im/post/5d76f469f265da039a28aff7)
+- [ ] [现代化懒加载的方式](https://juejin.im/post/5a76bb955188257a79247cbd)
+- [ ] [网站性能优化实战——从12.67s到1.06s的故事](https://juejin.im/post/5b6fa8c86fb9a0099910ac91)
+- [ ] [面试：页面加载海量数据](https://juejin.im/post/5ae17a386fb9a07abc299cdd)
+- [ ] [实现图片懒加载(Lazyload)](https://juejin.im/post/583b10640ce463006ba2a71a)
+- [ ] [【前端词典】5 种滚动吸顶实现方式的比较[性能升级版]](https://juejin.im/post/5caa0c2d51882543fa41e478)
 
-## 面试题库
+### 11. 面试题库
 
 - [ ] [这儿有20道大厂面试题等你查收](https://juejin.im/post/5d124a12f265da1b9163a28d)
 - [ ] [送你43道JavaScript面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)
@@ -166,11 +232,6 @@
 - [ ] [面试的信心来源于过硬的基础](https://segmentfault.com/a/1190000013331105)
 
 
-
-## 面试题文章
-- [ ] [面试官:请你实现一个深克隆](https://juejin.im/post/5abb55ee6fb9a028e33b7e0a)
-- [ ] [常见的异步笔试题（async，settimeout）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
-- [ ] [CSS实现水平垂直居中的1010种方式](https://juejin.im/post/5b9a4477f265da0ad82bf921)
 
 
 
