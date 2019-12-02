@@ -1,9 +1,9 @@
 <h1 align="center">
 <br>
-  <a href="https://github.com/zhenzhencai/FontEndInterview"><img src="icon.png" alt="前端面试资源汇总" width=200></a>
+  <a href="https://github.com/zhenzhencai/FontEndInterview"><img src="icon.png" alt="一个2020届硕士的秋招前端面试实战经验" width=200></a>
   <br>
     <br>
-  前端面试资源汇总
+  一个2020届硕士的秋招前端面试实战经验
   <br>
 </h1>
 
