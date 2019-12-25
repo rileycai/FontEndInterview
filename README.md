@@ -1,29 +1,25 @@
 <h1 align="center">
-<br>
-  <a href="https://github.com/zhenzhencai/FontEndInterview"><img src="icon.png" alt="一个2020届硕士的秋招前端面试实战经验" width=200></a>
   <br>
-    <br>
-  一个2020届硕士的秋招前端面试实战经验
+  <a href="https://github.com/zhenzhencai/FontEndInterview"><img src="icon.png" alt="FontEndInterview" width=100></a>
+  <br>
+  <br>
+  2020届硕士的秋招前端面试实战经验
   <br>
 </h1>
 
+## 简介
 
-## 简介 
-> 本人介绍，985本，中科院硕士，2020届应届，秋招面试BAT等20余家互联网公司，拿到8-9个offer，基本是sp及以上。
-
-> 这个项目是本人在2019年春招实习和秋招求职过程中积累的面试经历（经验）。
-
-> 包括本人的春招/秋招面试情况、前端最常见的面试题目、优秀的面试博客汇总以及一些优质的文章分享。
-
-> 长期维护，欢迎star。
-
-> 给下一届做分享：[2020年秋招前端实战心得](2020-Autumn-recruitment-experience.pdf)
+> **本人介绍**：985本，中科院硕士，2020届应届毕业生，秋招面试BAT等20余家互联网公司，拿到8-9个offer，基本是sp及以上。
+> **项目介绍**：这个项目是本人在2019年春招实习和秋招求职过程中积累的面试经验和复习材料。包括本人的春招/秋招面试情况、前端最常见的面试题目、优秀的面试博客汇总以及一些优质的文章分享。 
+> 项目**长期维护**，欢迎star，附上福利： 
+> 1. 给下一届做的经验分享：[2020年秋招前端实战心得](2020-Autumn-recruitment-experience.pdf) 
+> 2. 本人简历，仅供参考： **[访问作者的简历 go->](https://github.com/zhenzhencai/Resume-FontEnd)**
 
 
 ## 2019年秋招面试情况
 
-| 编号 | 公司 | 轮次 | 岗位 | 时间 |  星期 | 结果 | 形式 | 类型 | 笔试|
-| ------| ------| ------| ------| ------| ------| ------| ------| ------| ------|
+| 编号 | 公司 | 轮次 | 岗位 | 时间 | 星期 | 结果 | 形式 | 类型 | 笔试|
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |:----:|
 | 1 | [阿里巴巴](interview-autumn/alibaba.md) | 一面 | 前端 | 8月5日 | 周二 | 祭天 | 电话 | 内推 | 免笔试 |
 | 2 | [腾讯微信](interview-autumn/tencent.md) | 一面 | 运营开发 | 8月9日 | 周五 | **通过** | 电话 | 正常投递 | 免笔试 |
 | 3 | [图森未来](interview-autumn/tusimple.md) | 一面 | 前端 | 8月9日 | 周五 | **通过** | 电话 | 正常投递 |免笔试 |
@@ -63,10 +59,10 @@
 | 20 | [字节跳动](interview-autumn/bytedance.md) | 一二三面 | 前端 | 10月21日 | 周一 | **通过** | 现场 | - | - |
 | - | [字节跳动](interview-autumn/bytedance.md) | hr面 | 前端 | 10月23日 | 周三 | **通过** | 现场 | - | - |
 
-
 ## 2019年春招实习面试情况
+
 | 编号 | 主要内容 | 面试次数 |
-| ------| ------| ------|
+| :----: | :----: | :----: |
 | 1 | [阿里巴巴](interview/alibaba.md) | 1 |
 | 2 | [百度](interview/baidu.md) | 2 |
 | 3 | [字节跳动](interview/Bytedance.md) | 7 |
@@ -80,9 +76,9 @@
 | 11 | 网易雷火 | 放弃 |
 | 12 | 度小满金融 | 放弃 |
 
-
 ## 前端面试题目（自己整理）
 
+> 自己整理的面试题目，不够完善。
 - [ ] [JavaScript部分](topic/JavaScript.md)
 - [ ] [html部分](topic/html.md)
 - [ ] [css部分](topic/css.md)
@@ -98,26 +94,25 @@
 - [ ] [react部分](topic/react.md)
 - [ ] [工程化部分](topic/project.md)
 
-
 ## 博客
 
-- [ ] [木易杨前端进阶](https://muyiy.vip/question/)
-- [ ] [前端面试与进阶指南](https://www.cxymsg.com/)
-- [ ] [前端进阶之道](https://yuchengkai.cn/home/)
-- [ ] [yhlben的前端日志](https://yhlben.github.io/)
-- [ ] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
-- [ ] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/)
-
+> 那些年刷过的面试题，巨棒。这些看懂了，面试基本没问题。 
+- [X] [木易杨前端进阶](https://muyiy.vip/question/)
+- [X] [前端面试与进阶指南](https://www.cxymsg.com/)
+- [X] [前端进阶之道](https://yuchengkai.cn/home/)
+- [X] [yhlben的前端日志](https://yhlben.github.io/)
+- [X] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
+- [X] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/)
 
 ## 个人学习笔记
 
+> 不完善，没有看的必要
 - [ ] [git学习笔记](study/gitStudy.md)
 - [ ] [webpack学习笔记](study/webpackStudy.md)
 - [ ] [react学习笔记](study/reactStudy.md)
 - [ ] [浏览器学习笔记](study/browerStudy.md)
 - [ ] [设计模式学习笔记](study/designStudy.md)
 - [ ] [git学习笔记](study/gitStudy.md)
-
 
 ## 学习网站
 
