@@ -99,14 +99,22 @@
 
 ## 4. 博客 - 一定要看的面试题
 
+### 4.1 面试题
+
 > 那些年刷过的面试题，巨棒。这些看懂了，面试基本没问题。 
 
-- [X] [木易杨前端进阶](https://muyiy.vip/question/)
-- [X] [前端面试与进阶指南](https://www.cxymsg.com/)
+- [X] [木易杨前端进阶](https://muyiy.vip/question/) - 每日一题前端面试题
+- [X] [前端面试与进阶指南](https://www.cxymsg.com/) - 前端开发者面试清单
 - [X] [前端进阶之道](https://yuchengkai.cn/home/)
-- [X] [yhlben的前端日志](https://yhlben.github.io/)
-- [X] [冴羽的博客](https://github.com/mqyqingfeng/Blog)
-- [X] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/)
+- [x] [前端面试每日3+1](https://github.com/haizlin/fe-interview) 
+- [X] [前端开发面试题](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers)
+
+### 4.2 优质博客
+
+- [X] [冴羽的博客](https://github.com/mqyqingfeng/Blog) - JavaScript系列
+- [X] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/) - CSS大牛
+- [X] [阮一峰的博客](http://www.ruanyifeng.com/blog/) - [github](https://github.com/ruanyf)
+
 
 ## 5. 个人学习笔记
 
@@ -191,6 +199,7 @@
 + [面试精选之http缓存](https://juejin.im/post/5b3c87386fb9a04f9a5cb037)
 + [缓存详解](https://juejin.im/post/5a6c87c46fb9a01ca560b4d7)
 + [从多线程到Event Loop全面梳理](https://juejin.im/post/5d5b4c2df265da03dd3d73e5)
++ [浏览器与前端性能灵魂之问，请问你能接得住几个？（上）](https://juejin.im/post/5df5bcea6fb9a016091def69)
 
 ### 7.7 前端工程化
 
@@ -226,6 +235,7 @@
 + [面试：页面加载海量数据](https://juejin.im/post/5ae17a386fb9a07abc299cdd)
 + [实现图片懒加载(Lazyload)](https://juejin.im/post/583b10640ce463006ba2a71a)
 + [【前端词典】5 种滚动吸顶实现方式的比较[性能升级版]](https://juejin.im/post/5caa0c2d51882543fa41e478)
++ [推荐几个不错的console调试技巧](https://juejin.im/post/5ddd373cf265da05d7582ce8)
 
 ### 7.11 面试题库
 
