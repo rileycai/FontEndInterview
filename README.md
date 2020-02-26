@@ -108,12 +108,16 @@
 3. [X] [前端进阶之道](https://yuchengkai.cn/home/)
 4. [x] [前端面试每日3+1](https://github.com/haizlin/fe-interview) 
 5. [X] [前端开发面试题](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers)
+6. [X] [大前端吊打面试官系列](https://github.com/luxiangqiang/Web-interview) - 更新中...
 
 ### 4.2 优质博客
 
 1. [X] [冴羽的博客](https://github.com/mqyqingfeng/Blog) - JavaScript系列
 2. [X] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/) - CSS大牛
 3. [X] [阮一峰的博客](http://www.ruanyifeng.com/blog/) - [github](https://github.com/ruanyf)
+
+### 4.3 github优质资源
+1. [X] [前端进阶必备，github 优质资源整理分享](https://juejin.im/post/5d3edad9f265da03a652f133) 
 
 
 ## 5. 个人学习笔记
@@ -158,6 +162,10 @@
 7. [JS原型链与继承别再被问倒了](https://juejin.im/post/58f94c9bb123db411953691b)
 8. [一个合格的中级前端工程师需要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
 9. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
+10. [「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.im/post/5c9c3989e51d454e3a3902b6)
+11. [浏览器与前端性能灵魂之问（上）](https://juejin.im/post/5df5bcea6fb9a016091def69), [中篇](https://juejin.im/post/5dbebbfa51882524c507fddb), [下篇](https://juejin.im/post/5dd8b3a851882572f56b578f)
+12. [送你 43 道 JavaScript 面试题](https://juejin.im/post/5d0644976fb9a07ed064b0ca)
+13. [2020年，你必须知道的JS数组技巧](https://juejin.im/post/5e4c03da6fb9a07cac1d55bc)
 
 ### 7.3 ES6
 
@@ -166,6 +174,8 @@
 3. [前端er，你真的会用 async 吗？](https://juejin.im/post/5c0397186fb9a049b5068e54)
 4. [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
 5. [近一万字的ES6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)
+6. [25个你不得不知道的数组reduce高级用法](https://juejin.im/post/5e44002c6fb9a07c9f3fd135)
+7. [1.5万字概括ES6全部特性](https://juejin.im/post/5d9bf530518825427b27639d)
 
 ### 7.4 vue
 
@@ -174,6 +184,7 @@
 3. [面试官：自己搭建过vue开发环境吗？](https://juejin.im/post/5cc55c336fb9a032086dd701)
 4. [vue中8种组件通信方式, 值得收藏!](https://juejin.im/post/5d267dcdf265da1b957081a3)
 5. [手摸手，带你用vue撸后台 系列五](https://juejin.im/post/5c92ff94f265da6128275a85)
+6. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 
 ### 7.5 react
 
@@ -184,7 +195,7 @@
 5. [分享 50 个完整的 React Native 项目](https://juejin.im/post/58f37cb361ff4b0058f9824a)
 6. [30分钟精通React Hooks](https://juejin.im/post/5be3ea136fb9a049f9121014)
 
-### 7.6 浏览器与缓存
+### 7.6 浏览器、缓存、网络
 
 1. [图解浏览器工作原理](https://mp.weixin.qq.com/s/X4yAFZBNLwaDUFYaR0Cn5g)
 2. [前端缓存最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)
@@ -194,6 +205,7 @@
 6. [缓存详解](https://juejin.im/post/5a6c87c46fb9a01ca560b4d7)
 7. [从多线程到Event Loop全面梳理](https://juejin.im/post/5d5b4c2df265da03dd3d73e5)
 8. [浏览器与前端性能灵魂之问，请问你能接得住几个？（上）](https://juejin.im/post/5df5bcea6fb9a016091def69)
+9. [TCP协议灵魂之问，巩固你的网路底层基础](https://juejin.im/post/5e527c58e51d4526c654bf41)
 
 ### 7.7 前端工程化
 
@@ -212,6 +224,9 @@
 3. [一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)
 4. [【前端词典】提高幸福感的 9 个 CSS 技巧](https://juejin.im/post/5cb45a06f265da03474df54e)
 5. [前端工作学习相关网站收集整理](https://juejin.im/post/5d003f51e51d454fbe24a661)
+6. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
+7. [前端常用插件、工具类库汇总，不要重复造轮子啦](https://juejin.im/post/5ba7d5dd5188255c6140cc9d)
+8. [前端开发中79条不可忽视的知识点汇总](https://juejin.im/post/5d8989296fb9a06b1f147070)
 
 ### 7.9 数据结构
 
@@ -231,6 +246,10 @@
 9. [【前端词典】5 种滚动吸顶实现方式的比较[性能升级版]](https://juejin.im/post/5caa0c2d51882543fa41e478)
 10. [推荐几个不错的console调试技巧](https://juejin.im/post/5ddd373cf265da05d7582ce8)
 11. [字节跳动面试官：请你实现一个大文件上传和断点续传](https://juejin.im/post/5dff8a26e51d4558105420ed)
+12. [近两万字小程序攻略发布了](https://juejin.im/post/5b8fd1416fb9a05cf3710690)
+13. [总结移动端H5开发常用技巧](https://juejin.im/post/5e4a0162f265da57133b2005)
+14. [前端下载文件的5种方法的对比](https://juejin.im/post/5e50fa23518825494b3cccd7)
+
 
 ### 7.11 面试题库
 
