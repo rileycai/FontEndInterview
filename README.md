@@ -116,8 +116,12 @@
 2. [X] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/) - CSS大牛
 3. [X] [阮一峰的博客](http://www.ruanyifeng.com/blog/) - [github](https://github.com/ruanyf)
 
-### 4.3 github优质资源
+### 4.3 优质学习资源
 1. [X] [前端进阶必备，github 优质资源整理分享](https://juejin.im/post/5d3edad9f265da03a652f133) 
+
+**3月18日更新**
+
+2. [X] [JavaScript模块化七日谈](https://huangxuan.me/js-module-7day/#/) - 了解模块化发展历史，面试常考。
 
 
 ## 5. 个人学习笔记
@@ -176,6 +180,7 @@
 5. [近一万字的ES6语法知识点补充](https://juejin.im/post/5c6234f16fb9a049a81fcca5)
 6. [25个你不得不知道的数组reduce高级用法](https://juejin.im/post/5e44002c6fb9a07c9f3fd135)
 7. [1.5万字概括ES6全部特性](https://juejin.im/post/5d9bf530518825427b27639d)
+8. [30分钟掌握ES6/ES2015核心内容](https://segmentfault.com/a/1190000004365693)
 
 ### 7.4 vue
 
@@ -194,6 +199,7 @@
 4. [React 16 加载性能优化指南](https://juejin.im/post/5b506ae0e51d45191a0d4ec9)
 5. [分享 50 个完整的 React Native 项目](https://juejin.im/post/58f37cb361ff4b0058f9824a)
 6. [30分钟精通React Hooks](https://juejin.im/post/5be3ea136fb9a049f9121014)
+7. [这可能是最通俗的 React Fiber(时间分片) 打开方式](https://juejin.im/post/5dadc6045188255a270a0f85)
 
 ### 7.6 浏览器、缓存、网络
 
