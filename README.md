@@ -116,6 +116,7 @@
 1. [x] [冴羽的博客](https://github.com/mqyqingfeng/Blog) - JavaScript 系列
 2. [x] [张鑫旭的博客](https://www.zhangxinxu.com/wordpress/) - CSS 大牛
 3. [x] [阮一峰的博客](http://www.ruanyifeng.com/blog/) - [github](https://github.com/ruanyf)
+4. [x] [技术胖](https://jspang.com/) - 良心博主，react 那一套讲得挺好
 
 ### 4.3 优质学习资源
 
@@ -127,7 +128,15 @@
 ### 4 月 17 日更新
 
 1. [10 种跨域解决方案（附终极大招）](https://juejin.im/post/5e948bbbf265da47f2561705) -写得十分详细的跨域方案
-2. [《大前端进阶 安全》系列 HTTPS 详解](https://juejin.im/post/5e95ed89518825739208ec79) -了解 https 看这里
+2. [《大前端进阶 安全》系列 HTTPS 详解](https://juejin.im/post/5e95ed89518825739208ec79) -了解 https
+
+### 4 月 27 日更新
+
+1. [视频面试超高频在线编程题，搞懂这些足以应对大部分公司](https://juejin.im/post/5e9c42c7f265da47f5179d5e) - 编程题
+2. [前端进阶算法：常见算法题及完美题解](https://juejin.im/post/5ea3b1aa6fb9a03c8027bac2) - 编程题
+3. [前端性能优化 20 条建议](https://segmentfault.com/a/1190000022205291)
+4. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
+5. [2020 年前端面试复习必读精选文章【赠复习导图】](https://segmentfault.com/a/1190000022282401) - 很全的前端面试复习集锦
 
 ## 5. 个人学习笔记
 
@@ -253,6 +262,8 @@
 
 1. [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
 2. [我接触过的前端数据结构与算法](https://juejin.im/post/5958bac35188250d892f5c91)
+3. [视频面试超高频在线编程题，搞懂这些足以应对大部分公司](https://juejin.im/post/5e9c42c7f265da47f5179d5e) - 编程题
+4. [前端进阶算法：常见算法题及完美题解](https://juejin.im/post/5ea3b1aa6fb9a03c8027bac2) - 编程题
 
 ### 7.10 其他技术拓展
 
@@ -271,6 +282,8 @@
 13. [总结移动端 H5 开发常用技巧](https://juejin.im/post/5e4a0162f265da57133b2005)
 14. [前端下载文件的 5 种方法的对比](https://juejin.im/post/5e50fa23518825494b3cccd7)
 15. [面试官：你了解过移动端适配吗？](https://juejin.im/post/5e6caf55e51d4526ff026a71)
+16. [前端性能优化 20 条建议](https://segmentfault.com/a/1190000022205291)
+17. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
 
 ### 7.11 面试题库
 
@@ -291,5 +304,6 @@
 15. [2018 前端面试总结，看完弄懂，工资少说加 3K | 掘金技术征文](https://juejin.im/post/5b94d8965188255c5a0cdc02)
 16. [2020 三元同学春招阿里淘系、阿里云、字节跳动面经 & 个人成长经验分享](https://juejin.im/post/5e7d4e8b6fb9a03c6422f112) - 应届大佬的实习面试记录
 17. [阿里前端攻城狮们又写了一份面试题答案，请查收](https://juejin.im/post/5e82aa8df265da47ca6910b5) - 大厂有意思的面试题
+18. [2020 年前端面试复习必读精选文章【赠复习导图】](https://segmentfault.com/a/1190000022282401) - 很全的前端面试复习集锦
 
 Copyright (c) 2019-present ZhenzhenCai
