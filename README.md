@@ -125,18 +125,15 @@
 3. [x] [前端入门和学习进阶笔记](https://github.com/qianguyihao/Web) - 面试宝典，不能错过
 4. [x] [github 中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts#JavaScript) -高分优秀的中文项目
 
-### 4 月 17 日更新
+### 4.4 8 月 13 日更新
 
-1. [10 种跨域解决方案（附终极大招）](https://juejin.im/post/5e948bbbf265da47f2561705) -写得十分详细的跨域方案
-2. [《大前端进阶 安全》系列 HTTPS 详解](https://juejin.im/post/5e95ed89518825739208ec79) -了解 https
-
-### 4 月 27 日更新
-
-1. [视频面试超高频在线编程题，搞懂这些足以应对大部分公司](https://juejin.im/post/5e9c42c7f265da47f5179d5e) - 编程题
-2. [前端进阶算法：常见算法题及完美题解](https://juejin.im/post/5ea3b1aa6fb9a03c8027bac2) - 编程题
-3. [前端性能优化 20 条建议](https://segmentfault.com/a/1190000022205291)
-4. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
-5. [2020 年前端面试复习必读精选文章【赠复习导图】](https://segmentfault.com/a/1190000022282401) - 很全的前端面试复习集锦
+1. [][小程序直播-疯狂点赞动画实现原理解析](https://juejin.im/post/6859702071906533383/) - 最近比较热门的 canvas 动画案例
+2. [][史上最强 vue 总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478) - 高赞的 vue 面试题
+3. [][前端10个灵魂拷问 吃透这些你就能摆脱初级前端工程师！](https://juejin.im/post/6857800782276902919) - 前端比较常见的面试题
+4. [][「查缺补漏」送你18道浏览器面试题](https://juejin.im/post/6854573215830933512) - 常见的浏览器相关的面试题
+5. [][「查缺补漏」送你 54 道 javascript 面试题](https://juejin.im/post/6854573211443544078) - js 相关的面试题库
+6. [][「查缺补漏」巩固你的http知识体系](https://juejin.im/post/6857287743966281736) - http 常见的面试提
+7. [][1.2w字 | 了不起的 typescript 入门教程](https://juejin.im/post/6844904182843965453) - 这年头，TS 是必须掌握滴～
 
 ## 5. 个人学习笔记
 
@@ -211,6 +208,7 @@
 4. [vue 中 8 种组件通信方式, 值得收藏!](https://juejin.im/post/5d267dcdf265da1b957081a3)
 5. [手摸手，带你用 vue 撸后台 系列五](https://juejin.im/post/5c92ff94f265da6128275a85)
 6. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
+7. [史上最强 vue 总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478) - 高赞的 vue 面试题
 
 ### 7.5 react
 
@@ -235,6 +233,7 @@
 9. [TCP 协议灵魂之问，巩固你的网路底层基础](https://juejin.im/post/5e527c58e51d4526c654bf41)
 10. [10 种跨域解决方案（附终极大招）](https://juejin.im/post/5e948bbbf265da47f2561705) -写得十分详细的跨域方案
 11. [《大前端进阶 安全》系列 HTTPS 详解](https://juejin.im/post/5e95ed89518825739208ec79) -了解 https 看这里
+12. [「查缺补漏」送你 18 道浏览器面试题](https://juejin.im/post/6854573215830933512) - 常见的浏览器相关的面试题
 
 ### 7.7 前端工程化
 
@@ -284,6 +283,7 @@
 15. [面试官：你了解过移动端适配吗？](https://juejin.im/post/5e6caf55e51d4526ff026a71)
 16. [前端性能优化 20 条建议](https://segmentfault.com/a/1190000022205291)
 17. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
+18. [小程序直播-疯狂点赞动画实现原理解析](https://juejin.im/post/6859702071906533383/) - 最近比较热门的 canvas 动画案例
 
 ### 7.11 面试题库
 
@@ -305,5 +305,6 @@
 16. [2020 三元同学春招阿里淘系、阿里云、字节跳动面经 & 个人成长经验分享](https://juejin.im/post/5e7d4e8b6fb9a03c6422f112) - 应届大佬的实习面试记录
 17. [阿里前端攻城狮们又写了一份面试题答案，请查收](https://juejin.im/post/5e82aa8df265da47ca6910b5) - 大厂有意思的面试题
 18. [2020 年前端面试复习必读精选文章【赠复习导图】](https://segmentfault.com/a/1190000022282401) - 很全的前端面试复习集锦
+19. [前端 10 个灵魂拷问 吃透这些你就能摆脱初级前端工程师！](https://juejin.im/post/6857800782276902919) - 前端比较常见的面试题
 
 Copyright (c) 2019-present ZhenzhenCai
