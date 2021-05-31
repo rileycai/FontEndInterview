@@ -17,6 +17,7 @@
 >
 > 1. 给下一届做的经验分享：[2020 年秋招前端实战心得](2020-Autumn-recruitment-experience.pdf)
 > 2. 本人简历，仅供参考： **[访问作者的简历 go->](https://github.com/zhenzhencai/Resume-FontEnd)**
+> 3. 本人掘金文章专栏: **[狂戳这里](https://juejin.cn/user/3016715636839998/posts)**
 
 ## 经验之谈 - 2021 年 3 月 29 日记录
 
@@ -129,6 +130,8 @@
 5. [x] [前端开发面试题](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers)
 6. [x] [大前端吊打面试官系列](https://github.com/luxiangqiang/Web-interview) - 更新中...
 7. [ ] [2020 年前端面试复习必读文章](https://juejin.im/post/5e8b163ff265da47ee3f54a6) - 十分棒的面试复习必读文章集合
+8. [x] [前端面试](https://github.com/lgwebdream/FE-Interview)
+9. [x] [前端面试复习笔记](https://github.com/CavsZhouyou/Front-End-Interview-Notebook)
 
 ### 4.2 优质博客
 
@@ -143,16 +146,9 @@
 2. [x] [大前端的瑞士军刀](https://github.com/nieweidong/fetool#blogs) - 工具集
 3. [x] [前端入门和学习进阶笔记](https://github.com/qianguyihao/Web) - 面试宝典，不能错过
 4. [x] [github 中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts#JavaScript) -高分优秀的中文项目
-
-### 4.4 8 月 13 日更新
-
-1. [ ] [小程序直播-疯狂点赞动画实现原理解析](https://juejin.im/post/6859702071906533383/) - 最近比较热门的 canvas 动画案例
-2. [ ] [史上最强 vue 总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478) - 高赞的 vue 面试题
-3. [ ] [前端 10 个灵魂拷问 吃透这些你就能摆脱初级前端工程师！](https://juejin.im/post/6857800782276902919) - 前端比较常见的面试题
-4. [ ] [「查缺补漏」送你 18 道浏览器面试题](https://juejin.im/post/6854573215830933512) - 常见的浏览器相关的面试题
-5. [ ] [「查缺补漏」送你 54 道 javascript 面试题](https://juejin.im/post/6854573211443544078) - js 相关的面试题库
-6. [ ] [「查缺补漏」巩固你的 http 知识体系](https://juejin.im/post/6857287743966281736) - http 常见的面试提
-7. [ ] [1.2w 字 | 了不起的 typescript 入门教程](https://juejin.im/post/6844904182843965453) - 这年头，TS 是必须掌握滴～
+5. [x] [前端乐园](https://github.com/abc-club/js-paradise) - 前端资源汇总
+6. [x] [前端入门到进阶图文教程](https://github.com/qianguyihao/Web)
+7. [x] [写个初高级前端的前端进阶指南](https://github.com/sl1673495/frontend-roadmap)
 
 ## 5. 个人学习笔记
 
@@ -186,6 +182,8 @@
 7. [彻底搞懂 CSS 层叠上下文、层叠等级、层叠顺序、z-index](https://juejin.im/post/5b876f86518825431079ddd6)
 8. [【译】一行 css 代码搞定响应式布局](https://juejin.im/post/5d0ad9a4f265da1bae38ffe6)
 9. [CSS 技巧，让你的 CSS 更专业](https://juejin.im/collection/5e77608ff265da4ff445f6e8)
+10. [前端优秀实践不完全指南](https://juejin.cn/post/6932647134944886797)
+11. [你未必知道的 CSS 知识点（第二季）](https://juejin.cn/post/6844903960386469895)
 
 ### 7.2 JavaScript
 
@@ -204,6 +202,7 @@
 13. [2020 年，你必须知道的 JS 数组技巧](https://juejin.im/post/5e4c03da6fb9a07cac1d55bc)
 14. [【面试篇】寒冬求职季之你必须要懂的原生 JS(上)](https://juejin.im/post/5cab0c45f265da2513734390) ， [下](https://juejin.im/post/5cbd1e33e51d45789161d053)- Javascript 看这两篇
 15. [从 206 个 console.log()完全弄懂数据类型转换的前世今生](https://juejin.im/post/5e7f8314e51d4546fa4511c9) - 类型转换看这里
+16. [JS 原生面经从初级到高级【近 1.5W 字】](https://juejin.cn/post/6844903976081555470)
 
 ### 7.3 ES6
 
@@ -218,6 +217,7 @@
 9. [记好这 24 个 ES6 方法，用来解决实际开发的 JS 问题](https://juejin.im/post/5e5ef2f9f265da57685dc9c1)
 10. [要就来 45 道 Promise 面试题一次爽到底](https://juejin.im/post/5e58c618e51d4526ed66b5cf) - 最详细的 promise、async 题目，妈妈再也不用担心我不会异步了。
 11. [ES6 完全使用手册](https://juejin.im/post/5bfe05505188252098022400) - es6 的重点
+12. [剖析 Promise 内部结构，一步一步实现一个完整的、能通过所有 Test case 的 Promise 类](https://github.com/xieranmaya/blog/issues/3) - 手写 promise，拿高评价必学！
 
 ### 7.4 vue
 
@@ -238,6 +238,8 @@
 5. [分享 50 个完整的 React Native 项目](https://juejin.im/post/58f37cb361ff4b0058f9824a)
 6. [30 分钟精通 React Hooks](https://juejin.im/post/5be3ea136fb9a049f9121014)
 7. [这可能是最通俗的 React Fiber(时间分片) 打开方式](https://juejin.im/post/5dadc6045188255a270a0f85)
+8. [「React 进阶」 React 全部 api 解读+基础实践大全(夯实基础 2 万字总结)](https://juejin.cn/post/6950063294270930980)
+9. [React Hooks 详解 【近 1W 字】+ 项目实战](https://juejin.cn/post/6844903985338400782)
 
 ### 7.6 浏览器、缓存、网络
 
@@ -303,6 +305,7 @@
 16. [前端性能优化 20 条建议](https://segmentfault.com/a/1190000022205291)
 17. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
 18. [小程序直播-疯狂点赞动画实现原理解析](https://juejin.im/post/6859702071906533383/) - 最近比较热门的 canvas 动画案例
+19. [「一劳永逸」一张脑图带你掌握 Git 命令](https://juejin.cn/post/6869519303864123399)
 
 ### 7.11 面试题库
 
@@ -325,5 +328,6 @@
 17. [阿里前端攻城狮们又写了一份面试题答案，请查收](https://juejin.im/post/5e82aa8df265da47ca6910b5) - 大厂有意思的面试题
 18. [2020 年前端面试复习必读精选文章【赠复习导图】](https://segmentfault.com/a/1190000022282401) - 很全的前端面试复习集锦
 19. [前端 10 个灵魂拷问 吃透这些你就能摆脱初级前端工程师！](https://juejin.im/post/6857800782276902919) - 前端比较常见的面试题
+20. [让我在面试官面前结巴的 24 个 XX 和 XX 的区别！](https://juejin.cn/post/6956360277185003556)
 
 Copyright (c) 2019-present ZhenzhenCai
