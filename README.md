@@ -9,7 +9,7 @@
 
 ## 简介
 
-> **本人介绍**：985 本，中科院硕士，2020 届应届毕业生，秋招投递一二线互联网&部分 AI 独角兽公司，收到 30 余家公司面试邀约，面试 20 余家公司，拿到 8-9 个 offer，基本是 sp 及以上。
+> **本人简介**：985 本，中科院硕士，2020 届应届毕业生，秋招投递一二线互联网&部分 AI 独角兽公司，收到 30 余家公司面试邀约，面试 20 余家公司，拿到 9 个 offer，基本是 sp 及以上。
 
 > **项目介绍**：这个项目是本人在 2019 年春招实习和秋招求职过程中积累的面试经验和复习材料。包括本人的春招/秋招面试情况、前端最常见的面试题目、优秀的面试博客汇总以及一些优质的文章分享。
 
@@ -29,14 +29,23 @@
 4. **面试时自我介绍要详细且突出特点**：很多面试官在面试之前可能并没有查看过面试者的简历，更多的是通过面试者的自我介绍来了解面试者。所以自我介绍的时候尽可能详细且流利地向面试官描述自己的实习经历、项目经验、技术栈等，从自我介绍中，面试官就能准确评估你这个人的沟通能力和潜力。
 5. **学会突出潜力**： 应届生的技术水平都差不多，面试官更多考察的是简历，所以常有面试官问，你最近在看哪些书？你是如何学习前端的？...潜力这东西，更多地是靠平时地日积月累。作者本人曾经也靠下面贴出的各种链接速成，拿到相对不错的 offer，但是还是没有敲响几个知名部门的大门。想要冲击 top 部门，算法是基本功，leetcode 常见题型一定要了解得十分透彻。js、css、数据结构、安全、浏览器、工程化等等也要了解原理。js 可以看看《你不知道的 javascript》，css 可以看看《css 世界》，学习算法课可以了解一下极客时间的《数据结构与算法之美》，浏览器相关推荐极客时间的《浏览器工作原理与实践》。网络相关可以看下《趣谈网络协议》。
 
-<details>
-  <summary><strong>6. offer 该如何选择？</strong></summary>
-
-很多人会有疑问，最终 offer 是选择知名公司名不见经传的部门还是选择普通公司知名部门？作者年少不懂事，曾经一味地追求大厂 offer，回过头来，发现应届生的第一份工作，一定要去一个有用户基数的部门（即拥有占有 top3 市场份额的产品），业务不好，再好的大厂也只是镀铜。总结为三远离： 1. 远离脉脉怨声载道的部门。2. 远离听都没听过的新业务部门。3. 远离 tob。
-
-</details>
-
 以上经验，乃个人想法，不误伤，不担责。如果有其他问题，可以发 issue，作者有时间会回答的～
+
+## 2022 年 4 月 15 日小记
+
+时光流逝，再次回顾这个项目，发现`star`即将突破 500，才意识到又是新的一届校招季。
+
+然，随着中丐股价接连大跳水，各大公司纷纷举办“开猿节流”毕业典礼，不少行业老人都在感叹，寒冬已至。
+
+寒冬来临，hc 大量缩水，校招形势必定十分严峻，面试难度也会同比上升一个档次。唯有准备万全，才能过关斩将。
+
+作者盲猜今年的招聘，
+
+- 一是考察面试者的基础知识是否扎实，包括对`JS`、`ES`、`TS`是否熟悉、是否用过`React`/`Vue`/`小程序`其中一门或多门框架，至于工程化能力(webpack、gulp、rollup)、是否熟悉一门后端语言（如 node），则是加分项。
+- 二是着重了解面试者的实践经验，有实习加成或者突出项目，且在面试过程中能讲出所做项目的亮点，对自己所做项目有深入思考和研究的，必定优先考虑。另一种值得赞扬的是能够深入思考项目中遇到的问题并总结成博客进行分享。
+- 三是了解面试者对前端这个领域的涉猎是否广泛。比如，最近学习什么新技术？了解过低代码吗？了解过 vite 吗？等等等等。当你熟练地说出 vite 的原理和优劣势，必定十分出彩。
+
+祝屏幕对面正在努力学习的你，鹏程万里，锦绣前程。
 
 ## 1. 2019 年秋招面试情况
 
@@ -76,7 +85,7 @@
 |  -   |     [旷视科技](interview-autumn/megvii.md)     |    三四面    |   前端   | 10 月 12 日 | 周六 | **通过** | 现场 | 正常投递 |  免笔试  |
 |  -   |        [Bigo](interview-autumn/bigo.md)        |     三面     |   前端   | 10 月 16 日 | 周三 | **通过** | 视频 | 正常投递 | 笔试通过 |
 |  19  |     [微软](interview-autumn/microsoft.md)      |    一二面    |   前端   | 10 月 16 日 | 周三 |   失败   | 视频 | 正常投递 |  免笔试  |
-|  -   |    [图森未来](interview-autumn/tusimple.md)    | 四五六 hr 面 |   前端   | 10 月 18 日 | 周五 |   被鸽   | 现场 | 正常投递 |  免笔试  |
+|  -   |    [图森未来](interview-autumn/tusimple.md)    | 四五六 hr 面 |   前端   | 10 月 18 日 | 周五 | **通过** | 现场 | 正常投递 |  免笔试  |
 |  -   |        [Bigo](interview-autumn/bigo.md)        |    hr 面     |   前端   | 10 月 18 日 | 周五 | **通过** | 电话 | 正常投递 | 笔试通过 |
 |  20  |   [字节跳动](interview-autumn/bytedance.md)    |   一二三面   |   前端   | 10 月 21 日 | 周一 | **通过** | 现场 |    -     |    -     |
 |  -   |   [字节跳动](interview-autumn/bytedance.md)    |    hr 面     |   前端   | 10 月 23 日 | 周三 | **通过** | 现场 |    -     |    -     |
@@ -168,6 +177,11 @@
 10. [TypeScript Handbook（中文版）](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 11. [图解 Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 12. [微信小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/)
+13. [nodejs 技术栈](https://www.nodejs.red/#/) - 十分优秀的 nodejs 笔记分享
+14. [typescript 入门教程](https://ts.xcatliu.com/introduction/index.html) - 个人觉得比官方文档写得更通俗易懂
+15. [小程序开发文档-底层框架](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=0000e82f924ca0bb00869a5de5ec0a) - 微信官方提供的小程序开发文档，值得反复阅读，了解小程序设计的初衷以及底层原理
+
+16. [小程序-性能与体验](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tips/start.html) - 官方出品，必属精品，小程序底层做了许多性能优化，值得借鉴。
 
 ## 7. 技术分享文章 - 长期维护
 
@@ -203,6 +217,7 @@
 14. [【面试篇】寒冬求职季之你必须要懂的原生 JS(上)](https://juejin.im/post/5cab0c45f265da2513734390) ， [下](https://juejin.im/post/5cbd1e33e51d45789161d053)- Javascript 看这两篇
 15. [从 206 个 console.log()完全弄懂数据类型转换的前世今生](https://juejin.im/post/5e7f8314e51d4546fa4511c9) - 类型转换看这里
 16. [JS 原生面经从初级到高级【近 1.5W 字】](https://juejin.cn/post/6844903976081555470)
+17. [js 基础-面试官想知道你有多理解 call,apply,bind？[不看后悔系列]](https://juejin.cn/post/6844903906279964686) - call、apply、bind 源码实现得比较严谨
 
 ### 7.3 ES6
 
@@ -240,6 +255,14 @@
 7. [这可能是最通俗的 React Fiber(时间分片) 打开方式](https://juejin.im/post/5dadc6045188255a270a0f85)
 8. [「React 进阶」 React 全部 api 解读+基础实践大全(夯实基础 2 万字总结)](https://juejin.cn/post/6950063294270930980)
 9. [React Hooks 详解 【近 1W 字】+ 项目实战](https://juejin.cn/post/6844903985338400782)
+10. [React 如何区分 Class 和 Function？](https://overreacted.io/zh-hans/how-does-react-tell-a-class-from-a-function/) - react 开发人员分享的文章，涉及到 new、this、class、箭头函数、prototype、**proto**、instanceof 等方面。
+11. [「React 进阶」 React 全部 api 解读+基础实践大全(夯实基础 2 万字总结)](https://juejin.cn/post/6950063294270930980#heading-41) - 硬核文章，作者针对 react 写了一个系列，都值得阅读。
+12. [react 技术揭秘](https://react.iamkasong.com/) - react 源码解读
+13. [图解 react 源码](https://7kms.github.io/react-illustration-series/)，[github 仓库](https://github.com/7kms/react-illustration-series) - react 源码解读
+14. [函数式组件与类组件有何不同？](https://overreacted.io/zh-hans/how-are-function-components-different-from-classes/) - react 开发人员分享的文章，详细解释了函数式组件与类组件的区别，绝对值得一阅。
+15. [15 张图，20 分钟吃透 Diff 算法核心原理，我说的！！！](https://juejin.cn/post/6994959998283907102#comment) - 看过最通俗易懂的 react 虚拟 dom diff 算法原理了。
+16. [深入理解 React useLayoutEffect 和 useEffect 的执行时机 ](https://www.cnblogs.com/iheyunfei/p/13065047.html) - useEffect 和 useLayoutEffect 的区别，通俗易懂。
+17. [「react 进阶」一文吃透 react-hooks 原理](https://juejin.cn/post/6944863057000529933) - react-hooks 原理，可配合上面的「图解 react 源码」一同食用。
 
 ### 7.6 浏览器、缓存、网络
 
@@ -266,6 +289,12 @@
 6. [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
 7. [webpack4 的 30 个步骤打造优化到极致的 react 开发环境，如约而至](https://juejin.im/post/5cfe4b13f265da1bb13f26a8)
 8. [JavaScript 模块化七日谈](https://huangxuan.me/js-module-7day/#/) - 了解模块化发展历史，面试常考。
+9. [「万字进阶」深入浅出 Commonjs 和 Es Module](https://juejin.cn/post/6994224541312483336) - 非常深入的介绍 Commonjs 和 ES Module 的实现原理
+10. [module 的加载实现](https://es6.ruanyifeng.com/#docs/module-loader) - 阮一峰老师的模块的加载实现，内容详实。
+11. [从零搭建 React 全家桶框架教程](https://github.com/brickspert/blog/issues/1) - 一步一步教你搭建 react 框架，主要阐述 webpack 配置过程
+12. [深入理解 Vite 核心原理](https://juejin.cn/post/7064853960636989454) - 最通俗易懂解释 vite 原理的文章
+13. [webpack 官方文档](https://webpack.docschina.org/guides/tree-shaking/) - tree shaking 一节可以了解一下
+14. [【工程化】无用代码去哪了？项目减重之 rollup 的 Tree shaking](https://jishuin.proginn.com/p/763bfbd5c646) - rollup 的 tree shaking 的原理解析 15.[10 分钟快速入门 rollup.js](https://www.imooc.com/article/262083),[10 分钟快速进阶 rollup.js](https://www.imooc.com/article/263597) - rollup 进阶，了解基础配置
 
 ### 7.8 技术分享
 
@@ -306,6 +335,8 @@
 17. [Web 中的图像技术总结，前端开发中各种图片引入的优点缺点及实例](https://segmentfault.com/a/1190000022473422)
 18. [小程序直播-疯狂点赞动画实现原理解析](https://juejin.im/post/6859702071906533383/) - 最近比较热门的 canvas 动画案例
 19. [「一劳永逸」一张脑图带你掌握 Git 命令](https://juejin.cn/post/6869519303864123399)
+20. [【译】Redux 还是 Mobx，让我来解决你的困惑！](https://segmentfault.com/a/1190000011148981) - 非常好的文章，讲清楚 redux 和 mobx 的区别
+21. [深入理解 vite 核心原理](https://juejin.cn/post/7064853960636989454) - 了解 vite 的基本原理，入门必备。
 
 ### 7.11 面试题库
 
