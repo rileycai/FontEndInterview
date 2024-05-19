@@ -18,7 +18,6 @@
 > 1. 给下一届做的经验分享：[2020 年秋招前端实战心得](2020-Autumn-recruitment-experience.pdf)
 > 2. 本人校招简历，仅供参考： **[访问作者的简历 go->](https://github.com/zhenzhencai/Resume-FontEnd)**
 > 3. 本人掘金文章专栏: **[狂戳这里](https://juejin.cn/user/3016715636839998/posts)**
-> 4. 本人博客： **[rileycai.com](https://rileycai.com/)**
 
 ## 打个广告
 用户增长团队【核心部门！！！】招人，团队氛围好，有技术深度，有培养机制，招聘校招&实习生，各个技术方向都需要，hc多多。
