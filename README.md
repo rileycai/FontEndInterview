@@ -21,11 +21,11 @@
 > 4. 本人博客： **[rileycai.com](https://rileycai.com/)**
 
 ## 打个广告
-核心增长团队招人，团队氛围好，有技术深度，有培养机制，招聘实习生，各个技术方向都需要。
+用户增长团队【核心部门！！！】招人，团队氛围好，有技术深度，有培养机制，招聘校招&实习生，各个技术方向都需要，hc多多。
 
 此链接投递直达我们部门，可优先筛选简历。
 
-<img src="./image/2024_practice.png" alt="FontEndInterview" width=300>
+<img src="./image/post2024.png" alt="FontEndInterview" width=300>
 
 ## 经验之谈 - 2021 年 3 月 29 日记录
 
