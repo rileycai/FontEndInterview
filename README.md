@@ -24,7 +24,7 @@
 
 此链接投递直达我们部门，可优先筛选简历。
 
-<img src="./image/post2024.png" alt="FontEndInterview" width=500>
+<img src="./image/post2025.png" alt="FontEndInterview" width=300>
 
 ## 经验之谈 - 2021 年 3 月 29 日记录
 
